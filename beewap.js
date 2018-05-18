@@ -98,8 +98,8 @@ var contJSON= {
         
         <div class="py-3 px-3 rounded-circle picture${i} lambda"></div>
         <p class="text-left my-auto Awrt1 px-2 pl-3 ">${contJSON.contact[i-1].name}<br> 
-            <small class="text-left Awrt sailormoon1">Turn On Desktop Notification</small></p>
-            <div class="pix${i} ml-auto le Awrt"><small id="df" class="Awrt1">${contJSON.contact[i-1].time}</small></div>
+            <small class="text-left Awrt sailormoon1">loptgfvgh ghvghv hgfvhg</small></p>
+            <div class="pix${i} ml-auto le Awrt"><small id="df" class="Awrt sailormoon1">${contJSON.contact[i-1].time}</small></div>
     </div>`);
     $(`.picture${i}`).css(`background`,`url(static/A${i}.jpg)`);
     // add certain html in pix${i} class
