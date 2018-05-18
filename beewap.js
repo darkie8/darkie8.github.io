@@ -406,7 +406,7 @@ var contJSON= {
     
      let e
     $(`.send`).click(function () { 
-        alert($(`.texting`).html())
+        alert('later')
         
     });
     
