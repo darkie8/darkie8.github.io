@@ -1,0 +1,225 @@
+
+.red-back{
+    
+    height: 100vh;
+    background: white;
+    
+}
+.yellow-back{
+       background-color: white;
+       height: 100vh;
+    }
+.fullCover{
+    margin: 0 !important;
+    padding: 0 !important ;
+    font-family: 'Muli', sans-serif !important;
+}
+
+.sailormoon1{
+    font-weight: bold !important;
+    font-family: 'Indie Flower', cursive !important;
+}
+.container.alpha{
+    width: 100vw;
+}
+.row.alpha{
+    width: 100vw;
+}
+.hidden{
+    
+    overflow: hidden;
+}
+.beta1{
+    width: 90%;
+    
+}
+.round{
+    border-radius: 50px !important;
+}
+.bg-info{
+    background: linear-gradient(rgba(255, 255, 255,.5),rgba(255, 255, 255,.5));
+    background: -webkit-linear-gradient(rgba(255, 255, 255,.5),rgba(255, 255, 255,.5));
+    background: -o-linear-gradient(rgba(255, 255, 255,.5),rgba(255, 255, 255,.5));
+}
+.Awrt{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+.Awrt1{
+    font-size: 1.9vw;
+    font-weight: bold;
+}
+#inputGroup-sizing-sm, #inputGroup-sizing-default {
+    background-color: rgba(255, 255, 255,1);
+    border-right: none;
+    width: 40px;
+    z-index: 1;
+}
+.scroll{
+    overflow-y: scroll !important;
+}
+.sigma{
+    height: 65vh;
+    background: linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -webkit-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -moz-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -o-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);    
+}
+.dreco{
+    background: linear-gradient(rgba(250, 176, 18,.7),rgba(250, 176, 18,.7)),url(static/background/s5hehiscswz.jpg) !important;
+    background: -webkit-linear-gradient(rgba(250, 176, 18,.7),rgba(250, 176, 18,.7)),url(static/background/s5hehiscswz.jpg) !important;
+    background: -moz-linear-gradient(rgba(250, 176, 18,.7),rgba(250, 176, 18,.7)),url(static/background/s5hehiscswz.jpg) !important;
+    background: -o-linear-gradient(rgba(250, 176, 18,.7),rgba(250, 176, 18,.7)),url(static/background/s5hehiscswz.jpg) !important;    
+    
+}
+@media (max-height: 540px){
+    .sigma{
+        height: 40vh;
+    }
+}
+.gama{
+    border-bottom: .2px solid rgba(0, 0, 0,.5);
+}
+.kiop{
+    background: linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -webkit-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -moz-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -o-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);    
+
+}
+.col-4{
+    background: linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -webkit-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -moz-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);
+    background: -o-linear-gradient(rgba(255, 255, 255,.7),rgba(255, 255, 255,.7)),url(static/background/s5hehiscswz.jpg);    
+}
+.lambda{
+    background-size: cover !important;
+    background-position: center !important;
+    height: 4vw;
+    width: 4vw;
+}
+.baboon{
+    height: 80vh !important;
+}
+@media (max-height: 900px){
+    .baboon{
+        height: 40vh;
+    }
+}
+.Anushka{
+    width: auto;
+}
+.rounded{
+    border-radius: 5px;
+    background-color: aqua;
+}
+.pr1{
+    text-align: center;
+}
+#df{
+  font-size: 1.2vw !important;
+}
+.be{
+    visibility: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.wb{
+    font-size: 1.4vmax;
+}
+.noob{
+    height: 100vh;
+}
+.noob1{
+    height: 80%;
+}
+@media(max-height:500px){
+   .noob1{
+       height: 70%;
+   }
+}
+.btn-link {
+    color: black !important ;
+}
+.dropdown-menu{
+    font-size: 1.4vmax !important;
+}
+.pain{
+    width: 0% !important;
+
+}
+.pain1{
+    width: 100% !important;
+}
+.lopa{
+    width: 1.4vmax;
+    height: 1.4vmax;
+}
+
+@media (min-width: 850px){
+    .pain{
+        width: 60% !important;
+
+    }
+    .pain1{
+        width: 40% !important;
+    }
+    .show{
+        font-size: 2vmax !important;
+    }
+}
+@media(max-width: 600px){
+    .sigma{
+        height: 80%;
+    }
+    .lopa{
+        width: 1.7vmax;
+        height: 1.7vmax;
+    }
+    .Awrt{
+        font-size: 1.9vw;
+        font-weight: bold;
+    }
+    .Awrt1{
+        font-size: 2.4vw;
+        font-weight: bold;
+}
+.del{
+    height: 0 !important;
+    overflow: hidden !important;
+}
+}
+@media(max-width: 540px){
+    .Awrt{
+        font-size: 3vw !important;
+        font-weight: bold;
+    }
+    .Awrt1{
+        font-size: 4vw !important;
+        font-weight: bold;
+}
+.lopa{
+    width: 3vmax;
+    height: 3vmax;
+    
+}
+.show{
+    font-size: 2.5vmax !important;
+}
+}
+
