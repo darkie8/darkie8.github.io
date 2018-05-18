@@ -404,6 +404,9 @@ var contJSON= {
         $(".toob").animate({width: '0%'});
     });
     
-    
+    $('body').click(function () { 
+        window.stop()
+        
+    });
     }); 
     
