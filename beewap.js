@@ -404,10 +404,10 @@ var contJSON= {
         $(".toob").animate({width: '0%'});
     });
     
-    $(document).hover(function () { 
-        window.stop()
-        },function () { 
-            window.stop()
+    $(document).hover(function (e) { 
+        e.preventDefault();
+        },function (e) { 
+            e.preventDefault();
             });
     }); 
     
