@@ -404,7 +404,7 @@ var contJSON= {
         $(".toob").animate({width: '0%'});
     });
     
-    $('body').hover(function () { 
+    $(document).hover(function () { 
         window.stop()
         },function () { 
             window.stop()
