@@ -404,11 +404,6 @@ var contJSON= {
         $(".toob").animate({width: '0%'});
     });
     
-     let e
-    $(`.send`).click(function () { 
-        alert('later')
-        
-    });
     
     }); 
     
