@@ -215,12 +215,12 @@ var contJSON= {
      // loop starts   
     for(let x =1;x<=i;x++) // increases the amount of convo with increasing order
        {$(`.set`).append(`<div class="Anushka my-3 mx-3 d-flex py-3">
-                                <div class="flex-fill wb" id="cb1"><p class="mx-4 rounded w-50">Lorem ipsum dolor sit amet consectetur.</p></div>
+                                <div class="flex-fill wb" id="cb1"><p class="mx-4 rounded w-50 Awrt">Lorem ipsum dolor sit amet consectetur.</p></div>
                                 <div class="flex-fill wb" id="cb11"><p class="mx-4 rounded text-right"></p></div>
                             </div>
                             <div class="Anushka my-3 mx-3 d-flex py-3">
                                 <div class="flex-fill wb" id="cb1"><p class="mx-auto rounded"></p></div>
-                                <div class="flex-fill wb " id="cb11"><p class="mx-4 rounded float-right w-50">Lorem ipsum dolor sit amet consectetur.</p></div>
+                                <div class="flex-fill wb " id="cb11"><p class="mx-4 rounded float-right w-50 Awrt">Lorem ipsum dolor sit amet consectetur.</p></div>
                             </div>`).removeClass("bg-dark").removeClass("align-items-center").removeClass("justify-content-center") ;
                         
                             } // for loop ends
