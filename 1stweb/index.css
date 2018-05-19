@@ -1,0 +1,643 @@
+
+body{
+    background-image: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("doodles/doodles.png");
+    background-image: -webkit-linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("doodles/doodles.png");
+    background-image: -moz-linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("doodles/doodles.png");
+    background-image: -o-linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("doodles/doodles.png");
+    background-size: auto;
+    padding: 0;
+    margin: 0;
+    font-family: 'Questrial', sans-serif !important ;
+}
+header{
+    
+    /*background-image: url("setting_sun_by_reullethollow-dbylmhw.png");*/
+    
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    animation: example 6s linear 0s infinite alternate;  
+    -webkit-animation: example 6s linear 0s infinite alternate;
+    -moz-animation: example 6s linear 0s infinite alternate;
+    -o-animation: example 6s linear 0s infinite alternate;
+    
+}
+@keyframes example{
+    from{background-image: url("setting_sun_by_reullethollow-dbylmhw.png");}
+    to{background-image:url("landscape__3____desert_by_ncoll36-daxxv4f.jpg");}
+}
+@-webkit-keyframes example{
+    from{background-image: url("setting_sun_by_reullethollow-dbylmhw.png");}
+    to{background-image:url("landscape__3____desert_by_ncoll36-daxxv4f.jpg");}
+}
+@-moz-keyframes example{
+    from{background-image: url("setting_sun_by_reullethollow-dbylmhw.png");}
+    to{background-image:url("landscape__3____desert_by_ncoll36-daxxv4f.jpg");}
+}
+@-o-keyframes example{
+    from{background-image: url("setting_sun_by_reullethollow-dbylmhw.png");}
+    to{background-image:url("landscape__3____desert_by_ncoll36-daxxv4f.jpg");}
+}
+/* over head menu*/
+.list{
+    width: 100vw;
+    position: fixed;
+    visibility: hidden;
+}
+
+.menusymbol {
+    padding: 13px;
+    border: none;
+    animation: example1 6s linear 0s infinite alternate;  
+    -webkit-animation: example1 6s linear 0s infinite alternate;
+    -moz-animation: example1 6s linear 0s infinite alternate;
+    -o-animation: example1 6s linear 0s infinite alternate;
+}
+.menuicon{
+   position: relative ;
+   left: 80vw;
+   display: inline-block ;
+   
+}
+.menucontent{
+    display: none ;
+    position: absolute ;
+    background-color: #f1f1f1;
+    min-width: 160px ;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) ;
+    z-index: 5;
+    right: 1px;
+    list-style-type: none;
+}
+.menucontent a {
+    color: black ;
+    padding: 12px 16px ;
+    text-decoration: none ;
+    display: block ;
+}
+.menucontent a:hover {background-color: #ddd ;}
+.menuicon:hover .menucontent { display: block ;}
+.headmenu{
+    font-size: 1.5vw;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 4;
+    animation: example1 6s linear 0s infinite alternate;  
+    -webkit-animation: example1 6s linear 0s infinite alternate;
+    -moz-animation: example1 6s linear 0s infinite alternate;
+    -o-animation: example1 6s linear 0s infinite alternate;
+    
+}
+@keyframes example1{
+    from{background: rgb(255, 139, 97);}
+    to{background: rgb(247, 209, 107);}
+}
+@-webkit-keyframes example1{
+    from{background: rgb(255, 139, 97);}
+    to{background:  rgb(212, 212, 97);}
+}
+@-moz-keyframes example1{
+    from{background: rgb(255, 139, 97);}
+    to{background:  rgb(212, 212, 97);}
+}
+@-o-keyframes example1{
+    from{background: rgb(255, 139, 97);}
+    to{background:  rgb(212, 212, 97);}
+}
+li.bsc { float: right;}
+a.menu {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    
+}
+li.bsc:nth-child(1){float: left;
+  padding: 0px 0px !important;}
+.symbol{
+  width: 2vw;
+  height: 2vw;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+ a.menu:hover { background-color: rgba(0, 0, 0,.5);
+           color: azure;
+           padding: 20px 10px 20px 10px;    
+        }
+       
+a.menu:active{
+    padding: 20px 10px 20px 10px;  
+    background-color: rgb(0, 0, 0);
+}
+#op1:hover{
+    background-color:inherit !important;
+    
+    padding-left: 20px ;
+  padding-right: 20px ;
+  
+  height: 30px;
+}
+#op1:hover img {
+    width: 3vw ;
+    height: 3vw ;
+   position: relative;
+   bottom: 5px;
+}
+/* intro view */
+
+.head-info{
+    
+    font-weight: bold;
+}
+.description{
+    width: 15vw;
+    text-align: left;
+    font-size: 2vw;
+    margin-left: 20vw;
+}
+#des0{
+    height: 60vw;
+    text-align: center;
+    font-size: 7vw;
+}
+
+@media screen and (max-width: 780px){
+    .description{
+        width: 40vw;
+        font-size: 3.5vw;
+    }
+    .headmenu{
+        font-size: 2.3vw;
+    }
+    #op1:hover{
+        
+        padding-left: 20px !important;
+      padding-right: 20px !important;
+      height: 20px;
+    }
+    #op1:hover img {
+        position: relative;
+        bottom: 0px;
+    }
+}
+@media screen and (max-width:680px){
+    a.menu {
+        padding: 13px 10px;
+    }
+    #op1:hover{
+        
+        padding-left: 10px !important;
+      padding-right: 10px !important;
+      height: 20px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .description{
+        width: 45vw;
+        font-size: 5vw;
+    }
+    #des0{
+        font-size: 9vw;
+    }
+    .list{
+        
+        width: 0vw;
+        position: fixed;
+        
+        z-index: 6;
+        visibility: visible;
+    }
+    .symbol{
+        width: 20px !important;
+  height: 20px !important;
+  position: relative !important;
+  }
+    .symbol1{
+        width: 20px;
+     height: 20px;
+     padding-left: 10px;
+     padding-right: 10px;
+     
+    }
+    .a{
+        visibility: hidden !important;
+    }
+    
+    .headmenu{
+        height: 50px;
+    }
+
+#op1:hover{
+    height: 0px;
+}
+#op1:hover img {
+    height: 25px !important;
+    width: 25px !important;
+    position: relative;
+    bottom: 7px;
+}
+  
+}
+@media screen and (max-height: 370px){
+    .head-info{
+        position: relative;
+        bottom: 60px;
+    }
+    .description{
+        width: 45vw;
+        font-size: 3vw;
+    }
+    
+}
+
+/* about view */
+.aboutMe{
+background-size: auto;
+
+width: 98.1vw;
+position: relative;
+bottom: 120px;
+
+
+}
+#myImg{
+    position: relative;
+    left: 25vw;
+    top: 3vw;
+    width: 10vw;
+    
+}
+.resize1{
+    height: 160px;
+    width: 160px;
+    border-radius: 160px;
+    position: relative;
+    left: 5vw;
+     }
+#am {
+ position: relative;
+ text-align: right;
+ top: 20px;
+
+ width: 70vw;
+ 
+}
+.am1{
+    width: 60vw;
+    position: relative;
+    left: 20vw;
+    padding: 1vw;
+    text-align: justify;
+    font-size: 20px;
+    z-index: -1;
+    
+    
+}
+#third{
+    width: 100px;
+}
+/* technology view */
+#fourth{
+    visibility: hidden;
+}
+#fifth{
+    visibility: hidden;
+}
+#sixth{
+    visibility: hidden;
+}
+
+.heading{
+    
+    width: 25%;
+    position: relative;
+    bottom: 2vw;
+    left: 15%;
+}
+.techFlex{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    flex-flow: column; 
+    -webkit-flex-flow: column; 
+    -moz-flex-flow: column;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    background-image: linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url("s5hehiscswz.jpg");
+    background-image: -webkit-linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url("s5hehiscswz.jpg");
+    background-image: -moz-linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url("s5hehiscswz.jpg");
+    background-image: -o-linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url("s5hehiscswz.jpg");
+    background-size: auto;
+}
+.techi{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 5vw;
+    background: rgba(255, 255, 255, 1);
+    
+ }   
+  .resize{
+    height: 8.9vw;
+    width: 8.9vw;
+    
+   position: relative;
+    left: 13.6%;
+    top: 13.6%;
+    
+}
+ #gama1, #gama2, #gama5, #gama6{
+     position: relative;
+     left: 62%;
+     
+ }
+ #gama3, #gama4, #gama7, #gama8{
+    position: relative;
+    left: 25%;
+    
+}
+.writing1{
+    width: 50vw;
+    text-align: right;
+    position: relative;
+    left: 40%;
+    border-bottom: 1px solid black;
+    top: 12.2vw;
+    font: bold 3vw 'Questrial', sans-serif;
+}
+.writing{
+    width: 50vw;
+    
+    border-bottom: 1px solid black;
+    position: relative;
+    top: 12.2vw;
+    left: 9.2%;
+    font: bold 3vw 'Questrial', sans-serif;
+}
+.sigma, .sigma1{
+    font: normal 1.5vw 'Questrial', sans-serif !important;
+    text-align: justify;
+}
+.A{
+    background-position: center;
+    background-size: cover;
+    animation: example2 6s linear 0s infinite alternate;  
+    -webkit-animation: example2 6s linear 0s infinite alternate;
+    -moz-animation: example2 6s linear 0s infinite alternate;
+    -o-animation: example2 6s linear 0s infinite alternate;
+}
+@keyframes example2{
+    from{background-image: url("sigma.jpg");
+        color: black;}
+    to{background-image: url("sigma2.jpg");
+        color: white;}
+}
+@-webkit-keyframes example2{
+    from{background-image:  url("sigma.jpg");
+        color: black;}
+    to{background-image:url("sigma2.jpg");
+        color: white;}
+}
+@-moz-keyframes example2{
+    from{background-image: url("sigma.jpg");
+        color: black;}
+    to{background-image:url("sigma2.jpg");
+        color: white;}
+}
+@-o-keyframes example2{
+    from{background-image: url("sigma.jpg");
+        color: black;}
+    to{background-image: url("sigma2.jpg");
+        color: white;}
+}
+@media screen and (max-width: 650px){
+    .am1{
+        font-size: 15px;
+    }
+ .sigma, .sigma1{font-size: 2.5vw !important ;
+}
+}
+@media screen and (max-width: 450px){
+    
+    .sigma, .sigma1{font-size: 3.2vw !important ;}
+    
+   }
+
+@media screen and (max-width: 794px) {
+    .aboutMe{
+        background-size: auto;
+        
+        width: 98.1vw;
+        position: relative;
+        bottom: 90px;
+        
+        
+        }
+    #myImg{
+        position: relative;
+        right: 70px;
+        left: auto;
+        top: 3vw;
+        margin: auto;
+    }
+    .resize1{
+        height: 120px;
+        width: 120px;
+        border-radius: 120px;
+        position: relative;
+    }
+    #am {
+     position: relative;
+     text-align: center;
+     top: 20px;
+     width: auto;    
+    
+    }
+    .techi{
+        width: 17vw;
+        height: 17vw;
+        border-radius: 8vw;
+        
+     }
+    .resize{
+        height: 14vw;
+        width: 14vw;
+        
+       position: relative;
+        left: 9%;
+        top: 10%;
+        
+    }
+    
+     #gama1, #gama2, #gama5, #gama6{
+         position: relative;
+         left: 70%;
+         bottom: 50px;
+         
+     }
+     #gama3, #gama4, #gama7, #gama8{
+        position: relative;
+        left: 20%;
+        bottom: 50px;  
+    }
+    
+    .writing1{
+        
+        font: bold 5vw 'Questrial', sans-serif;
+    }
+    .writing{
+        
+        font: bold 5vw 'Questrial', sans-serif;
+    }
+    .sigma, .sigma1{
+        font: bold 2.5vw 'Questrial', sans-serif;
+        
+    }
+    .writing:hover, .writing1:hover{
+        background: white(0, 0, 0,1);
+        color: red;
+        border-radius: 8px;
+        width: 57vw;
+        text-align: left;
+  }
+  .sigma:hover, .sigma1:hover{
+    font-size: 3vw !important;
+}
+    }
+  
+ @media screen and (max-width:350px){
+    .writing:hover, .writing1:hover{
+        background: white;
+        color: red;
+        font-size: 6vw;
+        border-radius: 8px;
+        width: 55vw;
+  }
+  .sigma:hover, .sigma1:hover{
+    font-size: 4vw !important;
+   }
+}
+.work{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    height: 40vw;
+    
+    background: linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("pink-geo.jpg");
+    background: -webkit-linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("pink-geo.jpg");
+    background: -moz-linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("pink-geo.jpg");
+    background: -o-linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("pink-geo.jpg");
+    
+}
+.pix{
+    width: 30vw;
+    height: 15vw;
+    
+    
+
+    
+    border: 2px double white;
+    border-radius: 8px;
+    margin: auto;
+}
+.pixb{
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    
+}
+@media screen and (max-width: 540px){
+    .work{
+        height: 60vw;
+    }
+    .pix{
+        width: 40vw;
+        height: 25vw;
+        
+        }
+     }     
+     @media screen and (max-width: 350px){
+        .work{
+            height: 80vw;
+        }
+    }
+    @media screen and (max-width: 350px){
+        .work{
+            height: 90vw;
+        }
+    }
+.pix:hover{
+      opacity: .8;
+}
+ .more {
+    text-align: center;
+     
+}
+/*contact*/
+.strong{
+    width: 25px;
+    height: 25px;
+     padding: 0px 10px;
+    float: right;
+}
+.weak{
+    display: inline;    
+}
+@media screen and (max-width:450px){
+    .weak{display: inline-block;}
+    .strong{
+        width: 20px;
+        height: 20px;
+        float: none;
+    }
+}
+
+
+.contactsl{
+    margin: auto;
+    text-align: center;
+    position: relative;
+    right: 20px;
+}
+@media screen and (max-width: 309px){
+    .contactsl{
+        margin: auto;
+    }
+    .strong{
+        width: 20px;
+        height: 20px;
+        padding: 0vw 3vw ;     }
+}
+.pageback, #nav{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 60px;
+    background-color: white;
+}
+#nav{
+    position: relative;
+    top: 25px;
+}
+.pageback:hover, .pageback:hover div #nav{
+    width: 70px;
+    height: 70px;
+}
+.black{
+    height: 70px;
+    background-color: black;
+    
+}
