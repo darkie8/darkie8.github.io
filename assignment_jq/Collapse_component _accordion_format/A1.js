@@ -1,5 +1,7 @@
-$(function(){
+alert("godme")
+$(document).ready(function(){
 
-    alert("godme")
- 
+$(`button`).click(function () { 
+alert("dxgf")     
+}); 
  });
