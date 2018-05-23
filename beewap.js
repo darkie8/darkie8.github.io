@@ -87,7 +87,7 @@ var contJSON= {
     var n = false
    // initaiting jquerry library 
   $(document).ready(function(){
-    // $(window).resize(function(){location.reload();});
+     $(window).resize(function(){location.reload();});
     // starting for loop
     for(let i =1;i<9;i++)
     { 
