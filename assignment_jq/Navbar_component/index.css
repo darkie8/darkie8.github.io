@@ -1,0 +1,124 @@
+.parent{
+    padding: 10px 10px;
+    border: .5px solid rgb(95, 92, 92);
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    height: 40px;
+}
+.dandelion{
+    padding: 1px 1px;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.dandelion1{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    position: relative;
+    top: 3px;
+    overflow: hidden;
+}
+
+.big-guy{
+    font-size: 25px;
+    padding-left: 3px
+}
+.normal-guy, .link-guy, .dropdown-guy, .deactive-guy{
+    font-size: 18px;
+    padding-left: 2vw;
+    padding-right: 2vw
+}
+#menudropdown{
+    height: 0px;
+}
+.beta{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}
+.formInput{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
+form{
+    margin: 0%;
+    padding: 0px 10px
+    
+    
+}
+.font-sz{
+    font-size: 18px;
+    position: relative;
+}
+#searchdropdown{
+    height: 0px;
+}
+.buttonheight{
+    height: 28px;
+    margin: 0%;
+    border: none;
+   
+}
+.form{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+     overflow: hidden;
+}
+#search{
+    overflow: hidden;
+    
+}
+.pi2{
+    padding: 0px 10px;
+}
+#part2{
+    justify-content: flex-end !important;
+}
