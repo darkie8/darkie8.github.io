@@ -8,11 +8,7 @@
      position: fixed;
 
 }
-.ModalS1{
-    background: rgba(0, 0, 0,.4);
-     position: fixed;
 
-}
 .Zind{
     z-index: 100;
 }
@@ -26,6 +22,9 @@
     background: white;
     border-radius: 1vw;
     opacity: 0;
+    z-index: 101;
+    position: absolute;
+    left: 30vw;
 }
 .modalH{
     padding: 2vw 2vw 1vw 2vw;
