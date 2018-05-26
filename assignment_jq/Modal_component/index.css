@@ -1,0 +1,70 @@
+
+.modalRequirement{
+    
+    height: 100vh;
+}
+.ModalS{
+    background: rgba(0, 0, 0,.4);
+     position: fixed;
+
+}
+.ModalS1{
+    background: rgba(0, 0, 0,.4);
+     position: fixed;
+
+}
+.Zind{
+    z-index: 100;
+}
+.Overflw{
+    overflow: hidden;
+
+}
+.modalP{
+    margin: 0vh auto auto auto;
+    width: 40vw;
+    background: white;
+    border-radius: 1vw;
+    opacity: 0;
+}
+.modalH{
+    padding: 2vw 2vw 1vw 2vw;
+    font-size: 2vw;
+}
+.modalM{
+    padding: 1vw 2vw 5vw 2vw;
+    font-size: 1.2vw;
+}
+.modalF{
+    padding: 2vw;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+}
+.buttonMod{
+    padding: 0vw .5vw 0vw .5vw;
+}
+.buttonIns{
+    height: 3vw;
+    width: 7vw;
+    font-size: 2vw;
+    font-size: 1.2vw;
+}
+.sicko{
+    overflow-y: hidden;
+    height: 0vh;
+    width: 0vw;
+}
+.freako{
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw
+}
