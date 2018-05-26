@@ -1,25 +1,37 @@
-let n
-let m
+let dataText;
+let idText;
+let modoutchk;
 $(document).ready(function(){
-    $(`#One`).click(function () { 
-        $('.ModalS').removeClass("sicko").addClass("freako");
+    $(`.show`).click(function () { 
+        dataText= $(this).attr("data-small-text");
+        console.log(dataText);
+        modoutchk= true;
+        $(`#${dataText}`).removeClass("sicko").addClass("freako");
         $(`body`).addClass("Overflw");
-        $(`.modalP`).animate({margin: "10vh auto auto auto",opacity: "1"},"fast");       
-        n= true;
-        
-        console.log(n)
+        $(`.modalP`).animate({margin: "10vh auto auto auto",opacity: "1"},"fast");   
+    });
+
+    $('.crossout, .z').click(function () { 
+        modoutchk= false;
         
     });
     $(`.modalP`).click(function () { 
-        n= false
-        console.log(n)
-       });
+        if(modoutchk=== false){
+            $(`#${dataText}`).removeClass("freako").addClass("sicko");
+        $(`body`).removeClass("Overflw")
+        $(`.modalP`).css({"margin":"0vh auto auto auto","opacity": "0"})
+        }
+        else{
+            return;
+        }
+        
+    });
+
     $('.modalhelp').click(function () { 
-        $('.ModalS').removeClass("freako").addClass("sicko");
+        $(`#${dataText}`).removeClass("freako").addClass("sicko");
         $(`body`).removeClass("Overflw")
         $(`.modalP`).css({"margin":"0vh auto auto auto","opacity": "0"})
     });
     
-    console.log(n)
 
 })
