@@ -1,5 +1,6 @@
 let n= [true,true]
 let k;
+let positionLeft
 $(document).ready(function () {
     
     k = $(window).width();
@@ -83,6 +84,17 @@ $(document).ready(function () {
 
             console.log(n)
         });
-
+        var position1 = $(`#part1`).position();
+     var position2 = $(`.dandelion1`).position();
+     var position3 = $(`.dropdown-guy`).position();
+        var left = 15+ position1.left + position2.left + position3.left;
+        console.log(left);
+        $(`#dropdowndrop`).css({"position": "fixed",
+                                "left": `${left}px`});
+    $(`.dropdown-guy`).click(function () { 
+     
+        
+        
+    });
     
 });

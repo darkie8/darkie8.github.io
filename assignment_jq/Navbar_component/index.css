@@ -73,6 +73,10 @@
 #menudropdown{
     height: 0px;
 }
+#dropdowndrop{
+    height: 150px;
+    width: 100px
+}
 .beta{
     display: flex;
     display: -webkit-flex;
