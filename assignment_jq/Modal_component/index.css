@@ -67,3 +67,43 @@
     height: 100vh;
     width: 100vw
 }
+.form{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+     overflow: hidden;
+}
+form{
+    margin: 0%;
+    padding: 0px 10px
+    
+}
+.font-sz{
+    font-size: 15px;
+    position: relative;
+}
+.buttonheight{
+    border: none;
+    background-color: rgb(235, 203, 203);
+    padding: 2px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+}
+.email{
+    border-right: 0px;
+    border-width: 1px 0px 1px 1px;     
+    border-style: solid;
+    width: 80%
+    
+}
