@@ -74,8 +74,8 @@
     height: 0px;
 }
 #dropdowndrop{
-    height: 150px;
-    width: 100px
+    height: 180px;
+    width: 150px
 }
 .beta{
     display: flex;
@@ -90,6 +90,16 @@
     -webkit-justify-content: space-around;
     -moz-justify-content: space-around;
     -o-justify-content: space-around;
+}
+.betaa{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -o-flex-direction: column;
 }
 .formInput{
     display: flex;
@@ -152,4 +162,8 @@ form{
     -moz-justify-content: flex-end !important;
     -o-justify-content: flex-end !important;
 
+}
+.link-guy{
+    text-decoration: initial;
+    padding: 0px;
 }

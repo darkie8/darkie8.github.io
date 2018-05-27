@@ -1,24 +1,26 @@
 let n= [true,true]
 let k;
-let positionLeft
+let positionLeft;
+var htmlSave;
 $(document).ready(function () {
-    
+    htmlSave= $(`.dandelion1`).html();
+    console.log(htmlSave)
     k = $(window).width();
         function bullock(){if(k < 855){
             
-            $(`#part2`).append(`<div  class="fa-2x pi2" id="search">
+            $(`#part2`).append(`<div  class="fa-1x pi2" id="search">
             <i class="fas fa-search"></i></div>
     </div>`);
             $(`.form`).remove();
             $('#searchdropdown').html(`<form class="form" style="padding: 10px;">
-            <input type="text" name="firstname" value="Mickey" class="font-sz">
+            <input type="text" name="firstname" value="Search" class="font-sz">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
 
         }
         else{
             $(`#part2`).prepend(`<form class="form" style="padding: 10px;">
-            <input type="text" name="firstname" value="Mickey" class="font-sz">
+            <input type="text" name="firstname" value="Search" class="font-sz">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
         $(`#search`).remove();
@@ -26,7 +28,7 @@ $(document).ready(function () {
         bullock()
        function deadlockMin(){
             if(k<560){
-               $(`#part2`).prepend(`<div  class="fa-2x" style="padding: 0px 20px;" id="menudrop">
+               $(`#part2`).prepend(`<div  class="fa-1x" style="padding: 0px 20px;" id="menudrop">
                <i class="fas fa-caret-square-down" data-fa-transform="grow-3"></i>
            </div>`); 
                $(`.dandelion1`).html(``);
@@ -35,7 +37,10 @@ $(document).ready(function () {
                 $(`.menudrop`).remove();
                 $(`.dandelion1`).html(`<li style="display: inline;" class="pad normal-guy">Lorem</li>
                 <li style="display: inline;" class="pad link-guy">Lorem</li>
-                <li style="display: inline;" class="pad dropdown-guy">Lorem</li>
+                <li style="display: inline;" class="pad dropdown-guy">Lorem
+                <span style="padding-left: 1px;position:relative;top: 1.5px;">
+                <i data-fa-transform="shrink-4" class="fa fa-angle-right"></i>
+                </span></li>
                 <li style="display: inline;" class="pad deactive-guy">Lorem</li>`); 
                 
 
@@ -45,11 +50,12 @@ $(document).ready(function () {
         deadlockMin()
     $(`#menudrop`).click(function () { 
         if(n[0]==true)
-        {$(`#menudropdown`).animate({height:"150px"});
+        {$(`#menudropdown`).animate({height:"180px"});
         n[0] = false  
         console.log(n[0])}
         else { 
         $(`#menudropdown`).animate({height:"0px"});
+        $(`#dropdowndrop`).slideUp();
         n[0]= true;
      }
     });
@@ -64,7 +70,7 @@ $(document).ready(function () {
      }
     });
      $(window).resize(function () { 
-           
+        $(`#dropdowndrop`).slideUp();
             $(`#searchdropdown`).animate({height:"0px"});
             $(`#menudropdown`).animate({height:"0px"});
             for(let i=0;i<=1;i++){
@@ -92,8 +98,11 @@ $(document).ready(function () {
         $(`#dropdowndrop`).css({"position": "fixed",
                                 "left": `${left}px`});
     $(`.dropdown-guy`).click(function () { 
-     
-        
+        $(`#dropdowndrop`).slideToggle();
+        $(this)
+              .find('[data-fa-i2svg]')
+              .toggleClass('fa-angle-down')
+              .toggleClass('fa-angle-right');
         
     });
     
