@@ -9,8 +9,10 @@ let marginUltMid= 10;
 let marginUltMre= 19;
 let marginUltCent;
 let marginUlt;
+let dataId;
 $(document).ready(function(){
     $(`.show`).click(function () { 
+        dataId= $(this).attr("data-id-modal");
         dataText= $(this).attr("data-size-text");
         console.log(dataText);
         modalPosition= $(this).attr("data-position-modal");
@@ -24,7 +26,7 @@ $(document).ready(function(){
         marginUltMid:marginUltSm));
         console.log(marginUlt);
         modOutChk= true;
-        $(`.${dataText}.${modalPosition}`).removeClass("sicko").addClass("freako");
+        $(`.${dataText}.${modalPosition}#${dataId}`).removeClass("sicko").addClass("freako");
         $(`body`).addClass("Overflw");
         $(`.modalP`).animate({margin: `${marginUlt}vh auto auto auto`,opacity: "1"},"fast"); 
         
