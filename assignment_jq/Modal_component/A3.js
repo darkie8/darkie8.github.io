@@ -19,10 +19,12 @@ $(document).ready(function(){
         windowHeight= $(`.modalRequirement`).height()
         console.log(windowHeight)
         marginUltCent= ((1-modalHeight/windowHeight)/2)*100
-        marginUlt= (modalPosition=="centeraxis")?marginUltCent:((modalPosition=="normal-more")?marginUltMre:((modalPosition=="normal")?marginUltMid:marginUltSm));
+        marginUlt= (modalPosition=="centeraxis")?marginUltCent:((modalPosition=="normal-more")?
+        marginUltMre:((modalPosition=="normal")?
+        marginUltMid:marginUltSm));
         console.log(marginUlt);
         modOutChk= true;
-        $(`.${dataText}`).removeClass("sicko").addClass("freako");
+        $(`.${dataText}.${modalPosition}`).removeClass("sicko").addClass("freako");
         $(`body`).addClass("Overflw");
         $(`.modalP`).animate({margin: `${marginUlt}vh auto auto auto`,opacity: "1"},"fast"); 
         
