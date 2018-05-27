@@ -9,7 +9,7 @@
     </head>
     <body style="border: 1px double #000000;margin: 0%;" class="modalRequirement ">
         
-        <div class="ModalS Zind sicko"   id="smalltexts">
+        <div class="ModalS Zind sicko smalltexts">
                  <div class="modalhelp" style="width: 100%;height: 100%;margin: 0px;padding: 0px;position: absolute;z-index: 100;"></div>
             <div class="modalP">
                 <div class="modalH"><p style="margin: 0px">Heading <span class="crossout"><i class="fas fa-times fa-sm" style="float: right"></i></span></p>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="ModalS Zind sicko"   id="longtexts">
+        <div class="ModalS Zind sicko longtexts">
                 <div class="modalhelp" style="width: 100%;height: 100%;margin: 0px;padding: 0px;position: absolute;z-index: 100;"></div>
            <div class="modalP">
                <div class="modalH"><p style="margin: 0px">Heading <span class="crossout"><i class="fas fa-times fa-sm" style="float: right"></i></span></p>
@@ -53,9 +53,25 @@
                </div>
            </div>
        </div>
+       <div class="ModalS Zind sicko smalltexts centeraxis">
+            <div class="modalhelp" style="width: 100%;height: 100%;margin: 0px;padding: 0px;position: absolute;z-index: 100;"></div>
+       <div class="modalP">
+           <div class="modalH"><p style="margin: 0px">Heading <span class="crossout"><i class="fas fa-times fa-sm" style="float: right"></i></span></p>
+           
+           </div>
+           <hr style="margin: 0px">
+           <div class="modalM"><p style="margin: 0px;">Lorem ipsum dolor sit amet consectetur.</p></div>
+           <hr style="margin: 0px">
+           <div class="modalF">
+               <div class="buttonMod"><button class="Z buttonIns">Option1</button></div>
+               <div class="buttonMod"><button class="Z buttonIns">Option2</button></div>
+           </div>
+       </div>
+   </div>
         <div style="height: 150vh;">
-             <div class="buttonMod"><button class="buttonIns show"  id="One"  data-small-text="smalltexts">Option1</button></div>
-             <div class="buttonMod"><button class="buttonIns show"  id="Two" data-small-text="longtexts">Option2</button></div>
+             <div class="buttonMod"><button class="buttonIns show"  id="One"  data-size-text="smalltexts" data-position-modal="normal-small">Option1</button></div>
+             <div class="buttonMod"><button class="buttonIns show"  id="Two" data-size-text="longtexts" data-position-modal="normal-more">Option2</button></div>
+             <div class="buttonMod"><button class="buttonIns show"  id="Three" data-size-text="smalltexts" data-position-modal="centeraxis">Option3</button></div>
             </div>
             </div> 
         

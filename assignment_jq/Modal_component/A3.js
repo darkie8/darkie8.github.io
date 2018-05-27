@@ -1,23 +1,40 @@
 let dataText;
 let idText;
-let modoutchk;
+let modOutChk;
+let modalPosition;
+let modalHeight;
+let windowHeight;
+let marginUltSm = 6;
+let marginUltMid= 10;
+let marginUltMre= 19;
+let marginUltCent;
+let marginUlt;
 $(document).ready(function(){
     $(`.show`).click(function () { 
-        dataText= $(this).attr("data-small-text");
+        dataText= $(this).attr("data-size-text");
         console.log(dataText);
-        modoutchk= true;
-        $(`#${dataText}`).removeClass("sicko").addClass("freako");
+        modalPosition= $(this).attr("data-position-modal");
+        modalHeight= $(`.${dataText}`).children("div.modalP").height();
+        console.log(modalHeight);
+        windowHeight= $(`.modalRequirement`).height()
+        console.log(windowHeight)
+        marginUltCent= ((1-modalHeight/windowHeight)/2)*100
+        marginUlt= (modalPosition=="centeraxis")?marginUltCent:((modalPosition=="normal-more")?marginUltMre:((modalPosition=="normal")?marginUltMid:marginUltSm));
+        console.log(marginUlt);
+        modOutChk= true;
+        $(`.${dataText}`).removeClass("sicko").addClass("freako");
         $(`body`).addClass("Overflw");
-        $(`.modalP`).animate({margin: "10vh auto auto auto",opacity: "1"},"fast");   
+        $(`.modalP`).animate({margin: `${marginUlt}vh auto auto auto`,opacity: "1"},"fast"); 
+        
     });
 
     $('.crossout, .z').click(function () { 
-        modoutchk= false;
+        modOutChk= false;
         
     });
     $(`.modalP`).click(function () { 
-        if(modoutchk=== false){
-            $(`#${dataText}`).removeClass("freako").addClass("sicko");
+        if(modOutChk=== false){
+            $(`.${dataText}`).removeClass("freako").addClass("sicko");
         $(`body`).removeClass("Overflw")
         $(`.modalP`).css({"margin":"0vh auto auto auto","opacity": "0"})
         }
@@ -28,10 +45,12 @@ $(document).ready(function(){
     });
 
     $('.modalhelp').click(function () { 
-        $(`#${dataText}`).removeClass("freako").addClass("sicko");
+        $(`.${dataText}`).removeClass("freako").addClass("sicko");
         $(`body`).removeClass("Overflw")
         $(`.modalP`).css({"margin":"0vh auto auto auto","opacity": "0"})
     });
     
+    
+
 
 })
