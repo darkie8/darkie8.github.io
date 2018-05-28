@@ -13,14 +13,14 @@ $(document).ready(function () {
     </div>`);
             $(`.form`).remove();
             $('#searchdropdown').html(`<form class="form" style="padding: 10px;">
-            <input type="text" name="firstname" value="Search" class="font-sz">
+            <input type="text" name="firstname" value="Search" class="font-sz searchin">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
 
         }
         else{
             $(`#part2`).prepend(`<form class="form" style="padding: 10px;">
-            <input type="text" name="firstname" value="Search" class="font-sz">
+            <input type="text" name="firstname" value="Search" class="font-sz searchin">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
         $(`#search`).remove();
@@ -32,17 +32,14 @@ $(document).ready(function () {
                <i class="fas fa-caret-square-down" data-fa-transform="grow-3"></i>
            </div>`); 
                $(`.dandelion1`).html(``);
+               $(`#menudropdown`).html(`${htmlSave}`); 
+                $(`#menudropdown`).children(`.pad`).addClass("bi").removeClass("ti")
+
             }
             else{
                 $(`.menudrop`).remove();
-                $(`.dandelion1`).html(`<li style="display: inline;" class="pad normal-guy">Lorem</li>
-                <li style="display: inline;" class="pad link-guy">Lorem</li>
-                <li style="display: inline;" class="pad dropdown-guy">Lorem
-                <span style="padding-left: 1px;position:relative;top: 1.5px;">
-                <i data-fa-transform="shrink-4" class="fa fa-angle-right"></i>
-                </span></li>
-                <li style="display: inline;" class="pad deactive-guy">Lorem</li>`); 
-                
+                $(`.dandelion1`).html(`${htmlSave}`); 
+                $(`.dandelion1`).children(`.pad`).addClass("ti").removeClass("bi")
 
 
             }
@@ -103,6 +100,10 @@ $(document).ready(function () {
               .find('[data-fa-i2svg]')
               .toggleClass('fa-angle-down')
               .toggleClass('fa-angle-right');
+        
+    });
+    $(`.buttonheight`).click(function (e) { 
+        e.preventDefault();
         
     });
     
