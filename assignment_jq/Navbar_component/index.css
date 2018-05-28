@@ -75,7 +75,8 @@
 }
 .dropdowndrop{
     height: 180px;
-    width: 150px
+    width: 150px;
+    z-index: 105;
 }
 .beta{
     display: flex;
@@ -195,4 +196,5 @@ form{
 }
 .superParent{
     background-color: honeydew;
+    
 }

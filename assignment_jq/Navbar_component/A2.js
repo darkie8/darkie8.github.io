@@ -1,4 +1,4 @@
-let n= [[true,true],[true,true]]
+var n=[];
 let k;
 let positionLeft;
 var htmlSave;
@@ -6,7 +6,11 @@ $(document).ready(function () {
     let z = $(`body`).children(`.superParent`);
     console.log(z)
     console.log(z[0].id)
-    
+    for(let m = 0;m< z.length;m++){
+         n.push([true,true])
+
+    }
+    console.log(n)
     for(let m = 0;m< z.length;m++)
  {   
      htmlSave= $(`#${z[m].id}`).find(`.dandelion1`).html();
@@ -111,7 +115,7 @@ $(document).ready(function () {
      var position3 = $(`#${z[m].id}`).find(`.dropdown-guy`).position();
         var left = 15+ position1.left + position2.left + position3.left;
         console.log(left);
-        $(`#${z[m].id}`).find(`.dropdowndrop`).css({"position": "fixed",
+        $(`#${z[m].id}`).find(`.dropdowndrop`).css({"position": "relative",
                                 "left": `${left}px`});
     $(`#${z[m].id}`).find(`.dropdown-guy`).click(function () { 
         $(`#${z[m].id}`).find(`.dropdowndrop`).slideToggle();
@@ -124,7 +128,10 @@ $(document).ready(function () {
     $(`#${z[m].id}`).find(`.buttonheight`).click(function (e) { 
         e.preventDefault();
         
-    });}
+    });
+   
+
+}
     
     
 });
