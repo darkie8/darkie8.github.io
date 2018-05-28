@@ -70,10 +70,10 @@
     padding-left: 2vw;
     padding-right: 2vw
 }
-#menudropdown{
+.menudropdown{
     height: 0px;
 }
-#dropdowndrop{
+.dropdowndrop{
     height: 180px;
     width: 150px
 }
@@ -125,7 +125,7 @@ form{
     font-size: 18px;
     position: relative;
 }
-#searchdropdown{
+.searchdropdown{
     height: 0px;
 }
 .buttonheight{
@@ -154,7 +154,7 @@ form{
     -o-justify-content: center;
      overflow: hidden;
 }
-#search{
+.search{
     overflow: hidden;
     
 }

@@ -1,75 +1,93 @@
-let n= [true,true]
+let n= [[true,true],[true,true]]
 let k;
 let positionLeft;
 var htmlSave;
 $(document).ready(function () {
-    htmlSave= $(`.dandelion1`).html();
+    let z = $(`body`).children(`.superParent`);
+    console.log(z)
+    console.log(z[0].id)
+    
+    for(let m = 0;m< z.length;m++)
+ {   
+     htmlSave= $(`#${z[m].id}`).find(`.dandelion1`).html();
     console.log(htmlSave)
-    k = $(window).width();
-        function bullock(){if(k < 855){
+    k = $(window).width(); 
+        function bullock(){
+            for(let i=1;i<=2;i++)
+            {if($(`#${z[m].id}`).find(`.part${i}`).attr("data-element")=="searchbar")
+            {if(k < 855){
             
-            $(`#part2`).append(`<div  class="fa-1x pi2" id="search">
+            $(`#${z[m].id}`).find(`.part${i}`).append(`<div  class="fa-1x pi2" id="search">
             <i class="fas fa-search"></i></div>
     </div>`);
-            $(`.form`).remove();
-            $('#searchdropdown').html(`<form class="form" style="padding: 10px;">
+            $(`#${z[m].id}`).find(`.form`).remove();
+            $(`#${z[m].id}`).find('.searchdropdown').html(`<form class="form" style="padding: 10px;">
             <input type="text" name="firstname" value="Search" class="font-sz searchin">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
 
         }
         else{
-            $(`#part2`).prepend(`<form class="form" style="padding: 10px;">
+            $(`#${z[m].id}`).find(`.part${i}`).prepend(`<form class="form" style="padding: 10px;">
             <input type="text" name="firstname" value="Search" class="font-sz searchin">
                 <button class="fa-1x buttonheight"><i class="fas fa-search"></i></button>
         </form>`);
-        $(`#search`).remove();
+        $(`#${z[m].id}`).find(`#search`).remove();
         }}
+       }
+    }
         bullock()
        function deadlockMin(){
             if(k<560){
-               $(`#part2`).prepend(`<div  class="fa-1x" style="padding: 0px 20px;" id="menudrop">
+               for(let i=1;i<=2;i++)
+                {
+                    if($(`#${z[m].id}`).find(`.part${i}`).attr("data-element")=="searchbar")
+                    {$(`#${z[m].id}`).find(`.part${i}`).prepend(`<div  class="fa-1x menudrop" style="padding: 0px 20px;" >
                <i class="fas fa-caret-square-down" data-fa-transform="grow-3"></i>
-           </div>`); 
-               $(`.dandelion1`).html(``);
-               $(`#menudropdown`).html(`${htmlSave}`); 
-                $(`#menudropdown`).children(`.pad`).addClass("bi").removeClass("ti")
+           </div>`);
+        }
+        
+
+        } 
+               $(`#${z[m].id}`).find(`.dandelion1`).html(``);
+               $(`#${z[m].id}`).find(`.menudropdown`).html(`${htmlSave}`); 
+                $(`#${z[m].id}`).find(`.menudropdown`).children(`.pad`).addClass("bi").removeClass("ti")
 
             }
             else{
-                $(`.menudrop`).remove();
-                $(`.dandelion1`).html(`${htmlSave}`); 
-                $(`.dandelion1`).children(`.pad`).addClass("ti").removeClass("bi")
+                $(`#${z[m].id}`).find(`.menudrop`).remove();
+                $(`#${z[m].id}`).find(`.dandelion1`).html(`${htmlSave}`); 
+                $(`#${z[m].id}`).find(`.dandelion1`).children(`.pad`).addClass("ti").removeClass("bi")
 
 
             }
         }
         deadlockMin()
-    $(`#menudrop`).click(function () { 
-        if(n[0]==true)
-        {$(`#menudropdown`).animate({height:"180px"});
-        n[0] = false  
-        console.log(n[0])}
+    $(`#${z[m].id}`).find(`.menudrop`).click(function () { 
+        if(n[m][0]==true)
+        {$(`#${z[m].id}`).find(`.menudropdown`).animate({height:"180px"});
+        n[m][0] = false  
+        console.log(n[m][0])}
         else { 
-        $(`#menudropdown`).animate({height:"0px"});
-        $(`#dropdowndrop`).slideUp();
-        n[0]= true;
+        $(`#${z[m].id}`).find(`.menudropdown`).animate({height:"0px"});
+        $(`#${z[m].id}`).find(`.dropdowndrop`).slideUp();
+        n[m][0]= true;
      }
     });
-    $(`#search`).click(function () { 
-        if(n[1]==true)
-        {$(`#searchdropdown`).animate({height:"47px"});
-        n[1] = false  
+    $(`#${z[m].id}`).find(`#search`).click(function () { 
+        if(n[m][1]==true)
+        {$(`#${z[m].id}`).find(`.searchdropdown`).animate({height:"47px"});
+        n[m][1] = false  
         console.log(n)}
         else { 
-        $(`#searchdropdown`).animate({height:"0px"});
-        n[1]= true;
+        $(`#${z[m].id}`).find(`.searchdropdown`).animate({height:"0px"});
+        n[m][1]= true;
      }
     });
      $(window).resize(function () { 
-        $(`#dropdowndrop`).slideUp();
-            $(`#searchdropdown`).animate({height:"0px"});
-            $(`#menudropdown`).animate({height:"0px"});
+        $(`#${z[m].id}`).find(`.dropdowndrop`).slideUp();
+            $(`#${z[m].id}`).find(`.searchdropdown`).animate({height:"0px"});
+            $(`#${z[m].id}`).find(`.menudropdown`).animate({height:"0px"});
             for(let i=0;i<=1;i++){
                 if(n[i]==false)
             {
@@ -87,24 +105,26 @@ $(document).ready(function () {
 
             console.log(n)
         });
-        var position1 = $(`#part1`).position();
-     var position2 = $(`.dandelion1`).position();
-     var position3 = $(`.dropdown-guy`).position();
+
+        var position1 = $(`#${z[m].id}`).find(`.part1`).position();
+     var position2 = $(`#${z[m].id}`).find(`.dandelion1`).position();
+     var position3 = $(`#${z[m].id}`).find(`.dropdown-guy`).position();
         var left = 15+ position1.left + position2.left + position3.left;
         console.log(left);
-        $(`#dropdowndrop`).css({"position": "fixed",
+        $(`#${z[m].id}`).find(`.dropdowndrop`).css({"position": "fixed",
                                 "left": `${left}px`});
-    $(`.dropdown-guy`).click(function () { 
-        $(`#dropdowndrop`).slideToggle();
+    $(`#${z[m].id}`).find(`.dropdown-guy`).click(function () { 
+        $(`#${z[m].id}`).find(`.dropdowndrop`).slideToggle();
         $(this)
               .find('[data-fa-i2svg]')
               .toggleClass('fa-angle-down')
               .toggleClass('fa-angle-right');
         
     });
-    $(`.buttonheight`).click(function (e) { 
+    $(`#${z[m].id}`).find(`.buttonheight`).click(function (e) { 
         e.preventDefault();
         
-    });
+    });}
+    
     
 });

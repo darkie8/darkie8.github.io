@@ -10,9 +10,9 @@
     <body style="border: 1px double black;padding-left: 5px;padding-right: 5px;">
         <h1 style="text-align: center;font-family: 'IBM Plex Mono', monospace;">Navbar</h1>
         <h3 style="text-align: center;font-family: 'IBM Plex Mono', monospace;"></h3>
-        <div class="superParent">
+        <div class="superParent" id="one" data-navbar-number="one">
             <div class="parent font-sz">
-                <div class="dandelion" id="part1">
+                <div class="dandelion part1">
                  <li  class="ti big-guy"><b>Lorem</b></li>
                  <div class="dandelion1">
                         <li  class="ti pad normal-guy">Lorem</li>
@@ -24,12 +24,12 @@
                         <li  class="ti pad deactive-guy">Lorem</li>
                  </div>
                 </div>
-                <div class="dandelion" id="part2">
+                <div class="dandelion part2" data-element="searchbar">
                         
                     
                 </div>
             </div>
-            <div style="background: rgb(250, 187, 187);overflow: hidden;display: none;" id="dropdowndrop" class="betaa">
+            <div style="background: rgb(250, 187, 187);overflow: hidden;display: none;"  class="betaa dropdowndrop">
                     <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a href="#" style="text-decoration: initial;padding: 0px;" >Lorem</a></li>
                     <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
                     <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a style="text-decoration: initial;padding: 0px;" href="#">Lorem</a></li>
@@ -39,7 +39,7 @@
                     <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a style="text-decoration: initial;padding: 0px;" href="#">Lorem</a></li>
                     <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
                 </div>
-            <div style="background: rgb(245, 143, 185);overflow: hidden;" id="menudropdown" class="beta">
+            <div style="background: rgb(245, 143, 185);overflow: hidden;" class="beta menudropdown">
                         <li class="bi pad normal-guy">Lorem</li>
                         <li class="bi pad"><a href="#" class="link-guy">Lorem</a></li>
                         <li class="bi pad dropdown-guy">Lorem
@@ -48,7 +48,51 @@
                                 </span></li>
                         <li class="bi pad deactive-guy">Lorem</li>
             </div>
-            <div style="background: rgb(0, 110, 255);overflow: hidden;" id="searchdropdown" class="formInput">
+            <div style="background: rgb(0, 110, 255);overflow: hidden;" class="formInput searchdropdown">
+                    
+        </div>
+        </div>
+        <br><br>
+        <hr><br>
+        <div class="superParent" id="two" data-navbar-number="one">
+            <div class="parent font-sz">
+                <div class="dandelion part1">
+                 <li  class="ti big-guy"><b>Lorem</b></li>
+                 <div class="dandelion1">
+                        <li  class="ti pad normal-guy">Lorem</li>
+                        <li  class="ti pad"><a href="#" class="link-guy" >Lorem</a></li>
+                        <li  class="ti pad dropdown-guy">Lorem
+                        <span style="padding-left: 1px;position:relative;top: 1.5px;">
+                        <i data-fa-transform="shrink-4" class="fa fa-angle-right"></i>
+                        </span></li>
+                        
+                 </div>
+                </div>
+                <div class="dandelion part2" data-element="searchbar">
+                        
+                    
+                </div>
+            </div>
+            <div style="background: rgb(250, 187, 187);overflow: hidden;display: none;"  class="betaa dropdowndrop">
+                    <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a href="#" style="text-decoration: initial;padding: 0px;" >Lorem</a></li>
+                    <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
+                    <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a style="text-decoration: initial;padding: 0px;" href="#">Lorem</a></li>
+                    <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
+                    <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a style="text-decoration: initial;padding: 0px;" href="#">Lorem</a></li>
+                    <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
+                    <li style="display: block;padding-top: 6px;padding-bottom: 8px;padding-left: 12px;" class="pad link-guysm"><a style="text-decoration: initial;padding: 0px;" href="#">Lorem</a></li>
+                    <hr style="margin: 0%;background-color: white;border-style: solid;border-color: white">
+                </div>
+            <div style="background: rgb(245, 143, 185);overflow: hidden;" class="beta menudropdown">
+                        <li class="bi pad normal-guy">Lorem</li>
+                        <li class="bi pad"><a href="#" class="link-guy">Lorem</a></li>
+                        <li class="bi pad dropdown-guy">Lorem
+                                <span style="padding-left: 1px;position:relative;top: 1.5px;">
+                                <i data-fa-transform="shrink-4" class="fa fa-angle-right"></i>
+                                </span></li>
+                        <li class="bi pad deactive-guy">Lorem</li>
+            </div>
+            <div style="background: rgb(0, 110, 255);overflow: hidden;" class="formInput searchdropdown">
                     
         </div>
         </div>
@@ -57,4 +101,5 @@
             <script src="jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="A2.js"></script>
     </body>
+    
 </html>
