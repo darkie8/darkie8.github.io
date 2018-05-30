@@ -18,7 +18,7 @@ $(document).ready(function(){
         modalPosition= $(this).attr("data-position-modal");
         modalHeight= $(`.${dataText}`).children("div.modalP").height();
         console.log(modalHeight);
-        windowHeight= $(`.modalRequirement`).height()
+        windowHeight= $(window).height()
         console.log(windowHeight)
         marginUltCent= ((1-modalHeight/windowHeight)/2)*100
         marginUlt= (modalPosition=="centeraxis")?marginUltCent:((modalPosition=="normal-more")?
