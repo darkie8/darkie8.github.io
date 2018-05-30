@@ -2,7 +2,11 @@ var n=[];
 let k;
 let positionLeft;
 var htmlSave;
+
 $(document).ready(function () {
+    $(`.bigcrunch`).attr("data-crunch", "big");
+    $(`.mediumcrunch`).attr("data-crunch", "medium");
+    $(`.smallcrunch`).attr("data-crunch", "small");
     let z = $(`body`).find(`.superParent`);
     console.log(z)
     console.log(z[0].id)
@@ -13,6 +17,9 @@ $(document).ready(function () {
     console.log(n)
     for(let m = 0;m< z.length;m++)
  {   
+    var crunch = $(`#${z[m].id}`).attr("data-crunch");
+        console.log(crunch);
+        let widthNeed = (crunch=="big")? 1000:((crunch=="medium")?800:((crunch=="small")?650:560));
      htmlSave= $(`#${z[m].id}`).find(`.dandelion1`).html();
     console.log(htmlSave)
     k = $(window).width(); 
@@ -65,10 +72,18 @@ $(document).ready(function () {
             }
         }
        }
-    }
-        bullock()
+    } 
+    
+    bullock()
+    
+    
+        
        function deadlockMin(){
-            if(k<560){
+            
+        
+           
+    
+            if(k< widthNeed){
                for(let i=1;i<=2;i++)
                 {
                     if($(`#${z[m].id}`).find(`.part${i}`).attr("data-doomsday")=="icon")
@@ -91,6 +106,7 @@ $(document).ready(function () {
 
 
             }
+            
         }
         deadlockMin()
     $(`#${z[m].id}`).find(`.menudrop`).click(function () { 
@@ -161,7 +177,7 @@ $(document).ready(function () {
          position1 = $(`#${z[m].id}`).find(`.part1`).position();
       
       position3 = $(`#${z[m].id}`).find(`.dropdown-guy`).position();
-         left =(k<560)?110+position3.left:position1.left + position3.left-80;
+         left =(k<widthNeed)?110+position3.left:position1.left + position3.left-80;
         console.log(left);
         $(`#${z[m].id}`).find(`.dropdowndrop`).css({"position": "relative",
                                 "left": `${left}px`});
