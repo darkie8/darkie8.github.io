@@ -30,6 +30,8 @@ $(document).ready(function(){
         $(`body`).addClass("Overflw");
         $(`.modalP`).animate({margin: `${marginUlt}vh auto auto auto`,opacity: "1"},"fast"); 
         
+
+        
     });
 
     $('.crossout, .z').click(function () { 
@@ -52,9 +54,9 @@ $(document).ready(function(){
         $(`.${dataText}`).removeClass("freako").addClass("sicko");
         $(`body`).removeClass("Overflw")
         $(`.modalP`).css({"margin":"0vh auto auto auto","opacity": "0"})
+
+    
     });
     
-    
-
 
 })

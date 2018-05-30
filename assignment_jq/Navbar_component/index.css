@@ -122,9 +122,15 @@ form{
     
     
 }
+
 .font-sz{
     font-size: 18px;
     position: relative;
+}
+.font-szemail{
+    font-size: 13px;
+    position: relative;
+    width: 140px;
 }
 .searchdropdown{
     height: 0px;
@@ -137,6 +143,17 @@ form{
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     font-size: 18px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.buttonheightsubmit{
+    border: none;
+    background-color: rgb(185, 185, 211);
+    padding: 4px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 13px;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -154,6 +171,26 @@ form{
     -moz-justify-content: center;
     -o-justify-content: center;
      overflow: hidden;
+}
+.formem{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+     overflow: hidden;
+}
+.formempass{
+    padding: 0px 3px !important;
+    
+    
 }
 .search{
     overflow: hidden;
@@ -193,6 +230,12 @@ form{
     padding: 2px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px
+}
+.emailin{
+    border-width: 1px 1px 1px 1px;     
+    border-style: solid;
+    padding: 4px;
+    border-radius: 5px
 }
 .superParent{
     background-color: honeydew;
