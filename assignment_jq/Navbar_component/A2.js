@@ -2,7 +2,10 @@ var n=[];
 let k;
 let positionLeft;
 var htmlSave;
-
+let position1 
+let position2
+let position3
+let left
 $(document).ready(function () {
     $(`.bigcrunch`).attr("data-crunch", "big");
     $(`.mediumcrunch`).attr("data-crunch", "medium");
@@ -149,12 +152,18 @@ $(document).ready(function () {
 
             console.log(n)
         });
-
-        let position1 = $(`#${z[m].id}`).find(`.part1`).position();
-     let position2 = $(`#${z[m].id}`).find(`.dandelion1`).position();
-     let position3 = $(`#${z[m].id}`).find(`.dropdown-guy`).position();
-        let left = 15+ position1.left + position2.left + position3.left;
-        console.log(left);
+        
+        if($(`#${z[m].id}`).find(`.dropdown-guy`).length !=0)
+         {position1 = $(`#${z[m].id}`).find(`.part1`).position();
+         position2 = $(`#${z[m].id}`).find(`.dandelion1`).position();
+        position3 = $(`#${z[m].id}`).find(`.dropdown-guy`).position();
+    
+      left= 15+ position1.left + position2.left + position3.left;}
+      else{
+          left= 0;      }
+      
+        
+        
         $(`#${z[m].id}`).find(`.dropdowndrop`).css({"position": "relative",
                                 "left": `${left}px`});
     $(`#${z[m].id}`).find(`.dropdown-guy`).click(function () { 
