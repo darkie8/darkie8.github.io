@@ -98,10 +98,10 @@ $(document).ready(function () {
                 
                 // more than widthNeed => putting email password input in p(i)
                 $(`#${z[m].id}`).find(`.part${i}`).prepend(`<form class="form formempass" style="padding: 10px;">
-                <input type="text" name="firstname" value="Email" class="font-szemail emailin">
+                <input type="text" name="firstname" value="Email" class="font-szemail emailin" style="font-family: 'IBM Plex Mono', monospace;">
                     
                  </form><form class="form formempass" style="padding: 10px;">
-                <input type="text" name="firstname" value="Password" class="font-szemail searchin">
+                <input type="text" name="firstname" value="Password" class="font-szemail searchin" style="font-family: 'IBM Plex Mono', monospace;">
                 <button class="fa-1x buttonheightsubmit">Submit</button></form>
             `);
             // removing search container
