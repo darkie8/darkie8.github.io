@@ -24,9 +24,10 @@
     margin: 0%;
 }
 .container2_1{
+    display: none;
     margin: 0%;
     padding: 20px 15px 15px 15px;
-    display: none;
+    
     overflow: hidden;
 
 }
@@ -40,7 +41,11 @@
     margin: 0%;
     overflow: hidden;
     font-family: 'Indie Flower', cursive;
+    padding: 3px;
 }
 .container1_1{
     background-color: bisque;
+}
+.hideme{
+    display: none;
 }
