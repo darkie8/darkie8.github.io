@@ -12,7 +12,7 @@ let marginUlt;
 let dataId; // various variable declaration 
 $(document).ready(function(){
     // clicking .show class button 
-    let libra= (n)=> { 
+      let libra =(n)=>{ setTimeout(function(){
         // storing different data attr inside variables to initiate certain modals
         dataId= $(n).attr("data-id-modal"); 
         dataText= $(n).attr("data-size-text");
@@ -40,7 +40,7 @@ $(document).ready(function(){
         
 
         
-    }
+    },1)}
     $(`.show`).click(function () {libra (this)});
 
     $('.crossout, .Z').click(function () { 
