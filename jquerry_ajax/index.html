@@ -60,7 +60,7 @@
 							  <div class="input-group-prepend">
 								<div class="input-group-text">Title</div>
 							  </div>
-							  <input type="text" class="form-control" id="title" value="Movie name">
+							  <input type="text" class="form-control" id="title" name="t" value="Movie name">
 							</div>
 							<!--year input-->
 							<label class="sr-only" for="year">Year of release</label>
@@ -68,7 +68,7 @@
 							  <div class="input-group-prepend">
 								<div class="input-group-text">Year</div>
 							  </div>
-							  <input type="text" class="form-control" id="year" value="Year">
+							  <input type="text" class="form-control" id="year" name="y" value="Year">
 							</div>
 						  </div>
 						  
@@ -78,10 +78,10 @@
 									<div class="input-group-prepend">
 											<span class="input-group-text" id="basic-addon1">Plot</span>
 										  </div>
-									<select class="custom-select" id="inputGroupSelect01">
-									  <option selected>Choose...</option>
-									  <option value="1">Short</option>
-									  <option value="2">Full</option>
+									<select class="custom-select" id="inputGroupSelect01" name="plot">
+									  <option selected></option>
+									  <option value="short">Short</option>
+									  <option value="full">Full</option>
 							</select>
 								  </div>
 							  <!--submit button-->
@@ -112,7 +112,7 @@
 							  <div class="input-group-prepend">
 								<div class="input-group-text">Id</div>
 							  </div>
-							  <input type="text" class="form-control" id="id" value="IMDB Id">
+							  <input type="text" class="form-control" id="id" value="IMDB Id" name="i">
 							
 
 						  </div>
@@ -124,10 +124,10 @@
 										  <div class="input-group-prepend">
 												  <span class="input-group-text" id="basic-addon2">Plot</span>
 												</div>
-										  <select class="custom-select" id="inputGroupSelect02">
-											<option selected>Choose...</option>
-											<option value="1">Short</option>
-											<option value="2">Full</option>
+										  <select class="custom-select" id="inputGroupSelect02" name="plot">
+											<option selected></option>
+											<option value="short">Short</option>
+											<option value="full">Full</option>
 										</select>
 										</div>
 									<!--submit button-->

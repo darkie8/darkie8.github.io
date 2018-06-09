@@ -5,35 +5,71 @@ let title
 let year
 let id
 let plot
-
+let k=[]
+let k1= []
+var time= 1000
 $(document).ready(() => {
     $(`button`).click(function (e) { 
         e.preventDefault();
         
     });
-    $(`#search1`).find(`button`).hover(function () {
-        title= $(`#search1`).find(`#title`).val();
-        year= $(`#search1`).find(`#year`).val();
-        plot= $(`#search1`).find(`#inputGroupSelect01`).val();
-        console.log(title+","+year+","+plot)
-        if(title== null || title== "" || title == "Movie name")
-        {
-            $(`#needText`).text("Please give Correct movie title");
-            $(this).addClass("show");
-        }else {
-            $(this).removeClass("show");
-        }
+    /* function getAJAX(n)
+    {   
+       
+        return omega
+        
+    };
+
+   function postAJAX (n) {
             
-        }, function () {
-            $(this).removeClass("show");
-        }
-    );
+    }*/
+    function dfdAJAX(n){
+        var dfd= $.Deferred()
+        var omega= 
+        $.ajax({
+               type: 'GET',
+               dataType: 'jsonp',
+               async: true,
+               url: `https://www.omdbapi.com/?${$(n).parents("form").serialize()}&apikey=9ccf0d71`,
+               timeout: time});
+        omega.then(function(m){
+            console.log(m)
+            k.splice(0,0,m)
+            return k
+            },
+            function(e){
+            if(e.statusText == 'timeout')
+            {alert("error")
+             return "error"}
+            })  
+
+        dfd.resolve(k)
+        return dfd.promise()
+    }
     
-    $(`#search2`).find(`button`).hover(function () { 
-        id= $(`#search2`).find(`#id`).val();
-        plot= $(`#search2`).find(`#inputGroupSelect02`).val();
-        console.log(id+","+plot)
-        if(id== null || id== "" || id == "IMDB Id")
+    
+    $(`#search1`).find(`button`).click(function (){
+        dfdAJAX(this).then(function(t){
+            
+            setTimeout(function(){
+                console.log(t)
+                console.log(t[0])
+                k1.splice(0,0,t[0].Response)
+                console.log(k1)
+                
+            },time)
+    
+           })   
+
+    })
+     
+    
+    $(`#search2`).find(`button`).click(function(){
+        postAJAX(this)
+        console.log(k)
+
+    }).hover(function () { 
+        if(k[0].Response== "False")
         {
             $(`#needText`).text("Please give Correct Imdb Id");
             $(this).addClass("show");
@@ -46,45 +82,5 @@ $(document).ready(() => {
         function () {
             $(this).removeClass("show");
         });
-   
-    /*myFacebookToken = prompt("Please enter your Facebook Token:", "");
-
-    if (myFacebookToken == null || myFacebookToken == "") {
-
-        alert("No usr Token found");
-
-    } else {
-
-        getAllDetails();
-
-    } // end if condition
-
-}); // end document.ready function
-
-let getAllDetails = () =>
- {
-
-
-    // API call to get user details
-
-    $.ajax({
-        type: 'GET',
-        dataType: 'json',
-        async: true,
-        url: `https://graph.facebook.com/me?fields=name,quotes,cover,picture.type(large)&access_token=${myFacebookToken}`,
-
-        success: (response) => {
-
-
-
-
-        }, error: (err) => {
-
-            console.log(err.responseJSON.error.message);
-            alert(err.responseJSON.error.message)
-
-        }
-$(selector).data(key);
-    });// end ajax call */
 
 })

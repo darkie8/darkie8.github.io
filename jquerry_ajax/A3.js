@@ -12,12 +12,12 @@ let marginUlt;
 let dataId; // various variable declaration 
 $(document).ready(function(){
     // clicking .show class button 
-    $(`.show`).click(function () { 
+    let libra= (n)=> { 
         // storing different data attr inside variables to initiate certain modals
-        dataId= $(this).attr("data-id-modal"); 
-        dataText= $(this).attr("data-size-text");
+        dataId= $(n).attr("data-id-modal"); 
+        dataText= $(n).attr("data-size-text");
         console.log(dataText);
-        modalPosition= $(this).attr("data-position-modal");
+        modalPosition= $(n).attr("data-position-modal");
 
         // height of modals
         modalHeight= $(`.${dataText}`).children("div.modalP").height();
@@ -40,7 +40,8 @@ $(document).ready(function(){
         
 
         
-    });
+    }
+    $(`.show`).click(function () {libra (this)});
 
     $('.crossout, .Z').click(function () { 
         modOutChk= false;
