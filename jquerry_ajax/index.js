@@ -39,8 +39,9 @@ $(document).ready(() => {
             },
             function(e){
             if(e.statusText == 'timeout')
-            {alert("error")
-             return "error"}
+            {
+                k.splice(0,0,{"Response":"timeout"})
+             return k}
             })  
 
         dfd.resolve(k)
@@ -49,6 +50,7 @@ $(document).ready(() => {
     
     
     $(`#search1`).find(`button`).click(function (){
+        $(`#needText`).html(`<i class="fas fa-spinner fa-pulse fa-5x"></i><br><br>Proceeding`);
         dfdAJAX(this).then(function(t){
             
             setTimeout(function(){
@@ -56,7 +58,22 @@ $(document).ready(() => {
                 console.log(t[0])
                 k1.splice(0,0,t[0].Response)
                 console.log(k1)
+                if(k1[0] == "False")
+                {
+                    $(`#needText`).html(`<i class="fas fa-exclamation-circle fa-5x"></i><br><br>Please give Correct input`);
+                }else if(k1[0] == "timeout"){
+                    $(`#needText`).html(`<i class="fas fa-exclamation-circle fa-5x"></i><br><br>Request Timeout`);
                 
+
+                } 
+                
+                else {
+                    $(`#needText`).text("done");
+                }
+                   
+            
+            
+            
             },time)
     
            })   
