@@ -11,3 +11,7 @@ body {
 .mono{
     font-family: 'Comfortaa', cursive;
 }
+.brkP{
+    width: 95vw !important;
+    left: 2vw !important;
+}

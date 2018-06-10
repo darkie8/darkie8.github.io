@@ -40,6 +40,8 @@ $(document).ready(() => {
         return dfd.promise()
     }
     let infoShow = (n)=>{
+        $(`.modalP`).removeClass("brkP");
+        
         $(`.modalM`).css("background-image","url()")
         $(`.modalhelp`).css("height", "100%");
         $(`.modalH`).find(`p`).html(`Hello!`)
@@ -63,7 +65,8 @@ $(document).ready(() => {
                 
                 else {
                     $(`.modalhelp`).css("height", "460vh");
-                    $(`.modalP`).css({"width": "95vw","left":"2vw"});
+                    $(`.modalP`).addClass("brkP");
+                  
                     $(`.modalH`).find(`p`).html(`${t[0].Title} `);
                     if(t[0].Poster== "N/A"){
                         imgPoster = "static/Kanishka_enhanced.jpg" 
