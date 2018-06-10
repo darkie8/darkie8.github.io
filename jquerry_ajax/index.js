@@ -10,12 +10,14 @@ let k1= []
 var time= 1000
 let imgPoster;
 $(document).ready(() => {
+   // preven default
     $(`button`).click(function (e) { 
         e.preventDefault();
         
     });   
-
+   // ajax call
     function dfdAJAX(n){
+        // defarred to use elements after ajax loads itself
         var dfd= $.Deferred()
         var omega= 
         $.ajax({
@@ -39,7 +41,9 @@ $(document).ready(() => {
         dfd.resolve(k)
         return dfd.promise()
     }
+    // a function declaration which will deal with posting rele4vent html dom elements
     let infoShow = (n)=>{
+        // undoing every change 
         $(`.modalP`).removeClass("brkP");
         
         $(`.modalM`).css("background-image","url()")
@@ -47,7 +51,7 @@ $(document).ready(() => {
         $(`.modalH`).find(`p`).html(`Hello!`)
         $(`#needText`).html(`<i class="fas fa-spinner fa-pulse fa-5x"></i><br><br>Proceeding`);
         dfdAJAX(n).then(function(t){
-            
+            // using timeout to maintain dataload and usage of it....sync properly 
             setTimeout(function(){
                 console.log(t)
                 console.log(t[0])
@@ -114,21 +118,17 @@ $(document).ready(() => {
                       }
                     }
                 }
-                   
-            
-            
-            
-            },time)
+                 },time)
     
            })   
 
     }
-    
+    // for title and year part
     $(`#search1`).find(`button`).click(function (){infoShow(this)})
      
-    
+    // for id part 
     $(`#search2`).find(`button`).click(function(){
         infoShow(this)
 
     })
-})
+}) // program ends
