@@ -69,7 +69,7 @@ $(document).ready(() => {
                   
                     $(`.modalH`).find(`p`).html(`${t[0].Title} `);
                     if(t[0].Poster== "N/A"){
-                        imgPoster = "static/Kanishka_enhanced.jpg" 
+                        imgPoster = "https://darkie8.github.io/jquerry_ajax/Static/Kanishka_enhanced.jpg" 
                     }
                     else{
                         imgPoster = t[0].Poster
