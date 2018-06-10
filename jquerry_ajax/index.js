@@ -8,21 +8,13 @@ let plot
 let k=[]
 let k1= []
 var time= 1000
+let imgPoster;
 $(document).ready(() => {
     $(`button`).click(function (e) { 
         e.preventDefault();
         
-    });
-    /* function getAJAX(n)
-    {   
-       
-        return omega
-        
-    };
+    });   
 
-   function postAJAX (n) {
-            
-    }*/
     function dfdAJAX(n){
         var dfd= $.Deferred()
         var omega= 
@@ -47,11 +39,12 @@ $(document).ready(() => {
         dfd.resolve(k)
         return dfd.promise()
     }
-    
-    
-    $(`#search1`).find(`button`).click(function (){
+    let infoShow = (n)=>{
+        $(`.modalM`).css("background-color","white")
+        $(`.modalhelp`).css("height", "100%");
+        $(`.modalH`).find(`p`).html(`Hello!`)
         $(`#needText`).html(`<i class="fas fa-spinner fa-pulse fa-5x"></i><br><br>Proceeding`);
-        dfdAJAX(this).then(function(t){
+        dfdAJAX(n).then(function(t){
             
             setTimeout(function(){
                 console.log(t)
@@ -59,16 +52,64 @@ $(document).ready(() => {
                 k1.splice(0,0,t[0].Response)
                 console.log(k1)
                 if(k1[0] == "False")
-                {
+                {   $(`.modalhelp`).css("height", "100%");
                     $(`#needText`).html(`<i class="fas fa-exclamation-circle fa-5x"></i><br><br>Please give Correct input`);
                 }else if(k1[0] == "timeout"){
+                    $(`.modalhelp`).css("height", "100%");
                     $(`#needText`).html(`<i class="fas fa-exclamation-circle fa-5x"></i><br><br>Request Timeout`);
-                
+                 
 
                 } 
                 
                 else {
-                    $(`#needText`).text("done");
+                    $(`.modalhelp`).css("height", "460vh");
+                    $(`.modalP`).css({"width": "95vw","left":"2.5vw"});
+                    $(`.modalH`).find(`p`).html(`${t[0].Title} `);
+                    if(t[0].Poster== "N/A"){
+                        imgPoster = "static/Kanishka_enhanced.jpg" 
+                    }
+                    else{
+                        imgPoster = t[0].Poster
+                    }
+                    $(`.modalM`).css({"background-image": `url(${imgPoster})`,"background-size":"auto"});
+                    console.log(imgPoster)
+                    $(`#needText`).html(`<div class="card-group mono">
+                    <div class="card-columns ">
+                    <div class="card">
+                      <img class="card-img-top posterimg" src= "${imgPoster}" style="border: 20px solid white;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">${t[0].Title}</h5>
+                        </div>
+                      <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                      </div>
+                    </div>
+                    </div>`);
+                    
+                    for(let x=0;x< Object.keys(t[0]).length-1;x++)
+                    {
+                        $(`.card-columns`).append(` <div class="card text-center">
+                        <div class="card-body">
+                          <h5 class="card-header bg-info">${Object.keys(t[0])[x]}</h5>
+                          <p class="card-text p-2 ${Object.keys(t[0])[x]}">${Object.values(t[0])[x]}</p>
+                          <p class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>`);
+                      if(Object.keys(t[0])[x]=="Poster" && t[0].Poster != "N/A" ){
+                          $(`.Poster`).html(`<a href="">Follow this link</a>`);
+                          $(`.Poster`).find("a").attr("href", `${t[0].Poster}`);
+                      }
+                      if(Object.keys(t[0])[x]=="Website" && t[0].Website != "N/A"){
+                        $(`.Website`).html(`<a href="">Follow this link</a>`);
+                        $(`.Website`).find("a").attr("href", `${t[0].Website}`);
+                    }
+                      if(Array.isArray(Object.values(t[0])[x])==true)
+                      {    $(`.Ratings`).html("");
+                          for(let y of Object.values(t[0])[x]){
+                            $(`.Ratings`).append(`<small>${y.Source}:&nbsp${y.Value}</small><br>`);
+                          }
+                      }
+                    }
                 }
                    
             
@@ -78,26 +119,13 @@ $(document).ready(() => {
     
            })   
 
-    })
+    }
+    
+    $(`#search1`).find(`button`).click(function (){infoShow(this)})
      
     
     $(`#search2`).find(`button`).click(function(){
-        postAJAX(this)
-        console.log(k)
+        infoShow(this)
 
-    }).hover(function () { 
-        if(k[0].Response== "False")
-        {
-            $(`#needText`).text("Please give Correct Imdb Id");
-            $(this).addClass("show");
-        } else {
-            $(this).removeClass("show");
-        }
-           
-    
-    }, 
-        function () {
-            $(this).removeClass("show");
-        });
-
+    })
 })
