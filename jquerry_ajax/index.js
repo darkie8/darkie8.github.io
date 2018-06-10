@@ -22,7 +22,7 @@ $(document).ready(() => {
                type: 'GET',
                dataType: 'jsonp',
                async: true,
-               url: `https://www.omdbapi.com/?${$(n).parents("form").serialize()}&apikey=9ccf0d71`,
+               url: `https://www.omdbapi.com/?${$(n).parents("form").serialize()}&apikey=2534d699`,
                timeout: time});
         omega.then(function(m){
             console.log(m)
