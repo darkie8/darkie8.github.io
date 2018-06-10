@@ -40,7 +40,7 @@ $(document).ready(() => {
         return dfd.promise()
     }
     let infoShow = (n)=>{
-        $(`.modalM`).css("background-color","white")
+        $(`.modalM`).css("background-image","url()")
         $(`.modalhelp`).css("height", "100%");
         $(`.modalH`).find(`p`).html(`Hello!`)
         $(`#needText`).html(`<i class="fas fa-spinner fa-pulse fa-5x"></i><br><br>Proceeding`);
