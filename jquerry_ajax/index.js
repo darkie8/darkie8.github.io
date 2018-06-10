@@ -63,7 +63,7 @@ $(document).ready(() => {
                 
                 else {
                     $(`.modalhelp`).css("height", "460vh");
-                    $(`.modalP`).css({"width": "95vw","left":"2.5vw"});
+                    $(`.modalP`).css({"width": "95vw","left":"2vw"});
                     $(`.modalH`).find(`p`).html(`${t[0].Title} `);
                     if(t[0].Poster== "N/A"){
                         imgPoster = "static/Kanishka_enhanced.jpg" 
