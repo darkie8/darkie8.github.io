@@ -1,283 +1,342 @@
 // defining a class
-abstract class YouTubePage {
+ class YouTubePage {
+
+    protected appnavbarIconCountry                   :any
+    protected appnavbarIconMessagesNumber            :any
+    protected appnavbarIconMessagesAvailable            :any
+    protected appnavbarIconAccount                   :any
+    protected appnavbarIconAccountPass               :any
+    protected appviewVideoTitle                      :any
+    protected appviewVideoURL                        :any
+    protected appviewVideoCopyVideoURL               :any
+    protected appviewVideoURLAtCurrentTime           :any
+    protected appviewVideoCopyURLAtCurrentTime       :any
+    protected appviewVideoCopyEmbedCode              :any
+    protected appviewVideoLoop                       :any
+    protected appviewVideoTroubleshootPlaybackIssues :any
+    protected appviewVideoDebugInfo                  :any
+    protected appviewVideoCopyDebugInfo              :any
+    protected appviewVideoStats                      :any
+    protected appviewVideoArtist                     :any
+    protected appviewVideoLength                     :any
+    protected appviewVideoCurrentTime                :any
+    protected appviewVideoScreenSize                 :any
+    protected appviewVideoAutoPlay                   :any
+    protected appviewVideoAnnotations                :any
+    protected appviewVideoSpeed                      :any
+    protected appviewVideoSpeedOptionValues          :any
+    protected appviewVideoSubTitleAvailable          :any
+    protected appviewVideoSubTitleSHowEnable         :any
+    protected appviewVideoSubTitleLanguage           :any
+    protected appviewVideoSubTitleLanguageAvailable  :any
+    protected appviewVideoSubTitleStyleOptions       :any
+    protected appviewVideoSubTitleStyleOptionsValues :any
+    protected appviewVideoScreenResolutionValues     :any
+    protected appviewVideoScreenResolution           :any
+    protected appviewVideoDetailsViews               :any
+    protected appviewVideoDetailsLikes               :any
+    protected appviewVideoDetailsDislikes            :any
+    protected appviewVideoDetailsSubsribers          :any
+    protected appviewVideoDetailsPublcationDay       :any
+    protected appviewVideoDetailsDetails             :any
+    protected appupNextAutoplay                      :any
+    protected appupNextVideoNumbers                  :any
+    protected appupNextVideoTitles                   :any
+    protected appupNextVideoViews                    :any
+    protected appupNextMixVideos                     :any
+    protected appupNextMixVideosdetails              :any
+    protected appcommentBoxCommentsEnable            :any
+    protected appcommentBoxCommentsNumber            :any
+    protected appcommentBoxSortingMethod             :any
+    protected appcommentBoxCommentsUsernames         :any
+    protected appcommentBoxCommentsContent           :any
+    protected appcommentBoxCommentsPublicationTime   :any
+    protected appcommentBoxCommentsIndividualLikes   :any
+    protected appcommentBoxCommentsIndividualDislikes:any
+    protected appcommentBoxCommentsReplyPresent      :any
+    protected appcommentBoxCommentsReplyNumbers      :any
+    protected appcommentBoxCommentsReplies           :any
+     
 
     constructor
-    (
+    (protected youtube:{
     // navbar {
-        protected navbarIconCountry?: string,
+        navbarIconCountry?: string,
         
-        protected navbarIconMessagesNumber?: number,
+        navbarIconMessagesAvailable?: boolean,
+
+        navbarIconMessagesNumber?: number,
         
-        protected navbarIconAccount?: string,
+        navbarIconAccount?: string,
+
+        navbarIconAccountPass?: string,
         // }
     
         // video showing area {
-        protected viewVideoTitle?: string,
+        viewVideoTitle?: string,
     
         // video options {
-        protected viewVideoURL?: string,
-        protected viewVideoCopyVideoURL?: boolean,
+        viewVideoURL?: string,
+        viewVideoCopyVideoURL?: boolean,
     
-        protected viewVideoURLAtCurrentTime?: string,
-        protected viewVideoCopyURLAtCurrentTime?: boolean,
+        viewVideoURLAtCurrentTime?: string,
+        viewVideoCopyURLAtCurrentTime?: boolean,
     
-        protected viewVideoCopyEmbedCode?: string,
+        viewVideoCopyEmbedCode?: string,
     
-        protected viewVideoLoop?: boolean,
+        viewVideoLoop?: boolean,
     
-        protected viewVideoTroubleshootPlaybackIssues?: boolean,
+        viewVideoTroubleshootPlaybackIssues?: boolean,
     
-        protected viewVideoDebugInfo?: string,
-        protected viewVideoCopyDebugInfo?: boolean,
+        viewVideoDebugInfo?: string,
+        viewVideoCopyDebugInfo?: boolean,
     
-        protected viewVideoStats?: any,
+        viewVideoStats?: any,
         // }
     
         // Video footerbar {
-        protected viewVideoArtist?: string,
+        viewVideoArtist?: string,
     
-        protected viewVideoLength?: any,
+        viewVideoLength?: any,
     
-        protected viewVideoCurrentTime?: any,
+        viewVideoCurrentTime?: any,
        
-        protected viewVideoScreenSize?: string,
+        viewVideoScreenSize?: string,
     
         // video setting {
     
-        protected viewVideoAutoPlay?: boolean,
+        viewVideoAutoPlay?: boolean,
     
-        protected viewVideoAnnotations?: boolean,
+        viewVideoAnnotations?: boolean,
     
         // videospeed {
-        protected viewVideoSpeed?: string,
+        viewVideoSpeed?: string,
     
-        protected viewVideoSpeedOptionValues?: string[],
+        viewVideoSpeedOptionValues?: string[],
         // }
     
         // subtitle { 
-        protected viewVideoSubTitleAvailable?: boolean,
+        viewVideoSubTitleAvailable?: boolean,
     
-        protected viewVideoSubTitleSHowEnable?: boolean,
+        viewVideoSubTitleSHowEnable?: boolean,
     
-        protected viewVideoSubTitleLanguage?: string,
+        viewVideoSubTitleLanguage?: string,
     
-        protected viewVideoSubTitleLanguageAvailable?: string[],
+        viewVideoSubTitleLanguageAvailable?: string[],
     
-        protected viewVideoSubTitleStyleOptions?: string[],
+        viewVideoSubTitleStyleOptions?: string[],
     
-        protected viewVideoSubTitleStyleOptionsValues?: string[],
+        viewVideoSubTitleStyleOptionsValues?: string[],
         // } 
     
         // resolution of video
-        protected viewVideoScreenResolutionValues?: any[],
+        viewVideoScreenResolutionValues?: any[],
     
-        protected viewVideoScreenResolution?: any,
+        viewVideoScreenResolution?: any,
     
         //}}}
         
        // video details area {
-        protected viewVideoDetailsViews?: any,
+        viewVideoDetailsViews?: any,
     
-        protected viewVideoDetailsLikes?: any,
+        viewVideoDetailsLikes?: any,
     
-        protected viewVideoDetailsDislikes?: any,
+        viewVideoDetailsDislikes?: any,
     
-        protected viewVideoDetailsSubsribers?: any,
+        viewVideoDetailsSubsribers?: any,
     
-        protected viewVideoDetailsPublcationDay?: any,
+        viewVideoDetailsPublcationDay?: any,
     
-        protected viewVideoDetailsDetails?: string,
+        viewVideoDetailsDetails?: string,
         // }}
     
         // next video options {
-        protected upNextAutoplay?: boolean,
+        upNextAutoplay?: boolean,
     
-        protected upNextVideoNumbers?: number,
+        upNextVideoNumbers?: number,
     
-        protected upNextVideoTitles?: string[],
+        upNextVideoTitles?: string[],
     
-        protected upNextVideoViews?: string[],
+        upNextVideoViews?: string[],
     
-        protected upNextMixVideos?: string[],
+        upNextMixVideos?: string[],
         
-        protected upNextMixVideosdetails?: string[],
+        upNextMixVideosdetails?: string[],
         // }
     
         // comment box {
-        protected commentBoxCommentsEnable?: boolean,
+        commentBoxCommentsEnable?: boolean,
     
-        protected commentBoxCommentsNumber?: number,
+        commentBoxCommentsNumber?: number,
     
-        protected commentBoxSortingMethod?: string,
+        commentBoxSortingMethod?: string,
     
-        protected commentBoxCommentsUsernames?: string[],
+        commentBoxCommentsUsernames?: string[],
     
-        protected commentBoxCommentsContent?: string[],
+        commentBoxCommentsContent?: string[],
     
-        protected commentBoxCommentsPublicationTime?: string[],
+        commentBoxCommentsPublicationTime?: string[],
         
-        protected commentBoxCommentsIndividualLikes?: number[],
+        commentBoxCommentsIndividualLikes?: number[],
     
-        protected commentBoxCommentsIndividualDislikes?: number[],
+        commentBoxCommentsIndividualDislikes?: number[],
     
-        protected commentBoxCommentsReplyPresent?: boolean[],
+        commentBoxCommentsReplyPresent?: boolean[],
     
-        protected commentBoxCommentsReplyNumbers?: number[],
+        commentBoxCommentsReplyNumbers?: number[],
     
-        protected commentBoxCommentsReplies?: string[],
+        commentBoxCommentsReplies?: string[],
         // }
-    ) 
+    }) 
 {
         
-    this.navbarIconCountry                   =navbarIconCountry                   ;                                                                                                                         
+    this.appnavbarIconCountry                   =youtube.navbarIconCountry                   ;                                                                                                                         
         
-    this.navbarIconMessagesNumber                  =navbarIconMessagesNumber                  ;                                                                                                                          
+    this.appnavbarIconMessagesNumber                   =youtube.navbarIconMessagesNumber                  ;
     
-    this.navbarIconAccount                   =navbarIconAccount                   ;                                                                                                                         
+    this.appnavbarIconMessagesAvailable                   =youtube.navbarIconMessagesAvailable                   ;
+    
+    this.appnavbarIconAccount                   =youtube.navbarIconAccount                   ;  
+    
+    this.appnavbarIconAccountPass                   =youtube.navbarIconAccountPass                   ;
     
 
     
-    this.viewVideoTitle                      =viewVideoTitle                      ;                                                                                                                      
+    this.appviewVideoTitle                      =youtube.viewVideoTitle                      ;                                                                                                                      
 
     
-    this.viewVideoURL                        =viewVideoURL                        ;                                                                                                                    
+    this.appviewVideoURL                        =youtube.viewVideoURL                        ;                                                                                                                    
 
-    this.viewVideoCopyVideoURL               =viewVideoCopyVideoURL               ;                                                                                                                             
+    this.appviewVideoCopyVideoURL               =youtube.viewVideoCopyVideoURL               ;                                                                                                                             
 
-    this.viewVideoURLAtCurrentTime           =viewVideoURLAtCurrentTime           ;                                                                                                                                 
+    this.appviewVideoURLAtCurrentTime           =youtube.viewVideoURLAtCurrentTime           ;                                                                                                                                 
 
-    this.viewVideoCopyURLAtCurrentTime       =viewVideoCopyURLAtCurrentTime       ;                                                                                                                                     
+    this.appviewVideoCopyURLAtCurrentTime       =youtube.viewVideoCopyURLAtCurrentTime       ;                                                                                                                                     
 
-    this.viewVideoCopyEmbedCode              =viewVideoCopyEmbedCode              ;                                                                                                                              
+    this.appviewVideoCopyEmbedCode              =youtube.viewVideoCopyEmbedCode              ;                                                                                                                              
 
-    this.viewVideoLoop                       =viewVideoLoop                       ;                                                                                                                     
+    this.appviewVideoLoop                       =youtube.viewVideoLoop                       ;                                                                                                                     
 
-    this.viewVideoTroubleshootPlaybackIssues =viewVideoTroubleshootPlaybackIssues ;                                                                                                                                           
+    this.appviewVideoTroubleshootPlaybackIssues =youtube.viewVideoTroubleshootPlaybackIssues ;                                                                                                                                           
 
-    this.viewVideoDebugInfo                  =viewVideoDebugInfo                  ;                                                                                                                          
+    this.appviewVideoDebugInfo                  =youtube.viewVideoDebugInfo                  ;                                                                                                                          
 
-    this.viewVideoCopyDebugInfo              =viewVideoCopyDebugInfo              ;                                                                                                                              
+    this.appviewVideoCopyDebugInfo              =youtube.viewVideoCopyDebugInfo              ;                                                                                                                              
 
-    this.viewVideoStats                      =viewVideoStats                      ;                                                                                                                      
+    this.appviewVideoStats                      =youtube.viewVideoStats                      ;                                                                                                                      
    
 
-    this.viewVideoArtist                     =viewVideoArtist                     ;                                                                                                                       
+    this.appviewVideoArtist                     =youtube.viewVideoArtist                     ;                                                                                                                       
 
-    this.viewVideoLength                     =viewVideoLength                     ;                                                                                                                       
+    this.appviewVideoLength                     =youtube.viewVideoLength                     ;                                                                                                                       
 
-    this.viewVideoCurrentTime                =viewVideoCurrentTime                ;                                                                                                                            
+    this.appviewVideoCurrentTime                =youtube.viewVideoCurrentTime                ;                                                                                                                            
    
-    this.viewVideoScreenSize                 =viewVideoScreenSize                 ;                                                                                                                           
+    this.appviewVideoScreenSize                 =youtube.viewVideoScreenSize                 ;                                                                                                                           
 
     
 
-    this.viewVideoAutoPlay                   =viewVideoAutoPlay                   ;                                                                                                                         
+    this.appviewVideoAutoPlay                   =youtube.viewVideoAutoPlay                   ;                                                                                                                         
 
-    this.viewVideoAnnotations                =viewVideoAnnotations                ;                                                                                                                            
-
-    
-    this.viewVideoSpeed                      =viewVideoSpeed                      ;                                                                                                                      
-
-    this.viewVideoSpeedOptionValues          =viewVideoSpeedOptionValues          ;                                                                                                                                  
-    
+    this.appviewVideoAnnotations                =youtube.viewVideoAnnotations                ;                                                                                                                            
 
     
-    this.viewVideoSubTitleAvailable          =viewVideoSubTitleAvailable          ;                                                                                                                                  
+    this.appviewVideoSpeed                      =youtube.viewVideoSpeed                      ;                                                                                                                      
 
-    this.viewVideoSubTitleSHowEnable         =viewVideoSubTitleSHowEnable         ;                                                                                                                                   
-
-    this.viewVideoSubTitleLanguage           =viewVideoSubTitleLanguage           ;                                                                                                                                 
-
-    this.viewVideoSubTitleLanguageAvailable  =viewVideoSubTitleLanguageAvailable  ;                                                                                                                                          
-
-    this.viewVideoSubTitleStyleOptions       =viewVideoSubTitleStyleOptions       ;                                                                                                                                     
-
-    this.viewVideoSubTitleStyleOptionsValues =viewVideoSubTitleStyleOptionsValues ;                                                                                                                                           
+    this.appviewVideoSpeedOptionValues          =youtube.viewVideoSpeedOptionValues          ;                                                                                                                                  
     
 
     
-    this.viewVideoScreenResolutionValues     =viewVideoScreenResolutionValues     ;                                                                                                                                       
+    this.appviewVideoSubTitleAvailable          =youtube.viewVideoSubTitleAvailable          ;                                                                                                                                  
 
-    this.viewVideoScreenResolution           =viewVideoScreenResolution           ;                                                                                                                                 
+    this.appviewVideoSubTitleSHowEnable         =youtube.viewVideoSubTitleSHowEnable         ;                                                                                                                                   
+
+    this.appviewVideoSubTitleLanguage           =youtube.viewVideoSubTitleLanguage           ;                                                                                                                                 
+
+    this.appviewVideoSubTitleLanguageAvailable  =youtube.viewVideoSubTitleLanguageAvailable  ;                                                                                                                                          
+
+    this.appviewVideoSubTitleStyleOptions       =youtube.viewVideoSubTitleStyleOptions       ;                                                                                                                                     
+
+    this.appviewVideoSubTitleStyleOptionsValues =youtube.viewVideoSubTitleStyleOptionsValues ;                                                                                                                                           
+    
+
+    
+    this.appviewVideoScreenResolutionValues     =youtube.viewVideoScreenResolutionValues     ;                                                                                                                                       
+
+    this.appviewVideoScreenResolution           =youtube.viewVideoScreenResolution           ;                                                                                                                                 
 
     
     
    
-    this.viewVideoDetailsViews               =viewVideoDetailsViews               ;                                                                                                                             
+    this.appviewVideoDetailsViews               =youtube.viewVideoDetailsViews               ;                                                                                                                             
 
-    this.viewVideoDetailsLikes               =viewVideoDetailsLikes               ;                                                                                                                             
+    this.appviewVideoDetailsLikes               =youtube.viewVideoDetailsLikes               ;                                                                                                                             
 
-    this.viewVideoDetailsDislikes            =viewVideoDetailsDislikes            ;                                                                                                                                
+    this.appviewVideoDetailsDislikes            =youtube.viewVideoDetailsDislikes            ;                                                                                                                                
 
-    this.viewVideoDetailsSubsribers          =viewVideoDetailsSubsribers          ;                                                                                                                                  
+    this.appviewVideoDetailsSubsribers          =youtube.viewVideoDetailsSubsribers          ;                                                                                                                                  
 
-    this.viewVideoDetailsPublcationDay       =viewVideoDetailsPublcationDay       ;                                                                                                                                     
+    this.appviewVideoDetailsPublcationDay       =youtube.viewVideoDetailsPublcationDay       ;                                                                                                                                     
 
-    this.viewVideoDetailsDetails             =viewVideoDetailsDetails             ;                                                                                                                               
+    this.appviewVideoDetailsDetails             =youtube.viewVideoDetailsDetails             ;                                                                                                                               
     
 
     
-    this.upNextAutoplay                      =upNextAutoplay                      ;                                                                                                                      
+    this.appupNextAutoplay                      =youtube.upNextAutoplay                      ;                                                                                                                      
 
-    this.upNextVideoNumbers                  =upNextVideoNumbers                  ;                                                                                                                          
+    this.appupNextVideoNumbers                  =youtube.upNextVideoNumbers                  ;                                                                                                                          
 
-    this.upNextVideoTitles                   =upNextVideoTitles                   ;                                                                                                                         
+    this.appupNextVideoTitles                   =youtube.upNextVideoTitles                   ;                                                                                                                         
 
-    this.upNextVideoViews                    =upNextVideoViews                    ;                                                                                                                        
+    this.appupNextVideoViews                    =youtube.upNextVideoViews                    ;                                                                                                                        
 
-    this.upNextMixVideos                     =upNextMixVideos                     ;                                                                                                                       
+    this.appupNextMixVideos                     =youtube.upNextMixVideos                     ;                                                                                                                       
     
-    this.upNextMixVideosdetails              =upNextMixVideosdetails              ;                                                                                                                              
+    this.appupNextMixVideosdetails              =youtube.upNextMixVideosdetails              ;                                                                                                                              
     
 
     
-    this.commentBoxCommentsEnable            =commentBoxCommentsEnable            ;                                                                                                                                
+    this.appcommentBoxCommentsEnable            =youtube.commentBoxCommentsEnable            ;                                                                                                                                
 
-    this.commentBoxCommentsNumber            =commentBoxCommentsNumber            ;                                                                                                                                
+    this.appcommentBoxCommentsNumber            =youtube.commentBoxCommentsNumber            ;                                                                                                                                
 
-    this.commentBoxSortingMethod             =commentBoxSortingMethod             ;                                                                                                                               
+    this.appcommentBoxSortingMethod             =youtube.commentBoxSortingMethod             ;                                                                                                                               
 
-    this.commentBoxCommentsUsernames         =commentBoxCommentsUsernames         ;                                                                                                                                   
+    this.appcommentBoxCommentsUsernames         =youtube.commentBoxCommentsUsernames         ;                                                                                                                                   
 
-    this.commentBoxCommentsContent           =commentBoxCommentsContent           ;                                                                                                                                 
+    this.appcommentBoxCommentsContent           =youtube.commentBoxCommentsContent           ;                                                                                                                                 
 
-    this.commentBoxCommentsPublicationTime   =commentBoxCommentsPublicationTime   ;                                                                                                                                         
+    this.appcommentBoxCommentsPublicationTime   =youtube.commentBoxCommentsPublicationTime   ;                                                                                                                                         
     
-    this.commentBoxCommentsIndividualLikes   =commentBoxCommentsIndividualLikes   ;                                                                                                                                         
+    this.appcommentBoxCommentsIndividualLikes   =youtube.commentBoxCommentsIndividualLikes   ;                                                                                                                                         
 
-    this.commentBoxCommentsIndividualDislikes=commentBoxCommentsIndividualDislikes;                                                                                                                                            
+    this.appcommentBoxCommentsIndividualDislikes=youtube.commentBoxCommentsIndividualDislikes;                                                                                                                                            
 
-    this.commentBoxCommentsReplyPresent      =commentBoxCommentsReplyPresent      ;                                                                                                                                      
+    this.appcommentBoxCommentsReplyPresent      =youtube.commentBoxCommentsReplyPresent      ;                                                                                                                                      
 
-    this.commentBoxCommentsReplyNumbers      =commentBoxCommentsReplyNumbers      ;                                                                                                                                      
+    this.appcommentBoxCommentsReplyNumbers      =youtube.commentBoxCommentsReplyNumbers      ;                                                                                                                                      
 
-    this.commentBoxCommentsReplies           =commentBoxCommentsReplies           ;                                                                                                                                 
+    this.appcommentBoxCommentsReplies           =youtube.commentBoxCommentsReplies           ;                                                                                                                                 
     
 
 
 }// end constructor
-}// end class 
+static account = [{email:`sayan1@gmail.com`,password:`porter1`}
+,{email:`sayan2@gmail.com`,password:`porter2`},{email:`sayan3@gmail.com`,password:`porter3`}]
+navbarAccount():void {
+   let array = YouTubePage.account.filter((object)=>{
+       return object.email== this.appnavbarIconAccount &&
+        object.password== this.appnavbarIconAccountPass;
+   })
+   console.log((array.length>0)?JSON.stringify(array):`can not be logged in`);
+   
+    }
 
-class Navbar extends YouTubePage {
-  
-    constructor( navbarIconCountry: string,
-        navbarIconMessagesNumber: number,
-        navbarIconAccount: string)
-        {super(navbarIconCountry,navbarIconMessagesNumber,navbarIconAccount)}
-        Country() : void{
-          console.log(this.navbarIconCountry);
-          
-        }
-        messageNumber(): void {
-            console.log(this.navbarIconMessagesNumber);
-        }
-        userName(): void {
-            console.log(this.navbarIconAccount);
-            
-        }
-}
-let navbar: Navbar;
-navbar = new Navbar("India",5,"sdarkie9")
-navbar.Country()
-navbar.messageNumber()
-navbar.userName()
+}// end class 
+let eml = prompt(`input email`,`exmpl@qwrt.com`);
+let pss = prompt(`input pass`,`password`)
+let account: YouTubePage;
+account = new YouTubePage({navbarIconAccount:`${eml}`,navbarIconAccountPass:`${pss}`})
+account.navbarAccount()
+
+

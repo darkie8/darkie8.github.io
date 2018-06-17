@@ -1,172 +1,77 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 // defining a class
 var YouTubePage = /** @class */ (function () {
-    function YouTubePage(
-    // navbar {
-    navbarIconCountry, navbarIconMessagesNumber, navbarIconAccount, 
-    // }
-    // video showing area {
-    viewVideoTitle, 
-    // video options {
-    viewVideoURL, viewVideoCopyVideoURL, viewVideoURLAtCurrentTime, viewVideoCopyURLAtCurrentTime, viewVideoCopyEmbedCode, viewVideoLoop, viewVideoTroubleshootPlaybackIssues, viewVideoDebugInfo, viewVideoCopyDebugInfo, viewVideoStats, 
-    // }
-    // Video footerbar {
-    viewVideoArtist, viewVideoLength, viewVideoCurrentTime, viewVideoScreenSize, 
-    // video setting {
-    viewVideoAutoPlay, viewVideoAnnotations, 
-    // videospeed {
-    viewVideoSpeed, viewVideoSpeedOptionValues, 
-    // }
-    // subtitle { 
-    viewVideoSubTitleAvailable, viewVideoSubTitleSHowEnable, viewVideoSubTitleLanguage, viewVideoSubTitleLanguageAvailable, viewVideoSubTitleStyleOptions, viewVideoSubTitleStyleOptionsValues, 
-    // } 
-    // resolution of video
-    viewVideoScreenResolutionValues, viewVideoScreenResolution, 
-    //}}}
-    // video details area {
-    viewVideoDetailsViews, viewVideoDetailsLikes, viewVideoDetailsDislikes, viewVideoDetailsSubsribers, viewVideoDetailsPublcationDay, viewVideoDetailsDetails, 
-    // }}
-    // next video options {
-    upNextAutoplay, upNextVideoNumbers, upNextVideoTitles, upNextVideoViews, upNextMixVideos, upNextMixVideosdetails, 
-    // }
-    // comment box {
-    commentBoxCommentsEnable, commentBoxCommentsNumber, commentBoxSortingMethod, commentBoxCommentsUsernames, commentBoxCommentsContent, commentBoxCommentsPublicationTime, commentBoxCommentsIndividualLikes, commentBoxCommentsIndividualDislikes, commentBoxCommentsReplyPresent, commentBoxCommentsReplyNumbers, commentBoxCommentsReplies) {
-        this.navbarIconCountry = navbarIconCountry;
-        this.navbarIconMessagesNumber = navbarIconMessagesNumber;
-        this.navbarIconAccount = navbarIconAccount;
-        this.viewVideoTitle = viewVideoTitle;
-        this.viewVideoURL = viewVideoURL;
-        this.viewVideoCopyVideoURL = viewVideoCopyVideoURL;
-        this.viewVideoURLAtCurrentTime = viewVideoURLAtCurrentTime;
-        this.viewVideoCopyURLAtCurrentTime = viewVideoCopyURLAtCurrentTime;
-        this.viewVideoCopyEmbedCode = viewVideoCopyEmbedCode;
-        this.viewVideoLoop = viewVideoLoop;
-        this.viewVideoTroubleshootPlaybackIssues = viewVideoTroubleshootPlaybackIssues;
-        this.viewVideoDebugInfo = viewVideoDebugInfo;
-        this.viewVideoCopyDebugInfo = viewVideoCopyDebugInfo;
-        this.viewVideoStats = viewVideoStats;
-        this.viewVideoArtist = viewVideoArtist;
-        this.viewVideoLength = viewVideoLength;
-        this.viewVideoCurrentTime = viewVideoCurrentTime;
-        this.viewVideoScreenSize = viewVideoScreenSize;
-        this.viewVideoAutoPlay = viewVideoAutoPlay;
-        this.viewVideoAnnotations = viewVideoAnnotations;
-        this.viewVideoSpeed = viewVideoSpeed;
-        this.viewVideoSpeedOptionValues = viewVideoSpeedOptionValues;
-        this.viewVideoSubTitleAvailable = viewVideoSubTitleAvailable;
-        this.viewVideoSubTitleSHowEnable = viewVideoSubTitleSHowEnable;
-        this.viewVideoSubTitleLanguage = viewVideoSubTitleLanguage;
-        this.viewVideoSubTitleLanguageAvailable = viewVideoSubTitleLanguageAvailable;
-        this.viewVideoSubTitleStyleOptions = viewVideoSubTitleStyleOptions;
-        this.viewVideoSubTitleStyleOptionsValues = viewVideoSubTitleStyleOptionsValues;
-        this.viewVideoScreenResolutionValues = viewVideoScreenResolutionValues;
-        this.viewVideoScreenResolution = viewVideoScreenResolution;
-        this.viewVideoDetailsViews = viewVideoDetailsViews;
-        this.viewVideoDetailsLikes = viewVideoDetailsLikes;
-        this.viewVideoDetailsDislikes = viewVideoDetailsDislikes;
-        this.viewVideoDetailsSubsribers = viewVideoDetailsSubsribers;
-        this.viewVideoDetailsPublcationDay = viewVideoDetailsPublcationDay;
-        this.viewVideoDetailsDetails = viewVideoDetailsDetails;
-        this.upNextAutoplay = upNextAutoplay;
-        this.upNextVideoNumbers = upNextVideoNumbers;
-        this.upNextVideoTitles = upNextVideoTitles;
-        this.upNextVideoViews = upNextVideoViews;
-        this.upNextMixVideos = upNextMixVideos;
-        this.upNextMixVideosdetails = upNextMixVideosdetails;
-        this.commentBoxCommentsEnable = commentBoxCommentsEnable;
-        this.commentBoxCommentsNumber = commentBoxCommentsNumber;
-        this.commentBoxSortingMethod = commentBoxSortingMethod;
-        this.commentBoxCommentsUsernames = commentBoxCommentsUsernames;
-        this.commentBoxCommentsContent = commentBoxCommentsContent;
-        this.commentBoxCommentsPublicationTime = commentBoxCommentsPublicationTime;
-        this.commentBoxCommentsIndividualLikes = commentBoxCommentsIndividualLikes;
-        this.commentBoxCommentsIndividualDislikes = commentBoxCommentsIndividualDislikes;
-        this.commentBoxCommentsReplyPresent = commentBoxCommentsReplyPresent;
-        this.commentBoxCommentsReplyNumbers = commentBoxCommentsReplyNumbers;
-        this.commentBoxCommentsReplies = commentBoxCommentsReplies;
-        this.navbarIconCountry = navbarIconCountry;
-        this.navbarIconMessagesNumber = navbarIconMessagesNumber;
-        this.navbarIconAccount = navbarIconAccount;
-        this.viewVideoTitle = viewVideoTitle;
-        this.viewVideoURL = viewVideoURL;
-        this.viewVideoCopyVideoURL = viewVideoCopyVideoURL;
-        this.viewVideoURLAtCurrentTime = viewVideoURLAtCurrentTime;
-        this.viewVideoCopyURLAtCurrentTime = viewVideoCopyURLAtCurrentTime;
-        this.viewVideoCopyEmbedCode = viewVideoCopyEmbedCode;
-        this.viewVideoLoop = viewVideoLoop;
-        this.viewVideoTroubleshootPlaybackIssues = viewVideoTroubleshootPlaybackIssues;
-        this.viewVideoDebugInfo = viewVideoDebugInfo;
-        this.viewVideoCopyDebugInfo = viewVideoCopyDebugInfo;
-        this.viewVideoStats = viewVideoStats;
-        this.viewVideoArtist = viewVideoArtist;
-        this.viewVideoLength = viewVideoLength;
-        this.viewVideoCurrentTime = viewVideoCurrentTime;
-        this.viewVideoScreenSize = viewVideoScreenSize;
-        this.viewVideoAutoPlay = viewVideoAutoPlay;
-        this.viewVideoAnnotations = viewVideoAnnotations;
-        this.viewVideoSpeed = viewVideoSpeed;
-        this.viewVideoSpeedOptionValues = viewVideoSpeedOptionValues;
-        this.viewVideoSubTitleAvailable = viewVideoSubTitleAvailable;
-        this.viewVideoSubTitleSHowEnable = viewVideoSubTitleSHowEnable;
-        this.viewVideoSubTitleLanguage = viewVideoSubTitleLanguage;
-        this.viewVideoSubTitleLanguageAvailable = viewVideoSubTitleLanguageAvailable;
-        this.viewVideoSubTitleStyleOptions = viewVideoSubTitleStyleOptions;
-        this.viewVideoSubTitleStyleOptionsValues = viewVideoSubTitleStyleOptionsValues;
-        this.viewVideoScreenResolutionValues = viewVideoScreenResolutionValues;
-        this.viewVideoScreenResolution = viewVideoScreenResolution;
-        this.viewVideoDetailsViews = viewVideoDetailsViews;
-        this.viewVideoDetailsLikes = viewVideoDetailsLikes;
-        this.viewVideoDetailsDislikes = viewVideoDetailsDislikes;
-        this.viewVideoDetailsSubsribers = viewVideoDetailsSubsribers;
-        this.viewVideoDetailsPublcationDay = viewVideoDetailsPublcationDay;
-        this.viewVideoDetailsDetails = viewVideoDetailsDetails;
-        this.upNextAutoplay = upNextAutoplay;
-        this.upNextVideoNumbers = upNextVideoNumbers;
-        this.upNextVideoTitles = upNextVideoTitles;
-        this.upNextVideoViews = upNextVideoViews;
-        this.upNextMixVideos = upNextMixVideos;
-        this.upNextMixVideosdetails = upNextMixVideosdetails;
-        this.commentBoxCommentsEnable = commentBoxCommentsEnable;
-        this.commentBoxCommentsNumber = commentBoxCommentsNumber;
-        this.commentBoxSortingMethod = commentBoxSortingMethod;
-        this.commentBoxCommentsUsernames = commentBoxCommentsUsernames;
-        this.commentBoxCommentsContent = commentBoxCommentsContent;
-        this.commentBoxCommentsPublicationTime = commentBoxCommentsPublicationTime;
-        this.commentBoxCommentsIndividualLikes = commentBoxCommentsIndividualLikes;
-        this.commentBoxCommentsIndividualDislikes = commentBoxCommentsIndividualDislikes;
-        this.commentBoxCommentsReplyPresent = commentBoxCommentsReplyPresent;
-        this.commentBoxCommentsReplyNumbers = commentBoxCommentsReplyNumbers;
-        this.commentBoxCommentsReplies = commentBoxCommentsReplies;
+    function YouTubePage(youtube) {
+        this.youtube = youtube;
+        this.appnavbarIconCountry = youtube.navbarIconCountry;
+        this.appnavbarIconMessagesNumber = youtube.navbarIconMessagesNumber;
+        this.appnavbarIconMessagesAvailable = youtube.navbarIconMessagesAvailable;
+        this.appnavbarIconAccount = youtube.navbarIconAccount;
+        this.appnavbarIconAccountPass = youtube.navbarIconAccountPass;
+        this.appviewVideoTitle = youtube.viewVideoTitle;
+        this.appviewVideoURL = youtube.viewVideoURL;
+        this.appviewVideoCopyVideoURL = youtube.viewVideoCopyVideoURL;
+        this.appviewVideoURLAtCurrentTime = youtube.viewVideoURLAtCurrentTime;
+        this.appviewVideoCopyURLAtCurrentTime = youtube.viewVideoCopyURLAtCurrentTime;
+        this.appviewVideoCopyEmbedCode = youtube.viewVideoCopyEmbedCode;
+        this.appviewVideoLoop = youtube.viewVideoLoop;
+        this.appviewVideoTroubleshootPlaybackIssues = youtube.viewVideoTroubleshootPlaybackIssues;
+        this.appviewVideoDebugInfo = youtube.viewVideoDebugInfo;
+        this.appviewVideoCopyDebugInfo = youtube.viewVideoCopyDebugInfo;
+        this.appviewVideoStats = youtube.viewVideoStats;
+        this.appviewVideoArtist = youtube.viewVideoArtist;
+        this.appviewVideoLength = youtube.viewVideoLength;
+        this.appviewVideoCurrentTime = youtube.viewVideoCurrentTime;
+        this.appviewVideoScreenSize = youtube.viewVideoScreenSize;
+        this.appviewVideoAutoPlay = youtube.viewVideoAutoPlay;
+        this.appviewVideoAnnotations = youtube.viewVideoAnnotations;
+        this.appviewVideoSpeed = youtube.viewVideoSpeed;
+        this.appviewVideoSpeedOptionValues = youtube.viewVideoSpeedOptionValues;
+        this.appviewVideoSubTitleAvailable = youtube.viewVideoSubTitleAvailable;
+        this.appviewVideoSubTitleSHowEnable = youtube.viewVideoSubTitleSHowEnable;
+        this.appviewVideoSubTitleLanguage = youtube.viewVideoSubTitleLanguage;
+        this.appviewVideoSubTitleLanguageAvailable = youtube.viewVideoSubTitleLanguageAvailable;
+        this.appviewVideoSubTitleStyleOptions = youtube.viewVideoSubTitleStyleOptions;
+        this.appviewVideoSubTitleStyleOptionsValues = youtube.viewVideoSubTitleStyleOptionsValues;
+        this.appviewVideoScreenResolutionValues = youtube.viewVideoScreenResolutionValues;
+        this.appviewVideoScreenResolution = youtube.viewVideoScreenResolution;
+        this.appviewVideoDetailsViews = youtube.viewVideoDetailsViews;
+        this.appviewVideoDetailsLikes = youtube.viewVideoDetailsLikes;
+        this.appviewVideoDetailsDislikes = youtube.viewVideoDetailsDislikes;
+        this.appviewVideoDetailsSubsribers = youtube.viewVideoDetailsSubsribers;
+        this.appviewVideoDetailsPublcationDay = youtube.viewVideoDetailsPublcationDay;
+        this.appviewVideoDetailsDetails = youtube.viewVideoDetailsDetails;
+        this.appupNextAutoplay = youtube.upNextAutoplay;
+        this.appupNextVideoNumbers = youtube.upNextVideoNumbers;
+        this.appupNextVideoTitles = youtube.upNextVideoTitles;
+        this.appupNextVideoViews = youtube.upNextVideoViews;
+        this.appupNextMixVideos = youtube.upNextMixVideos;
+        this.appupNextMixVideosdetails = youtube.upNextMixVideosdetails;
+        this.appcommentBoxCommentsEnable = youtube.commentBoxCommentsEnable;
+        this.appcommentBoxCommentsNumber = youtube.commentBoxCommentsNumber;
+        this.appcommentBoxSortingMethod = youtube.commentBoxSortingMethod;
+        this.appcommentBoxCommentsUsernames = youtube.commentBoxCommentsUsernames;
+        this.appcommentBoxCommentsContent = youtube.commentBoxCommentsContent;
+        this.appcommentBoxCommentsPublicationTime = youtube.commentBoxCommentsPublicationTime;
+        this.appcommentBoxCommentsIndividualLikes = youtube.commentBoxCommentsIndividualLikes;
+        this.appcommentBoxCommentsIndividualDislikes = youtube.commentBoxCommentsIndividualDislikes;
+        this.appcommentBoxCommentsReplyPresent = youtube.commentBoxCommentsReplyPresent;
+        this.appcommentBoxCommentsReplyNumbers = youtube.commentBoxCommentsReplyNumbers;
+        this.appcommentBoxCommentsReplies = youtube.commentBoxCommentsReplies;
     } // end constructor
+    YouTubePage.prototype.navbarAccount = function () {
+        var _this = this;
+        var array = YouTubePage.account.filter(function (object) {
+            return object.email == _this.appnavbarIconAccount &&
+                object.password == _this.appnavbarIconAccountPass;
+        });
+        console.log((array.length > 0) ? JSON.stringify(array) : "can not be logged in");
+    };
+    YouTubePage.account = [{ email: "sayan1@gmail.com", password: "porter1" },
+        { email: "sayan2@gmail.com", password: "porter2" }, { email: "sayan3@gmail.com", password: "porter3" }];
     return YouTubePage;
 }()); // end class 
-var Navbar = /** @class */ (function (_super) {
-    __extends(Navbar, _super);
-    function Navbar(navbarIconCountry, navbarIconMessagesNumber, navbarIconAccount) {
-        return _super.call(this, navbarIconCountry, navbarIconMessagesNumber, navbarIconAccount) || this;
-    }
-    Navbar.prototype.Country = function () {
-        console.log(this.navbarIconCountry);
-    };
-    Navbar.prototype.messageNumber = function () {
-        console.log(this.navbarIconMessagesNumber);
-    };
-    Navbar.prototype.userName = function () {
-        console.log(this.navbarIconAccount);
-    };
-    return Navbar;
-}(YouTubePage));
-var navbar;
-navbar = new Navbar("India", 5, "sdarkie9");
-navbar.Country();
-navbar.messageNumber();
-navbar.userName();
+var eml = prompt("input email", "exmpl@qwrt.com");
+var pss = prompt("input pass", "password");
+var account;
+account = new YouTubePage({ navbarIconAccount: "" + eml, navbarIconAccountPass: "" + pss });
+account.navbarAccount();
