@@ -41,7 +41,7 @@
     protected appviewVideoDetailsDetails             :any
     protected appupNextAutoplay                      :any
     protected appupNextVideoNumbers                  :any
-    protected appupNextVideoTitles                   :any
+    protected appupNextVideos                   :any
     protected appupNextVideoViews                    :any
     protected appupNextMixVideos                     :any
     protected appupNextMixVideosdetails              :any
@@ -101,7 +101,7 @@
     
         viewVideoCurrentTime?: any,
        
-        viewVideoScreenSize?: string,
+        viewVideoScreenSize?: any,
     
         // video setting {
     
@@ -110,7 +110,7 @@
         viewVideoAnnotations?: boolean,
     
         // videospeed {
-        viewVideoSpeed?: string,
+        viewVideoSpeed?: number,
     
         viewVideoSpeedOptionValues?: string[],
         // }
@@ -155,7 +155,7 @@
     
         upNextVideoNumbers?: number,
     
-        upNextVideoTitles?: string[],
+        upNextVideos?: string[],
     
         upNextVideoViews?: string[],
     
@@ -286,7 +286,7 @@
 
     this.appupNextVideoNumbers                  =youtube.upNextVideoNumbers                  ;                                                                                                                          
 
-    this.appupNextVideoTitles                   =youtube.upNextVideoTitles                   ;                                                                                                                         
+    this.appupNextVideos                   =youtube.upNextVideos                   ;                                                                                                                         
 
     this.appupNextVideoViews                    =youtube.upNextVideoViews                    ;                                                                                                                        
 
@@ -397,6 +397,46 @@ console.log((this.appviewVideoStats == true)?`Show`:`problem arising`);
 console.log((this.appviewVideoTroubleshootPlaybackIssues == true)?
 `troubleshoot proceeding`:`Problem is still there`);
 }
+static screenRes:any[] = [[144,240,360,480],[720,1080,1440,4320]]
+// defining scrrensize and speed
+screenReseandSpeed():void {
+    let array = YouTubePage.screenRes.filter((obj)=>{
+        for(let x of obj){
+            return x == this.appviewVideoScreenResolution
+        }
+    }    
+    )
+    let yu = (array[0]==YouTubePage.screenRes[0])?`Normal`:`HD`
+    console.log((array[0].length>0)?`THe video resolution is ${yu} ${this.appviewVideoScreenResolution}p`
+    :`such resolution doesn't exist`) 
+    console.log(this.appviewVideoSpeed);
+    
+}
+// video details 
+showDetails():void{
+    console.log(this.appviewVideoDetailsViews);
+    console.log(this.appviewVideoDetailsLikes);
+    console.log(this.appviewVideoDetailsSubsribers);
+    console.log(this.appviewVideoDetailsPublcationDay);
+    console.log(this.appviewVideoDetailsDetails);
+}
+nextVideos():void{
+    console.log(this.appupNextVideoNumbers);
+
+    console.log(this.appupNextVideos)
+    console.log(this.appupNextMixVideos);
+    
+    
+}
+
+commentBox():void {
+if(this.appcommentBoxCommentsEnable== true){
+    console.log(this.appcommentBoxCommentsNumber)
+    console.log(this.appcommentBoxCommentsUsernames)
+    console.log(this.appcommentBoxCommentsContent);
+}
+}
+
 }// end class 
 
 let eml = prompt(`input email`,`exmpl@qwrt.com`);
@@ -514,3 +554,7 @@ youtubemethods = new YouTubePage({viewVideoLoop: true,viewVideoTroubleshootPlayb
         "debug_date": "Mon Jun 18 2018 07:50:38 GMT+0530 (India Standard Time)"
       }`,viewVideoStats: true})
       youtubemethods.videoOtherDetail()
+
+      youtubemethods = new YouTubePage({viewVideoScreenResolution:720,viewVideoSpeed:.75})
+      youtubemethods.screenReseandSpeed()
+      
