@@ -318,7 +318,8 @@ fbLifeEvent(pass:any):void{
     }
 }
 }// class declaration ends
-let Facebook : FBAbout
+let button =()=>
+{let Facebook : FBAbout
 
 Facebook = new FBAbout(`https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=overview`,
 {recent_work: `lorem ipsem`,
@@ -336,4 +337,4 @@ Facebook.fbOverview(`porter123`)
 Facebook = new FBAbout(`https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=education`
 ,{},{WORK:[`heggen brothers`,`toad company`],PROFESSIONAL_SKILLS:[`web developer`,`cooking`],
 HIGH_SCHOOL:[`ABC school`,`GFT institution`]},{},{},{},{},{})
-Facebook.fbWorkEducation(`porter123`)
+Facebook.fbWorkEducation(`porter123`)}

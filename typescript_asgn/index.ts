@@ -438,8 +438,8 @@ if(this.appcommentBoxCommentsEnable== true){
 }
 
 }// end class 
-
-let eml = prompt(`input email`,`exmpl@qwrt.com`);
+let button2 =()=>
+{let eml = prompt(`input email`,`exmpl@qwrt.com`);
 let pss = prompt(`input pass`,`password`)
 let account: YouTubePage;
 account = new YouTubePage({navbarIconAccount:`${eml}`,navbarIconAccountPass:`${pss}`})
@@ -556,5 +556,5 @@ youtubemethods = new YouTubePage({viewVideoLoop: true,viewVideoTroubleshootPlayb
       youtubemethods.videoOtherDetail()
 
       youtubemethods = new YouTubePage({viewVideoScreenResolution:720,viewVideoSpeed:.75})
-      youtubemethods.screenReseandSpeed()
+      youtubemethods.screenReseandSpeed()}
       

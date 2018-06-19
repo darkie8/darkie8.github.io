@@ -171,18 +171,20 @@ var FBAbout = /** @class */ (function () {
     FBAbout.password = "porter123";
     return FBAbout;
 }()); // class declaration ends
-var Facebook;
-Facebook = new FBAbout("https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=overview", { recent_work: "lorem ipsem",
-    recent_Uni: "lorem ipsem",
-    recent_Place: "lorem ipsem",
-    phone_number: 12345,
-    websites: ["https://hyu.com"],
-    date_of_birth: "3.8.1997",
-    relationship: ["father", "sister"],
-    name: ["lorem", 'lorenina'],
-    profile: ["https://www.facebook.com/profile.php?id=100011687492076", "https://www.facebook.com/profile.php?id=100011687492076"]
-}, {}, {}, {}, {}, {}, {});
-Facebook.fbOverview("porter123");
-Facebook = new FBAbout("https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=education", {}, { WORK: ["heggen brothers", "toad company"], PROFESSIONAL_SKILLS: ["web developer", "cooking"],
-    HIGH_SCHOOL: ["ABC school", "GFT institution"] }, {}, {}, {}, {}, {});
-Facebook.fbWorkEducation("porter123");
+var button = function () {
+    var Facebook;
+    Facebook = new FBAbout("https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=overview", { recent_work: "lorem ipsem",
+        recent_Uni: "lorem ipsem",
+        recent_Place: "lorem ipsem",
+        phone_number: 12345,
+        websites: ["https://hyu.com"],
+        date_of_birth: "3.8.1997",
+        relationship: ["father", "sister"],
+        name: ["lorem", 'lorenina'],
+        profile: ["https://www.facebook.com/profile.php?id=100011687492076", "https://www.facebook.com/profile.php?id=100011687492076"]
+    }, {}, {}, {}, {}, {}, {});
+    Facebook.fbOverview("porter123");
+    Facebook = new FBAbout("https://www.facebook.com/marxdrama/about?lst=100011200598589%3A100011200598589%3A1529365035&section=education", {}, { WORK: ["heggen brothers", "toad company"], PROFESSIONAL_SKILLS: ["web developer", "cooking"],
+        HIGH_SCHOOL: ["ABC school", "GFT institution"] }, {}, {}, {}, {}, {});
+    Facebook.fbWorkEducation("porter123");
+};
