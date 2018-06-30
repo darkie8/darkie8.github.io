@@ -8,6 +8,7 @@ declare var $: any;
 })
 export class HousesComponent implements OnInit {
   public houses: any;
+  public beta: any;
   constructor(private httpHouse: HttpGOTService) {
     console.log('http request done');
 
@@ -20,8 +21,7 @@ export class HousesComponent implements OnInit {
       {
         type: 'GET',
         async: true,
-        url: 'https://awoiaf.westeros.org/thumb.php?f=House_Baratheon.svg&width=545&lang=en',
-        dataType: 'html',
+        url: 'https://awoiaf.westeros.org/thumb.php?f=House_Baratheon.svg&width=600&lang=en',
         success: (r) => {
           console.log('done');
 
@@ -32,12 +32,16 @@ export class HousesComponent implements OnInit {
         }
       }
     );
+    console.log($('.namePix0').text());
+
 
     this.httpHouse.httpRequestHouses().subscribe(
       data => {
         console.log(data);
 
         this.houses = data;
+        const h = $(`ng-template`).html();
+        console.log(h);
 
       },
       error => {
@@ -45,20 +49,30 @@ export class HousesComponent implements OnInit {
         console.log(error.errorMessage);
       }
     );
-    this.httpHouse.checkPix().subscribe(
+    this.httpHouse.checkPix('House_Baelish').subscribe(
       data => {
-        console.log(data);
+        console.log('done');
+        this.beta = data;
+        console.log(this.beta);
+        console.log($('.namePix0').text());
+        return true;
 
       },
       error => {
         console.log(error.errorMessage);
         console.log('no pix');
+        return false;
 
 
       }
     );
-   this.httpHouse.imgFix();
+
+    // tslint:disable-next-line:prefer-const
+
+
+
+
+
 
   }
-
 }

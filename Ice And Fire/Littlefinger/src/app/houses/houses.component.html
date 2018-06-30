@@ -3,24 +3,33 @@
   <div class="card-columns mx-1 w-75 col-10" style="position: relative;top: 78px;z-index: -1;">
     <div class="card" *ngFor="let x of houses;index as i">
       <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
-        <img id='id{{i}}' class="card-img-top {{beta}}" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+        <img id='id{{i}}' class="card-img-top" *ngIf="beta; else nop1" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
           style="padding: 12%">
+          <ng-template #nop1>
+              <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en"
+              style="padding: 12%">
+          </ng-template>
         <div class="card-body">
           <h5 class="card-title">Houses</h5>
           <p class="card-text list-group">
-            <button type="button" class="list-group-item list-group-item-action active">
+            <button type="button" class="list-group-item list-group-item-action active namePix{{i}}">
               {{x.name.slice(0,x.name.indexOf(' of'))}}
             </button>
           </p>
         </div>
       </ng-template>
       <ng-template #different>
-        <img id='id{{i}}' class="card-img-top {{beta}}" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en" style="padding: 12%">
+        <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
+         style="padding: 12%" *ngIf="beta; else nop">
+         <ng-template #nop>
+            <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en"
+            style="padding: 12%">
+        </ng-template>
         <div class="card-body">
           <h5 class="card-title">Houses</h5>
           <p class="card-text list-group">
-            <button type="button" class="list-group-item list-group-item-action active">
-              {{x.name}}
+            <button type="button" class="list-group-item list-group-item-action active namePix{{i}}">
+              {{x.name}} 
             </button>
           </p>
         </div>

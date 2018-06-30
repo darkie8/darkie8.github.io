@@ -28,7 +28,7 @@ export class HttpGOTService {
   private parm1 = 'books';
   private parm2 = 'characters';
   private parm3 = 'houses';
-  public beta;
+  public beta: any[];
   constructor(private httpClient: HttpClient) {
   }
   public pixcar() {
@@ -56,8 +56,9 @@ export class HttpGOTService {
   /**
    * checkPix
    */
-  public checkPix() {
-    return this.httpClient.get('https://awoiaf.westeros.org/thumb.php?f=House_Baratheon.svg&width=545&lang=en');
+  public checkPix(houseName) {
+    // tslint:disable-next-line:max-line-length
+    return this.httpClient.get(`https://awoiaf.westeros.org/thumb.php?f=${houseName}.svg&width=545&lang=en`, { responseType: 'blob' });
   }
   /**
    * imgFix
@@ -65,10 +66,10 @@ export class HttpGOTService {
   public imgFix() {
     for (let i = 0; i <= 9; i++) {
       // tslint:disable-next-line:prefer-const
+      let h = ($(`img #id${i}`).width() === 0 && $(`img #id${i}`).height() === 0) ? 'wrong' : 'right';
 
-      return this.beta = ($(`img #id${i}`).width() === undefined && $(`img #id${i}`).height() === undefined) ? 'wrong' : 'right';
+      return this.beta.push(h);
     }
-
 
   }
 }
