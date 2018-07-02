@@ -1,42 +1,66 @@
 <div class="row mx-0">
   <div class="col-1"></div>
-  <div class="card-columns mx-1 w-75 col-10" style="position: relative;top: 78px;z-index: -1;">
-    <div class="card" *ngFor="let x of houses;index as i">
-      <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
-        <img id='id{{i}}' class="card-img-top" *ngIf="beta; else nop1" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
-          style="padding: 12%">
-          <ng-template #nop1>
-              <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en"
-              style="padding: 12%">
-          </ng-template>
-        <div class="card-body">
-          <h5 class="card-title">Houses</h5>
-          <p class="card-text list-group">
-            <button type="button" class="list-group-item list-group-item-action active namePix{{i}}">
-              {{x.name.slice(0,x.name.indexOf(' of'))}}
-            </button>
-          </p>
-        </div>
-      </ng-template>
-      <ng-template #different>
-        <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
-         style="padding: 12%" *ngIf="beta; else nop">
-         <ng-template #nop>
-            <img id='id{{i}}' class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en"
-            style="padding: 12%">
-        </ng-template>
-        <div class="card-body">
-          <h5 class="card-title">Houses</h5>
-          <p class="card-text list-group">
-            <button type="button" class="list-group-item list-group-item-action active namePix{{i}}">
-              {{x.name}} 
-            </button>
-          </p>
-        </div>
-      </ng-template>
+  <div class="col-10  mx-1 w-75">
+    <div id="crude{{n}}" class="card-columns" style="position: relative;top: 78px;z-index: -1;" *ngFor="let m of alphabet;index as n">
 
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+
+      <div class="card" id="card{{x.name.charAt(6)}}{{i}}" *ngFor="let x of houses;index as i">
+        <ng-container *ngIf="x.name.charAt(6)== m; then loggedIn; else loggedOut">
+        </ng-container>
+        <ng-template #loggedIn>
+          <h4 class="ml-1 {{x.name.charAt(6)}}" *ngIf="i==0; else sigmoid1">#{{x.name.charAt(6)}}</h4>
+          <h4 class="ml-1 {{x.name.charAt(6)}}" *ngIf="i>0 && houses[i].name.charAt(6) !=houses[i-1].name.charAt(6);else sigmoid">#{{x.name.charAt(6)}}</h4>
+          <ng-template #sigmoid>
+            <h4 style="height: 27.78px;" *ngIf="i !=0"></h4>
+          </ng-template>
+          <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
+            <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+              onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 26vw;">
+            <!--<img id='id{{i}}' class="card-img-top pos" *ngIf="check(x.name.slice(0,x.name.indexOf(' of'))) && beta[0]==true; else nop1" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+                  style="padding: 12%;height: 22vw;width: 20vw;">
+                <ng-template #nop1>
+                  <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en" style="padding: 12%;height: 22vw;width: 20vw;">
+                </ng-template>-->
+            <div class="card-body">
+              <h5 class="card-title text-center">Noble House</h5>
+              <!-- <p class="card-text list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                      {{x.name.slice(0,x.name.indexOf(' of'))}}
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">Region</button>
+                    <button type="button" class="list-group-item list-group-item-action active">
+                      {{x.region}}
+                    </button>
+                  </p>-->
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small>
+            </div>
+          </ng-template>
+          <ng-template #different>
+            <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
+              style="padding: 12%;height: 26vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+
+            <div class="card-body">
+              <h5 class="card-title text-center">Noble House</h5>
+              <!--<p class="card-text list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                      {{x.name}}
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">Region</button>
+                    <button type="button" class="list-group-item list-group-item-action active">
+                      {{x.region}}
+                    </button>
+                  </p>-->
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-center">{{x.name}}</small>
+            </div>
+          </ng-template>
+        </ng-template>
+
+
+
       </div>
     </div>
   </div>

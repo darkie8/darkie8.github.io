@@ -38,20 +38,20 @@ export class HttpGOTService {
    * httpRequestBooks
    */
   public httpRequestBooks() {
-    return this.httpClient.get(this.baseUrl + '/' + this.parm1);
+    return this.httpClient.get(this.baseUrl + '/' + this.parm1 + '?page=1&pageSize=12');
   }
   /**
    * httpRequestCharacters
    */
   public httpRequestCharacters() {
-    return this.httpClient.get(this.baseUrl + '/' + this.parm2);
+    return this.httpClient.get(this.baseUrl + '/' + this.parm2 + '?page=1&pageSize=12');
 
   }
   /**
    * httpRequestHouses
    */
   public httpRequestHouses() {
-    return this.httpClient.get(this.baseUrl + '/' + this.parm3);
+    return this.httpClient.get(this.baseUrl + '/' + this.parm3 + '?page=1&pageSize=15', { responseType: 'json' });
   }
   /**
    * checkPix
@@ -59,17 +59,5 @@ export class HttpGOTService {
   public checkPix(houseName) {
     // tslint:disable-next-line:max-line-length
     return this.httpClient.get(`https://awoiaf.westeros.org/thumb.php?f=${houseName}.svg&width=545&lang=en`, { responseType: 'blob' });
-  }
-  /**
-   * imgFix
-   */
-  public imgFix() {
-    for (let i = 0; i <= 9; i++) {
-      // tslint:disable-next-line:prefer-const
-      let h = ($(`img #id${i}`).width() === 0 && $(`img #id${i}`).height() === 0) ? 'wrong' : 'right';
-
-      return this.beta.push(h);
-    }
-
   }
 }

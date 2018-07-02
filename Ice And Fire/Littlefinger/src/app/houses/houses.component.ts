@@ -8,30 +8,37 @@ declare var $: any;
 })
 export class HousesComponent implements OnInit {
   public houses: any;
-  public beta: any;
+  public beta = 'A';
+  public alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
   constructor(private httpHouse: HttpGOTService) {
     console.log('http request done');
 
 
   }
-
-  ngOnInit() {
-
+  /*check(name) {
+    // tslint:disable-next-line:prefer-const
     $.ajax(
       {
         type: 'GET',
-        async: true,
-        url: 'https://awoiaf.westeros.org/thumb.php?f=House_Baratheon.svg&width=600&lang=en',
+        async: false,
+        url: `https://awoiaf.westeros.org/thumb.php?f=${name}.svg&width=600&lang=en`,
         success: (r) => {
-          console.log('done');
+          this.beta.splice(0, 0, true);
 
         },
         error: (e) => {
-          console.log('error');
+          this.beta.splice(0, 0, false);
 
         }
       }
     );
+    return this.beta;
+
+  }*/
+
+  ngOnInit() {
+
+
     console.log($('.namePix0').text());
 
 
@@ -40,8 +47,18 @@ export class HousesComponent implements OnInit {
         console.log(data);
 
         this.houses = data;
-        const h = $(`ng-template`).html();
-        console.log(h);
+        // tslint:disable-next-line:prefer-const
+        for (let x of this.houses) {
+          let frstLtr = x.name.charAt(6);
+          console.log(frstLtr);
+        }
+
+        // tslint:disable-next-line:prefer-const
+        let finalProduct = this.houses.filter(obj => {
+
+        })
+
+
 
       },
       error => {
@@ -49,25 +66,15 @@ export class HousesComponent implements OnInit {
         console.log(error.errorMessage);
       }
     );
-    this.httpHouse.checkPix('House_Baelish').subscribe(
-      data => {
-        console.log('done');
-        this.beta = data;
-        console.log(this.beta);
-        console.log($('.namePix0').text());
-        return true;
-
-      },
-      error => {
-        console.log(error.errorMessage);
-        console.log('no pix');
-        return false;
 
 
-      }
-    );
 
-    // tslint:disable-next-line:prefer-const
+    // tslint:disable-next-line:triple-equals
+    if ($('.cardB').height() <= 10) {
+      $('.cardB').css({ 'height': '0px', 'width': '0px' });
+    }
+
+    console.log(this.alphabet);
 
 
 
