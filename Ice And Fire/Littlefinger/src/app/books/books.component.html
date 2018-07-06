@@ -1,3 +1,30 @@
-<p>
-  books works!
-</p>
+<div class="row mx-0" style="position: relative;top: 78px;z-index: 1;">
+  <div class="col-1"></div>
+  <div class="col-10  mx-1 w-75">
+    <div id="crude{{n}}" class=" border border-dark mb-2 p-2" *ngFor="let m of sortedAlphabet;index as n">
+      <div class="w-100">
+        <h3>#{{m}}</h3>
+      </div>
+
+      <div class="card-columns mt-2">
+        <div class="card" id="card{{x.name.charAt(0)}}{{i}}" *ngFor="let x of sortedProduct[n];index as i"> 
+          <img id='id{{i}}' class="card-img-top pos" src={{urlPix[n][i]}}
+            style="padding: 12%;height: 32vw;">
+          <div class="card-body">
+            <h5 class="card-title text-center">Character</h5>
+          </div>
+          <div class="card-footer text-center">
+            <small class="text-center">{{x.name}}</small>
+          </div>
+  
+  
+  
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
+

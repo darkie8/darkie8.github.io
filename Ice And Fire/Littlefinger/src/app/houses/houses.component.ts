@@ -11,37 +11,15 @@ export class HousesComponent implements OnInit {
   public finalProduct: any;
   public sortedProduct: any;
   public sortedAlphabet: any;
+  public noReapeatingSortedProduct: any;
   public alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
   constructor(private httpHouse: HttpGOTService) {
     console.log('http request done');
 
 
   }
-  /*check(name) {
-    // tslint:disable-next-line:prefer-const
-    $.ajax(
-      {
-        type: 'GET',
-        async: false,
-        url: `https://awoiaf.westeros.org/thumb.php?f=${name}.svg&width=600&lang=en`,
-        success: (r) => {
-          this.beta.splice(0, 0, true);
-
-        },
-        error: (e) => {
-          this.beta.splice(0, 0, false);
-
-        }
-      }
-    );
-    return this.beta;
-
-  }*/
 
   ngOnInit() {
-
-
-    console.log($('.namePix0').text());
 
 
     this.httpHouse.httpRequestHouses().subscribe(
@@ -57,12 +35,7 @@ export class HousesComponent implements OnInit {
         }
 
         // tslint:disable-next-line:prefer-const
-        this.finalProduct = this.alphabet.map(main => {
-          // tslint:disable-next-line:prefer-const
-
-          return this.houses.filter(obj => Object.is(obj.name.charAt(6), main));
-
-        });
+        this.finalProduct = this.alphabet.map(main => this.houses.filter(obj => Object.is(obj.name.charAt(6), main)));
         console.log(this.finalProduct);
         console.log(Object.values(this.finalProduct[0]));
 
@@ -70,26 +43,10 @@ export class HousesComponent implements OnInit {
         console.log(this.sortedProduct);
         this.sortedAlphabet = this.sortedProduct.map(obj => obj[0].name.charAt(6));
         console.log(this.sortedAlphabet);
-
-
-
       },
       error => {
         console.log('some error occured');
-        console.log(error.errorMessage);
       }
     );
-
-
-
-
-
-    console.log(this.alphabet);
-
-
-
-
-
-
   }
 }

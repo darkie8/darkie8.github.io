@@ -1,4 +1,4 @@
-<div class="card mb-3 mx-1" style="position: relative;top: 78px;z-index: -1;">
+<div class="card mb-3 mx-1" style="position: relative;top: 78px;z-index: 1;">
     <div id="carouselExampleFade" class="carousel slide carousel-fade m-4 px-4" data-ride="carousel">
         <div class="carousel-inner">
           <div class={{m.class}} *ngFor= "let m of GOTCarousel">
@@ -17,4 +17,31 @@
     <p class="card-text">
       <small class="text-muted">Last updated 3 mins ago</small>
     </p>
+    
+    <div class="card bg-dark text-white">
+      <img class="card-img" src="https://www.meliuz.com.br/blog/wp-content/uploads/2014/07/game_of_thrones.jpg" alt="Card image cap">
+      <div class="card-img-overlay">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">Last updated 3 mins ago</p>
+      </div>
+    </div>
+    <div class="card text-center mt-2">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Infos</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Search</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+          
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
