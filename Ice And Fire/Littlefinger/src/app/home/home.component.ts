@@ -20,8 +20,21 @@ export class HomeComponent implements OnInit {
   public alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
   public alphabet2 = ' abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
   public sortedNames: any;
-  public sortedalphabets: any;
+  public sortedAlphabets: any;
   public GOTCarousel: any;
+  public imgBarray = {};
+  public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
+    'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
+    'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
+    'https://awoiaf.westeros.org/images/a/a3/AFeastForCrows.jpg',
+    'https://awoiaf.westeros.org/images/archive/7/79/20110717040941%21ADanceWithDragons.jpg',
+    'https://awoiaf.westeros.org/images/5/5e/A_Knight_of_the_Seven_Kingdoms.jpg',
+    'https://awoiaf.westeros.org/images/0/05/Hedgeknight.jpg',
+    'https://awoiaf.westeros.org/images/1/17/TheSwornSword.jpg',
+    'https://ic.pics.livejournal.com/grrm/7059164/406278/406278_900.jpg',
+    'https://img00.deviantart.net/99f5/i/2013/338/6/f/the_princess_and_the_queen_book_cover_by_nateblunt-d6wqf76.jpg',
+    'https://awoiaf.westeros.org/images/4/45/Rouges_novella.jpg',
+    'https://awoiaf.westeros.org/images/3/35/World_of_ice_and_fire.JPG'];
   constructor(public homeService: HttpGOTService) {
   }
 
@@ -47,6 +60,13 @@ export class HomeComponent implements OnInit {
                 console.log(this.nullProduct);
                 this.finalProductB = this.alphabet.map(main =>
                   this.books.filter(obj => Object.is(obj.name.charAt(0), main)));
+                this.books.forEach((obj, i) => {
+                  // tslint:disable-next-line:prefer-const
+
+                  this.imgBarray[`${obj.name}`] = this.urlPix[i];
+
+                });
+                console.log(this.imgBarray);
                 console.log(this.finalProductB);
 
                 this.finalProductC = this.alphabet.map(main =>
@@ -64,9 +84,15 @@ export class HomeComponent implements OnInit {
                 this.sortedProduct = this.finalProduct.filter(obj => Object.values(obj).length !== 0);
                 console.log(this.sortedProduct);
                 console.log(this.alphabet2);
-                this.sortedalphabets = this.alphabet2.filter((obj: any, i) =>
+                this.sortedAlphabets = this.alphabet2.filter((obj: any, i) =>
                   (Object.values(this.finalProduct[i]).length !== 0) ? true : false);
-                console.log(this.sortedalphabets);
+                console.log(this.sortedAlphabets);
+                this.sortedNames = this.sortedProduct.map(obj1 =>
+                  obj1.map(obj => (obj.name !== '') ? obj.name : obj.aliases[0]));
+                console.log(this.sortedNames);
+                let dew = this.sortedProduct.map(obj => obj.filter(obj1 => (obj1.region) ? true : false));
+                console.log(dew);
+
               },
               error2 => {
                 console.log('character service terminated');
