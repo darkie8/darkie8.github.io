@@ -39,11 +39,11 @@
           <div class="card-header rounded">
               <ul class="nav nav-pills card-header-pills">
                 <li class="nav-item">
-                  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><h3>#{{m}}</h3></a>
+                  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample1{{n}}" role="button" aria-expanded="false" aria-controls="collapseExample"><h3>#{{m}}</h3></a>
                 </li>
               </ul>
             </div>
-        <div class="card-columns mt-2 p-lg-4">
+        <div class="card-columns mt-2 p-lg-4 collapse" id="collapseExample1{{n}}">
             <div class="card" *ngFor="let x of sortedProduct[n];index as i"> 
               <div *ngIf="x.gender">
                 <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
