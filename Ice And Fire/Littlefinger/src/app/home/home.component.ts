@@ -90,8 +90,6 @@ export class HomeComponent implements OnInit {
                 this.sortedNames = this.sortedProduct.map(obj1 =>
                   obj1.map(obj => (obj.name !== '') ? obj.name : obj.aliases[0]));
                 console.log(this.sortedNames);
-                let dew = this.sortedProduct.map(obj => obj.filter(obj1 => (obj1.region) ? true : false));
-                console.log(dew);
 
               },
               error2 => {
