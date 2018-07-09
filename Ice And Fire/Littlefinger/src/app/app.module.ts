@@ -21,6 +21,7 @@ import { HousesComponent } from './houses/houses.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
 import { HttpGOTService } from './http-got.service';
+import { CardViewComponent } from './card-view/card-view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpGOTService } from './http-got.service';
     BooksComponent,
     HousesComponent,
     CharactersComponent,
-    HomeComponent
+    HomeComponent,
+    CardViewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +42,8 @@ import { HttpGOTService } from './http-got.service';
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'houses', component: HousesComponent },
       { path: 'books', component: BooksComponent },
-      { path: 'characters', component: CharactersComponent }
-
+      { path: 'characters', component: CharactersComponent },
+      { path: 'element/:type/:id', component: CardViewComponent }
     ])
   ],
   providers: [HttpClientModule, HttpGOTService, {

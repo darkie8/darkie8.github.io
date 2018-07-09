@@ -29,7 +29,7 @@ export class HttpGOTService {
   private parm2 = 'characters';
   private parm3 = 'houses';
   private baseUrl1 = 'https://api.got.show/api/';
-  public beta: any[];
+  public beta: any;
   constructor(private httpClient: HttpClient) {
   }
   public pixcar() {
@@ -60,5 +60,11 @@ export class HttpGOTService {
    */
   public characterpix(name) {
     return this.httpClient.get(this.baseUrl1 + this.parm2 + '/' + name, { responseType: 'json' });
+  }
+  /**
+   * individualAccesor
+   */
+  public individualAccesor(type, id) {
+    return this.httpClient.get(`https://www.anapioficeandfire.com/api/${type}/${id}`, { responseType: 'json' });
   }
 }
