@@ -1,8 +1,8 @@
-<div class="card mb-3 mx-1" style="position: relative;top: 78px;z-index: 1;">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade m-4 px-4" data-ride="carousel">
-    <div class="carousel-inner">
+<div class="card mb-3 mx-1" style="position: relative;top: 55px;z-index: 1;background-size: 40%;background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0LkA-Sc8KSSqvhn03-z_6H9YPru-lxElaOqiiSc9ysu8Z2HGU);">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade my-4 px-0 mt-0" data-ride="carousel" >
+    <div class="carousel-inner w-100">
       <div class={{m.class}} *ngFor="let m of GOTCarousel">
-        <img class="d-block w-100" style="height: 40vw;" src={{m.pix}}>
+        <img class="d-block" style="height: 45vw;width: 100%" src={{m.pix}}>
         <div class="carousel-caption d-none d-md-block">
 
         </div>
@@ -18,10 +18,10 @@
       <small class="text-muted">Last updated 3 mins ago</small>
     </p>
   </div>
-  <div class="card bg-dark text-white m-2">
-    <img class="card-img p-3" src="https://www.meliuz.com.br/blog/wp-content/uploads/2014/07/game_of_thrones.jpg" alt="Card image cap">
+  <div class="card bg-white mb-0 text-white mx-2">
+    <img class="card-img p-1" src="https://www.meliuz.com.br/blog/wp-content/uploads/2014/07/game_of_thrones.jpg" alt="Card image cap">
   </div>
-  <div class="card text-center mt-2 mx-2">
+  <div class="card text-center mx-2 bg-white" style="position: relative;top: -5px;">
     <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
@@ -32,14 +32,14 @@
         </li>
       </ul>
     </div>
-    <div class="card-body">
+    <div class="card-body" style="background-image: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/08/07/05/game-of-thrones-spoils.jpeg);background-size: contain;">
 
       <h5 class="card-title">Special title treatment</h5>
-      <div id="crude{{n}}" class=" border border-dark mb-2 p-2" *ngFor="let m of sortedAlphabets;index as n">
-          <div class="card-header rounded">
-              <ul class="nav nav-pills card-header-pills">
+      <div id="crude{{n}}" class=" border rounded mb-4 p-2" *ngFor="let m of sortedAlphabets;index as n"  style="background-size: 40%;background-image: url(https://www.planwallpaper.com/static/images/cool-background.jpg)">
+          <div class="card-header rounded my-0 py-0" >
+              <ul class="nav nav-pills card-header-pills" style="height: 30px;">
                 <li class="nav-item">
-                  <a class="btn btn-link" data-toggle="collapse" href="#collapseExample1{{n}}" role="button" aria-expanded="false" aria-controls="collapseExample"><h3>#{{m}}</h3></a>
+                  <a class="btn btn-link text-light" style="height: 30px;" data-toggle="collapse" href="#collapseExample1{{n}}" role="button" aria-expanded="false" aria-controls="collapseExample"><h4 class="my-1" style="position: relative;bottom: 10px;">#{{m}}</h4></a>
                 </li>
               </ul>
             </div>

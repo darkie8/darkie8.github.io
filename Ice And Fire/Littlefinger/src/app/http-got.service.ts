@@ -11,18 +11,18 @@ declare var $: any;
 export class HttpGOTService {
   public GOTCarousel = [
     // tslint:disable-next-line:max-line-length
-    { desc: ' Welcome to the World Of GOT', pix: 'https://www.tatacliq.com/que/wp-content/uploads/2017/08/film-scores-as-epic-as-got-main-theme-featured.jpg', class: 'carousel-item px-sm-4 active' },
+    { desc: ' Welcome to the World Of GOT', pix: 'https://www.tatacliq.com/que/wp-content/uploads/2017/08/film-scores-as-epic-as-got-main-theme-featured.jpg', class: 'carousel-item px-2 active' },
     // tslint:disable-next-line:max-line-length
-    { desc: 'And A Song of Ice and Fire', pix: 'http://wikiofthrones.com/static/uploads/2016/09/book_covers_ipadpro10-pf-spgray_v1.jpg', class: 'carousel-item px-sm-3' },
+    { desc: 'And A Song of Ice and Fire', pix: 'http://wikiofthrones.com/static/uploads/2016/09/book_covers_ipadpro10-pf-spgray_v1.jpg', class: 'carousel-item px-2' },
     // tslint:disable-next-line:max-line-length
-    { desc: ' Welcome to the World Of GOT', pix: 'https://i.pinimg.com/originals/b0/d4/7c/b0d47c4f83b39622c58168d11abf05bb.jpg', class: 'carousel-item px-sm-3' },
-    { desc: 'And A Song of Ice and Fire', pix: 'https://i.imgur.com/YS0RAhc.jpg', class: 'carousel-item px-3' },
+    { desc: ' Welcome to the World Of GOT', pix: 'https://i.pinimg.com/originals/b0/d4/7c/b0d47c4f83b39622c58168d11abf05bb.jpg', class: 'carousel-item px-2' },
+    { desc: 'And A Song of Ice and Fire', pix: 'https://i.imgur.com/YS0RAhc.jpg', class: 'carousel-item px-2' },
     // tslint:disable-next-line:max-line-length
-    { desc: 'You Know Nothing, Jon Snow', pix: 'https://www.pinnacle.com/Cms_Data/Contents/Guest/Media/betting-articles/feature/game-of-thrones-hero.jpg', class: 'carousel-item px-sm-3' },
+    { desc: 'You Know Nothing, Jon Snow', pix: 'https://www.dailydot.com/wp-content/uploads/b7e/95/6e3cab9d4222c6cdc1fab528e9863730.jpg', class: 'carousel-item px-2' },
     // tslint:disable-next-line:max-line-length
-    { desc: 'And A Song of Ice and Fire', pix: 'http://i.imgur.com/TDjiA9e.png', class: 'carousel-item px-3' },
+    { desc: 'And A Song of Ice and Fire', pix: 'http://wikiofthrones.com/static/uploads/2017/01/Westeros.jpg', class: 'carousel-item px-2' },
     // tslint:disable-next-line:max-line-length
-    { desc: 'And A Song of Ice and Fire', pix: 'http://i.imgur.com/N7djS6X.jpg', class: 'carousel-item px-3' }
+    { desc: 'And A Song of Ice and Fire', pix: 'http://i.imgur.com/N7djS6X.jpg', class: 'carousel-item px-2' }
   ];
   private baseUrl = 'https://www.anapioficeandfire.com/api';
   private parm1 = 'books';

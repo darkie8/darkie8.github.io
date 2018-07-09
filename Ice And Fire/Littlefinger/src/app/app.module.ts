@@ -5,7 +5,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // http request
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+// interceptor to access CORS
+import { MyHttpInterceptor } from './my-http-interceptor';
 
 // http loader spinner
 import { NgHttpLoaderModule } from 'ng-http-loader';
@@ -41,7 +44,11 @@ import { HttpGOTService } from './http-got.service';
 
     ])
   ],
-  providers: [HttpClientModule, HttpGOTService],
+  providers: [HttpClientModule, HttpGOTService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: MyHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
