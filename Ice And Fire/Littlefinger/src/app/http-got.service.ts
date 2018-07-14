@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/zip';
 declare var $: any;
 @Injectable({
   providedIn: 'root'
@@ -66,5 +67,11 @@ export class HttpGOTService {
    */
   public individualAccesor(type, id) {
     return this.httpClient.get(`https://www.anapioficeandfire.com/api/${type}/${id}`, { responseType: 'json' });
+  }
+  /**
+   * tableComponent
+   */
+  public tableComponent(url) {
+    return this.httpClient.get(url, { responseType: 'json' });
   }
 }

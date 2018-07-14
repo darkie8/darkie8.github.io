@@ -9,21 +9,30 @@
       </li>
     </ul>
   </div>
-  <div class="card-body row">
+  <div class="card-body">
 
-    <div class="card col-4" style="width: 18rem;">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="card-columns row"  *ngIf="houses">
+      <div class="card col-sm-4 p-2">
+        <img *ngIf="houses.name.indexOf(' of') != -1;else different" class="card-img-top" src="https://awoiaf.westeros.org/thumb.php?f={{houses.name.slice(0,houses.name.indexOf(' of'))}}.svg&width=600&lang=en"
+          onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" alt="Card image cap">
+        <ng-template #different>
+          <img class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{houses.name}}.svg&width=600&lang=en"
+            style="padding: 12%;height: 32vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+        </ng-template>
       </div>
-    </div>
-
-    <div class="col-8">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="card col-sm-8">
+          <div class="table-responsive">
+            <table class="table table-hover text-capitalize">
+                <tbody class="w-100">
+                  <tr *ngFor="let x of houseKeys; let i=index">
+                    <td scope="row" style="width: 10vw !important;font-weight: bold !important;">{{x}}</td>
+                    <td style="text-align: left;overflow-x: scroll;" class="w-75">{{houseValues[i]}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        <a href="#" class="btn btn-primary mb-1">Go Back</a>
+      </div>
     </div>
 
   </div>
