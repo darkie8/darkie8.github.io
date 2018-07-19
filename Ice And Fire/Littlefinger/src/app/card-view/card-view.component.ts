@@ -10,20 +10,32 @@ import { delay } from '../../../node_modules/rxjs/operators';
 })
 export class CardViewComponent implements OnInit {
   public houses: any;
-  public characters: any;
+  public type: any;
+  public id: any;
   public swornMembers = [];
   public houseKeys: any;
   public houseValues: any;
-  public overLord: any;
+  public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
+    'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
+    'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
+    'https://awoiaf.westeros.org/images/a/a3/AFeastForCrows.jpg',
+    'https://awoiaf.westeros.org/images/0/05/Hedgeknight.jpg',
+    'https://awoiaf.westeros.org/images/1/17/TheSwornSword.jpg',
+    'https://ic.pics.livejournal.com/grrm/7059164/406278/406278_900.jpg',
+    'https://awoiaf.westeros.org/images/archive/7/79/20110717040941%21ADanceWithDragons.jpg',
+    'https://img00.deviantart.net/99f5/i/2013/338/6/f/the_princess_and_the_queen_book_cover_by_nateblunt-d6wqf76.jpg',
+    'https://awoiaf.westeros.org/images/4/45/Rouges_novella.jpg',
+    'https://awoiaf.westeros.org/images/3/35/World_of_ice_and_fire.JPG',
+    'https://awoiaf.westeros.org/images/5/5e/A_Knight_of_the_Seven_Kingdoms.jpg'];
   constructor(private routeEnd: ActivatedRoute, private router: Router,
     private individualContent: HttpGOTService) { }
 
 
   ngOnInit() {
-    const id = this.routeEnd.snapshot.paramMap.get('id');
-    const type = this.routeEnd.snapshot.paramMap.get('type');
-    console.log(`https://www.anapioficeandfire.com/api/${type}/${id}`);
-    this.individualContent.individualAccesor(type, id).subscribe(
+    this.id = this.routeEnd.snapshot.paramMap.get('id');
+    this.type = this.routeEnd.snapshot.paramMap.get('type');
+    console.log(`https://www.anapioficeandfire.com/api/${this.type}/${this.id}`);
+    this.individualContent.individualAccesor(this.type, this.id).subscribe(
       data => {
         console.log(data);
         this.houses = data;
