@@ -10,6 +10,7 @@ import { delay } from '../../../node_modules/rxjs/operators';
 })
 export class CardViewComponent implements OnInit {
   public houses: any;
+  public characters: any;
   public swornMembers = [];
   public houseKeys: any;
   public houseValues: any;
@@ -55,6 +56,13 @@ export class CardViewComponent implements OnInit {
         sigma(this.houses.heir);
         sigma(this.houses.overlord);
         sigma(this.houses.founder);
+        sigma(this.houses.allegiances);
+        sigma(this.houses.books);
+        sigma(this.houses.father);
+        sigma(this.houses.mother);
+        sigma(this.houses.povBooks);
+        sigma(this.houses.povCharacters);
+        sigma(this.houses.characters);
       },
       error => {
         console.log('error accessing');
