@@ -9,12 +9,11 @@ import { delay } from '../../../node_modules/rxjs/operators';
   styleUrls: ['./card-view.component.css']
 })
 export class CardViewComponent implements OnInit {
-  public houses: any;
+  public mainObject: any;
   public type: any;
   public id: any;
-  public swornMembers = [];
-  public houseKeys: any;
-  public houseValues: any;
+  public mainObjectKeys: any;
+  public mainObjectValues: any;
   public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
     'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
     'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
@@ -38,12 +37,12 @@ export class CardViewComponent implements OnInit {
     this.individualContent.individualAccesor(this.type, this.id).subscribe(
       data => {
         console.log(data);
-        this.houses = data;
-        this.houseKeys = Object.keys(this.houses);
-        this.houseKeys.splice(0, 1);
-        console.log(this.houseKeys);
-        this.houseValues = Object.values(this.houses);
-        this.houseValues.splice(0, 1);
+        this.mainObject = data;
+        this.mainObjectKeys = Object.keys(this.mainObject);
+        this.mainObjectKeys.splice(0, 1);
+        console.log(this.mainObjectKeys);
+        this.mainObjectValues = Object.values(this.mainObject);
+        this.mainObjectValues.splice(0, 1);
         // tslint:disable-next-line:prefer-const
         let sigma = (need) => {
           // tslint:disable-next-line:prefer-const
@@ -53,8 +52,8 @@ export class CardViewComponent implements OnInit {
               data1 => {
                 // tslint:disable-next-line:prefer-const
                 let su = data1.map((obj: any) => obj.name);
-                this.houseValues.splice(this.houseValues.indexOf(need), 1, su);
-                console.log(this.houseValues);
+                this.mainObjectValues.splice(this.mainObjectValues.indexOf(need), 1, su);
+                console.log(this.mainObjectValues);
               },
               error => {
                 console.log('error fetching');
@@ -62,19 +61,19 @@ export class CardViewComponent implements OnInit {
               }
             );
         };
-        sigma(this.houses.swornMembers);
-        sigma(this.houses.cadetBranches);
-        sigma(this.houses.currentLord);
-        sigma(this.houses.heir);
-        sigma(this.houses.overlord);
-        sigma(this.houses.founder);
-        sigma(this.houses.allegiances);
-        sigma(this.houses.books);
-        sigma(this.houses.father);
-        sigma(this.houses.mother);
-        sigma(this.houses.povBooks);
-        sigma(this.houses.povCharacters);
-        sigma(this.houses.characters);
+        sigma(this.mainObject.swornMembers);
+        sigma(this.mainObject.cadetBranches);
+        sigma(this.mainObject.currentLord);
+        sigma(this.mainObject.heir);
+        sigma(this.mainObject.overlord);
+        sigma(this.mainObject.founder);
+        sigma(this.mainObject.allegiances);
+        sigma(this.mainObject.books);
+        sigma(this.mainObject.father);
+        sigma(this.mainObject.mother);
+        sigma(this.mainObject.povBooks);
+        sigma(this.mainObject.povCharacters);
+        sigma(this.mainObject.characters);
       },
       error => {
         console.log('error accessing');

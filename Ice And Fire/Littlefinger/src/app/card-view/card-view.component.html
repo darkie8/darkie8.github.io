@@ -11,22 +11,22 @@
   </div>
   <div class="card-body">
 
-    <div class="card-columns row"  *ngIf="houses">
+    <div class="card-columns row"  *ngIf="mainObject">
       <div class="card col-sm-4 p-2">
         <ng-template [ngIf]="type == 'houses'">
-          <img *ngIf="houses.name.indexOf(' of') != -1;else different" class="card-img-top bg-success  pos border border-secondary {{type}}" src="https://awoiaf.westeros.org/thumb.php?f={{houses.name.slice(0,houses.name.indexOf(' of'))}}.svg&width=600&lang=en"
+          <img *ngIf="mainObject.name.indexOf(' of') != -1;else different" class="card-img-top pos {{type}}" src="https://awoiaf.westeros.org/thumb.php?f={{mainObject.name.slice(0,mainObject.name.indexOf(' of'))}}.svg&width=600&lang=en"
             onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" alt="Card image cap">
           <ng-template #different>
-            <img class="card-img-top bg-success  pos border border-secondary {{type}}" src="https://awoiaf.westeros.org/thumb.php?f={{houses.name}}.svg&width=600&lang=en"
+            <img class="card-img-top bg-success  pos border border-secondary {{type}}" src="https://awoiaf.westeros.org/thumb.php?f={{mainObject.name}}.svg&width=600&lang=en"
               style="padding: 12%;height: 32vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
           </ng-template>
         </ng-template>
         <ng-template [ngIf]="type == 'characters'">
-          <img class="card-img-top pos {{houses.gender}}" src='https://api.got.show/misc/images/characters/{{houses.name}}.jpeg'
-          style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top pos Male')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
+          <img class="card-img-top pos {{mainObject.gender}} {{type}}" src='https://api.got.show/misc/images/characters/{{mainObject.name}}.jpeg'
+          style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top pos Male characters')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
         </ng-template>
         <ng-template [ngIf]="type == 'books'">
-            <img id='id{{id}}' class="card-img-top pos" src={{urlPix[id]}}
+            <img id='id{{id}}' class="card-img-top pos {{type}}" src={{urlPix[id]}}
             style="padding: 12%;height: 40vw;">
         </ng-template>
       </div>
@@ -34,9 +34,9 @@
           <div class="table-responsive">
             <table class="table table-hover text-capitalize">
                 <tbody class="w-100">
-                  <tr *ngFor="let x of houseKeys; let i=index">
+                  <tr *ngFor="let x of mainObjectKeys; let i=index">
                     <td scope="row" style="width: 10vw !important;font-weight: bold !important;">{{x}}</td>
-                    <td style="text-align: left;overflow-x: scroll;" class="w-75">{{houseValues[i]}}</td>
+                    <td style="text-align: left;overflow-x: scroll;" class="w-75">{{mainObjectValues[i]}}</td>
                   </tr>
                 </tbody>
               </table>

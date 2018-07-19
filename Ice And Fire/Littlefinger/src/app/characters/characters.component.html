@@ -8,14 +8,16 @@
 
       <div class="card-columns mt-2">
         <div class="card" id="card{{x.name.charAt(0)}}{{i}}" *ngFor="let x of sortedProduct[n];index as i"> 
-          <img id='id{{i}}' class="card-img-top pos {{x.gender}}" src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
-            style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top pos Male')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
-          <div class="card-body">
-            <h5 class="card-title text-center">Character</h5>
-          </div>
-          <div class="card-footer text-center" style="height: 75px !important;">
-            <small class="text-center">{{sortedNames[n][i]}}</small>
-          </div>
+            <a [routerLink]="['/element','characters',x.url.slice(49)]" style="color: black !important;">
+            <img id='id{{i}}' class="card-img-top pos {{x.gender}}" src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
+              style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top pos Male')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
+            <div class="card-body">
+              <h5 class="card-title text-center">Character</h5>
+            </div>
+            <div class="card-footer text-center" style="height: 75px !important;">
+              <small class="text-center">{{sortedNames[n][i]}}</small>
+            </div>
+          </a>
         </div>
       </div>
     </div>

@@ -7,32 +7,31 @@
       </div>
       <div class="card-columns mt-2">
         <div class="card" id="card{{x.name.charAt(6)}}{{i}}" *ngFor="let x of sortedProduct[n];index as i">
-
-
-
-          <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
-            <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
-              onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 26vw;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Noble House</h5>
-            </div>
-            <div class="card-footer text-center">
-              <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small><br>
-              <small class="text-center">of {{x.region}}</small>
-            </div>
-          </ng-template>
-          <ng-template #different>
-            <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
-              style="padding: 12%;height: 26vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
-
-            <div class="card-body">
-              <h5 class="card-title text-center">Noble House</h5>
-            </div>
-            <div class="card-footer text-center">
-              <small class="text-center">{{x.name}}</small><br>
-              <small class="text-center">of {{x.region}}</small>
-            </div>
-          </ng-template>
+            <a [routerLink]="['/element','houses',x.url.slice(45)]" style="color: black !important;">
+            <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
+              <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+                onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 26vw;">
+              <div class="card-body">
+                <h5 class="card-title text-center">Noble House</h5>
+              </div>
+              <div class="card-footer text-center">
+                <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small><br>
+                <small class="text-center">of {{x.region}}</small>
+              </div>
+            </ng-template>
+            <ng-template #different>
+              <img id='id{{i}}' class="card-img-top pos" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
+                style="padding: 12%;height: 26vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+  
+              <div class="card-body">
+                <h5 class="card-title text-center">Noble House</h5>
+              </div>
+              <div class="card-footer text-center">
+                <small class="text-center">{{x.name}}</small><br>
+                <small class="text-center">of {{x.region}}</small>
+              </div>
+            </ng-template>
+          </a>
         </div>
 
 

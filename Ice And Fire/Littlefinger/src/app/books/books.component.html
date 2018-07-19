@@ -8,14 +8,16 @@
 
       <div class="card-columns mt-2">
         <div class="card" id="card{{x.name.charAt(0)}}{{i}}" *ngFor="let x of sortedProduct[n];index as i"> 
-          <img id='id{{i}}' class="card-img-top pos" src={{urlPix[n][i]}}
-            style="padding: 12%;height: 32vw;">
-          <div class="card-body">
-            <h5 class="card-title text-center">Books</h5>
-          </div>
-          <div class="card-footer text-center">
-            <small class="text-center">{{x.name}}</small>
-          </div>
+            <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
+            <img id='id{{i}}' class="card-img-top pos" src={{urlPix[n][i]}}
+              style="padding: 12%;height: 32vw;">
+            <div class="card-body">
+              <h5 class="card-title text-center">Books</h5>
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-center">{{x.name}}</small>
+            </div>
+          </a>
   
   
   

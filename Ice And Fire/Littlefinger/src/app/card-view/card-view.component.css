@@ -1,5 +1,11 @@
 @media screen and (max-width: 575px) {
-    .pos {
+    .houses {
       height: 90vw !important;
+    }
+    .books{
+      height: 120vw !important;
+    }
+    .characters{
+      height: 100vw !important;
     }
   }
