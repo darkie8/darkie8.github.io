@@ -25,87 +25,99 @@
     <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
-          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Infos</a>
+          <a class="btn btn-primary collapsed" data-toggle="collapse"
+          role="button" aria-expanded="true" data-target=".multi-collapse" aria-controls="collapseExample1">Default Data</a>
         </li>
-        <li class="nav-item mx-2">
-          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Search</a>
+        <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+              </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="w-100 btn text-left" role="button" data-toggle="modal" data-target="#exampleModalLong1">Books</a>
+              <div class="dropdown-divider"></div>
+              <a class="w-100 btn text-left"  role="button" data-toggle="modal" data-target="#exampleModalLong2">Houses</a>
+              <div class="dropdown-divider"></div>
+              <a class="w-100 btn text-left" role="button" data-toggle="modal" data-target="#exampleModalLong3">Characters</a>
+            </div>
         </li>
       </ul>
     </div>
-    <div class="card-body" style="background-image: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/08/07/05/game-of-thrones-spoils.jpeg);background-size: contain;">
-
-      <h5 class="card-title">Special title treatment</h5>
-      <div id="crude{{n}}" class=" border rounded mb-4 p-2" *ngFor="let m of sortedAlphabets;index as n" style="background-size: 40%;background-image: url(https://www.planwallpaper.com/static/images/cool-background.jpg)">
-        <div class="card-header rounded my-0 py-0">
-          <ul class="nav nav-pills card-header-pills" style="height: 30px;">
-            <li class="nav-item">
-              <a class="btn btn-link text-light" style="height: 30px;" data-toggle="collapse" href="#collapseExample1{{n}}" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                <h4 class="my-1" style="position: relative;bottom: 10px;">#{{m}}</h4>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-columns mt-2 p-lg-4 collapse" id="collapseExample1{{n}}">
-          <div class="card" *ngFor="let x of sortedProduct[n];index as i">
-            <div *ngIf="x.gender">
-              <a [routerLink]="['/element','characters',x.url.slice(49)]" style="color: black !important;">
-                <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
-                  style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top bg-dark  pos Male border border-primary ')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Character</h5>
-                </div>
-                <div class="card-footer text-center bg-secondary" style="height: 75px !important;">
-                  
-                    <small class="text-center">{{sortedNames[n][i]}}</small>
-                  
-                </div>
-              </a>
-            </div>
-            <div *ngIf="x.region">
-              <a [routerLink]="['/element','houses',x.url.slice(45)]" style="color: black !important;">
-                <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
-                  <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
-                    onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 32vw;">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">Noble House</h5>
-                  </div>
-                  <div class="card-footer text-center" style="height: 75px !important;">
-                    <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small>
-                    <br>
-                    <small class="text-center">of {{x.region}}</small>
-                  </div>
-                </ng-template>
-                <ng-template #different>
-                  <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
-                    style="padding: 12%;height: 32vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+    <div class="collapse multi-collapse show" id="collapseExample2">
+      <div class="card-body"  style="background-image: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/08/07/05/game-of-thrones-spoils.jpeg);background-size: contain;">
   
+        <h5 class="card-title">Special title treatment</h5>
+        <div id="crude{{n}}" class=" border rounded mb-4 p-2" *ngFor="let m of sortedAlphabets;index as n" style="background-size: 40%;background-image: url(https://www.planwallpaper.com/static/images/cool-background.jpg)">
+          <div class="card-header rounded my-0 py-0">
+            <ul class="nav nav-pills card-header-pills" style="height: 30px;">
+              <li class="nav-item">
+                <a class="btn btn-link text-light" style="height: 30px;" data-toggle="collapse" href="#collapseExample1{{n}}" role="button"
+                  aria-expanded="false" aria-controls="collapseExample">
+                  <h4 class="my-1" style="position: relative;bottom: 10px;">#{{m}}</h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-columns mt-2 p-lg-4 collapse" id="collapseExample1{{n}}">
+            <div class="card" *ngFor="let x of sortedProduct[n];index as i">
+              <div *ngIf="x.gender">
+                <a [routerLink]="['/element','characters',x.url.slice(49)]" style="color: black !important;">
+                  <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
+                    style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top bg-dark  pos Male border border-primary ')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
                   <div class="card-body">
-                    <h5 class="card-title text-center">Noble House</h5>
+                    <h5 class="card-title text-center">Character</h5>
+                  </div>
+                  <div class="card-footer text-center bg-secondary" style="height: 75px !important;">
+                    
+                      <small class="text-center">{{sortedNames[n][i]}}</small>
+                    
+                  </div>
+                </a>
+              </div>
+              <div *ngIf="x.region">
+                <a [routerLink]="['/element','houses',x.url.slice(45)]" style="color: black !important;">
+                  <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
+                    <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+                      onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 32vw;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Noble House</h5>
+                    </div>
+                    <div class="card-footer text-center" style="height: 75px !important;">
+                      <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small>
+                      <br>
+                      <small class="text-center">of {{x.region}}</small>
+                    </div>
+                  </ng-template>
+                  <ng-template #different>
+                    <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
+                      style="padding: 12%;height: 32vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+    
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Noble House</h5>
+                    </div>
+                    <div class="card-footer text-center" style="height: 75px !important;">
+                      <small class="text-center">{{x.name}}</small>
+                      <br>
+                      <small class="text-center">of {{x.region}}</small>
+                    </div>
+                  </ng-template>
+                </a>
+              </div>
+              <div *ngIf="x.isbn">
+                <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
+                  <img id='id{{i}}' class="card-img-top bg-warning  pos border border-info" src={{imgBarray[x.name]}} style="padding: 12%;height: 32vw;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Books</h5>
                   </div>
                   <div class="card-footer text-center" style="height: 75px !important;">
                     <small class="text-center">{{x.name}}</small>
-                    <br>
-                    <small class="text-center">of {{x.region}}</small>
                   </div>
-                </ng-template>
-              </a>
-            </div>
-            <div *ngIf="x.isbn">
-              <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
-                <img id='id{{i}}' class="card-img-top bg-warning  pos border border-info" src={{imgBarray[x.name]}} style="padding: 12%;height: 32vw;">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Books</h5>
-                </div>
-                <div class="card-footer text-center" style="height: 75px !important;">
-                  <small class="text-center">{{x.name}}</small>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
 </div>

@@ -69,6 +69,12 @@ export class HttpGOTService {
     return this.httpClient.get(`https://www.anapioficeandfire.com/api/${type}/${id}`, { responseType: 'json' });
   }
   /**
+   * filterMethod
+   */
+  public filterMethod(type, id) {
+    return this.httpClient.get(`https://www.anapioficeandfire.com/api/${type}?${id}`, { responseType: 'json' });
+  }
+  /**
    * tableComponent
    */
   public tableComponent(url) {

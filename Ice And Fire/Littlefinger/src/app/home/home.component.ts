@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   public sortedAlphabets: any;
   public GOTCarousel: any;
   public imgBarray = {};
+  public showProductB: any;
   public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
     'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
     'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
@@ -37,7 +38,6 @@ export class HomeComponent implements OnInit {
     'https://awoiaf.westeros.org/images/3/35/World_of_ice_and_fire.JPG'];
   constructor(public homeService: HttpGOTService) {
   }
-
   ngOnInit() {
     console.log(this.homeService.pixcar());
     this.GOTCarousel = this.homeService.pixcar();

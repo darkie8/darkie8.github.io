@@ -26,7 +26,7 @@
           style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top pos Male characters')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
         </ng-template>
         <ng-template [ngIf]="type == 'books'">
-            <img id='id{{id}}' class="card-img-top pos {{type}}" src={{urlPix[id]}}
+            <img id='id{{id}}' class="card-img-top pos {{type}}" src={{urlPix[id-1]}}
             style="padding: 12%;height: 40vw;">
         </ng-template>
       </div>

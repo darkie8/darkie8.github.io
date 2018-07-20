@@ -1,45 +1,214 @@
- <nav class="navbar navbar-expand-md navbar-light bg-light" style="position: fixed;width: 100%;z-index: 3;">
-          <a class="navbar-brand" href="#">
-              <img src="https://i.pinimg.com/736x/14/7a/c9/147ac912d7863445c0e71a13a57a1a6c--silhouette-files-silhouette-cameo.jpg" width="50" height="40" class="d-inline-block align-top border border-dark rounded" alt="GOT">
-            </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Wikipedia
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Game_of_Thrones">Game of Thrones</a>
-                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/A_Song_of_Ice_and_Fire">A Song of Ice and Fire</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="http://www.georgerrmartin.com/book-category/">OW of SIF</a>
-                    <a class="dropdown-item" href="https://www.hbo.com/game-of-thrones">OW of GOT</a>
-                  </div>
-                </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Info
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" [routerLink]="['/houses']">Houses</a>
-                  <a class="dropdown-item" [routerLink]="['/characters']">Characters</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" [routerLink]="['/books']">Books</a>
-                </div>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<nav class="navbar navbar-expand-md navbar-light bg-light" style="position: fixed;width: 100%;z-index: 3;">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.pinimg.com/736x/14/7a/c9/147ac912d7863445c0e71a13a57a1a6c--silhouette-files-silhouette-cameo.jpg" width="50"
+      height="40" class="d-inline-block align-top border border-dark rounded" alt="GOT">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Wikipedia
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Game_of_Thrones">Game of Thrones</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/A_Song_of_Ice_and_Fire">A Song of Ice and Fire</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="http://www.georgerrmartin.com/book-category/">OW of SIF</a>
+          <a class="dropdown-item" href="https://www.hbo.com/game-of-thrones">OW of GOT</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Info
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/houses']">Houses</a>
+          <a class="dropdown-item" [routerLink]="['/characters']">Characters</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/books']">Books</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<spinner></spinner>
+<div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+  style="z-index: 1051 !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Books</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="getIt()" #form01>
+          <div class="form-group px-3">
+            <label>
+              <h3>Parameters</h3>
+            </label>
+            <br>
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name" #name1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="name1.valid || name1.pristine">
+              Name is required!!
+            </div>
           </div>
-        </nav>
-        <spinner></spinner>
-        <router-outlet></router-outlet>
+          <div class="form-group px-3">
+            <label>From-Release-Date</label>
+            <input type="text" class="form-control" required id="fromReleaseDate" [(ngModel)]="fromReleaseDate" name="fromReleaseDate"
+              #fromReleaseDate1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="fromReleaseDate1.valid || fromReleaseDate1.pristine">
+              From-Release-Date is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>To-Release-Date</label>
+            <input type="text" class="form-control" required id="toReleaseDate" [(ngModel)]="toReleaseDate" name="toReleaseDate" #toReleaseDate1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="toReleaseDate1.valid || toReleaseDate1.pristine">
+              To-Release-Date is required!!
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit" role="button" aria-expanded="true">Submit</button>
+        </form>
+        <div *ngIf="showProductB" class="card-columns mt-2 p-1 p-lg-4">
+          <div class="card" *ngFor="let x of showProductB;index as i" data-dismiss="modal">
+            <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
+              <img id='id{{i}}' class="spec card-img-top bg-warning  pos border border-info" src={{urlPix[x.url.slice(44)-1]}} style="padding: 12%;height: 25vw;">
+              <div class="card-body">
+                <h5 class="card-title text-center spec">Books</h5>
+              </div>
+              <div class="card-footer text-center spec" style="height: 75px !important;">
+                <small class="text-center spec">{{x.name}}</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--next filter-->
+<div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+  style="z-index: 1051 !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Books</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="getIt1()" #form01>
+          <div class="form-group px-3">
+            <label>
+              <h3>Parameters</h3>
+            </label>
+            <br>
+            <label>Name</label>
+            <input type="text" class="form-control" id="nameh" required [(ngModel)]="nameh" name="nameh" #nameh1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="nameh1.valid || nameh1.pristine">
+              Name is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Region</label>
+            <input type="text" class="form-control" required id="region" [(ngModel)]="region" name="region"
+              #region1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="region1.valid || region1.pristine">
+              region is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Words</label>
+            <input type="text" class="form-control" required id="words" [(ngModel)]="words" name="words" #words1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="words1.valid || words1.pristine">
+              Words is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Has-Words</label>
+            <input type="text" class="form-control" required id="hasWords" [(ngModel)]="words" name="hasWords" #hasWords1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="hasWords1.valid || hasWords1.pristine">
+              Has-Words is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Has-Title</label>
+            <input type="text" class="form-control" required id="hasTitle" placeholder="boolean" [(ngModel)]="hasTitle" name="hasTitle" #hasTitle1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="hasTitle1.valid || hasTitle1.pristine">
+              Has-Title is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Has-Seats</label>
+            <input type="text" class="form-control" required id="hasSeats" placeholder="boolean" [(ngModel)]="hasSeats" name="hasSeats" #hasSeats1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="hasSeats1.valid || hasSeats1.pristine">
+              Has-Seats is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Has-Died-Out</label>
+            <input type="text" class="form-control" required id="hasDiedOut" placeholder="boolean" [(ngModel)]="hasDiedOut" name="hasDiedOut" #hasDiedOut1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="hasDiedOut1.valid || hasDiedOut1.pristine">
+              Has-Died-Out is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Has-Ancestral-Weapons</label>
+            <input type="text" class="form-control" required id="hasAncestralWeapons" placeholder="boolean" [(ngModel)]="hasAncestralWeapons" name="hasAncestralWeapons" #hasAncestralWeapons1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="hasAncestralWeapons1.valid || hasAncestralWeapons1.pristine">
+              Has-Ancestral-Weapons is required!!
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit" role="button" aria-expanded="true">Submit</button>
+        </form>
+        <div *ngIf="showProductB" class="card-columns mt-2 p-1 p-lg-4">
+          <div class="card" *ngFor="let x of showProductB;index as i" data-dismiss="modal">
+            <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
+              <img id='id{{i}}' class="spec card-img-top bg-warning  pos border border-info" src={{urlPix[x.url.slice(44)-1]}} style="padding: 12%;height: 25vw;">
+              <div class="card-body">
+                <h5 class="card-title text-center spec">Books</h5>
+              </div>
+              <div class="card-footer text-center spec" style="height: 75px !important;">
+                <small class="text-center spec">{{x.name}}</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

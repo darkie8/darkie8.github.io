@@ -22,6 +22,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
 import { HttpGOTService } from './http-got.service';
 import { CardViewComponent } from './card-view/card-view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CardViewComponent } from './card-view/card-view.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     FontAwesomeModule,
     NgHttpLoaderModule,
