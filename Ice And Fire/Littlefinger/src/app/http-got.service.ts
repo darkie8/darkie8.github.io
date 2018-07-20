@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/zip';
+import { Router, NavigationEnd } from '../../node_modules/@angular/router';
+import { filter } from '../../node_modules/rxjs/operators';
 declare var $: any;
 @Injectable({
   providedIn: 'root'
@@ -31,7 +33,8 @@ export class HttpGOTService {
   private parm3 = 'houses';
   private baseUrl1 = 'https://api.got.show/api/';
   public beta: any;
-  constructor(private httpClient: HttpClient) {
+  private history = [];
+  constructor(private httpClient: HttpClient, private router: Router) {
   }
   public pixcar() {
     return this.GOTCarousel;
@@ -79,5 +82,21 @@ export class HttpGOTService {
    */
   public tableComponent(url) {
     return this.httpClient.get(url, { responseType: 'json' });
+  }
+
+  public loadRouting(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(({urlAfterRedirects}: NavigationEnd) => {
+        this.history = [...this.history, urlAfterRedirects];
+      });
+  }
+
+  public getHistory(): string[] {
+    return this.history;
+  }
+
+  public getPreviousUrl(): string {
+    return this.history[this.history.length - 2] || '/home';
   }
 }

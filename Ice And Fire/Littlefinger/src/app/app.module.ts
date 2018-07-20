@@ -24,6 +24,10 @@ import { HttpGOTService } from './http-got.service';
 import { CardViewComponent } from './card-view/card-view.component';
 import { FormsModule } from '@angular/forms';
 
+// scroll
+import { GoTopButtonModule } from 'ng2-go-top-button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +50,9 @@ import { FormsModule } from '@angular/forms';
       { path: 'books', component: BooksComponent },
       { path: 'characters', component: CharactersComponent },
       { path: 'element/:type/:id', component: CardViewComponent }
-    ])
+    ]),
+    GoTopButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClientModule, HttpGOTService, {
     provide: HTTP_INTERCEPTORS,

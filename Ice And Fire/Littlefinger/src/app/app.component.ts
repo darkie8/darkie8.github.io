@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     'https://awoiaf.westeros.org/images/3/35/World_of_ice_and_fire.JPG',
     'https://awoiaf.westeros.org/images/5/5e/A_Knight_of_the_Seven_Kingdoms.jpg'];
   constructor(public appService: HttpGOTService) {
+    appService.loadRouting();
   }
   public name = '';
   public fromReleaseDate = '';
@@ -96,15 +97,14 @@ export class AppComponent implements OnInit {
     );
   }
   public getIt2() {
-
     const namec = this.namec;
     const gender = this.gender;
     const culture = this.culture;
     const born = this.born;
     const died = this.died;
     const isAlive = this.isAlive;
-    const omega1 = `name=${namec}&region=${gender}&words=${born}
-    &hasWords=${died}&hastitles=${culture}&hasSeats=${isAlive}`;
+    const omega1 = `name=${namec}&gender=${gender}&born=${born}
+    &died=${died}&culture=${culture}&isAlive=${isAlive}`;
     this.appService.filterMethod(this.type2, omega1).subscribe(
       data => {
         console.log(data);
@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
     );
   }
   ngOnInit() {
-
+    $('#exampleModalCenter').modal('show')
   }
 
 }

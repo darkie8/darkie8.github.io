@@ -14,6 +14,7 @@ export class CardViewComponent implements OnInit {
   public id: any;
   public mainObjectKeys: any;
   public mainObjectValues: any;
+  previouUrl: any;
   public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
     'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
     'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
@@ -27,10 +28,14 @@ export class CardViewComponent implements OnInit {
     'https://awoiaf.westeros.org/images/3/35/World_of_ice_and_fire.JPG',
     'https://awoiaf.westeros.org/images/5/5e/A_Knight_of_the_Seven_Kingdoms.jpg'];
   constructor(private routeEnd: ActivatedRoute, private router: Router,
-    private individualContent: HttpGOTService) { }
+    private individualContent: HttpGOTService) {
+     }
 
 
   ngOnInit() {
+    this.previouUrl = this.individualContent.getPreviousUrl();
+    console.log(this.individualContent.getHistory());
+    console.log(this.individualContent.getPreviousUrl());
     this.id = this.routeEnd.snapshot.paramMap.get('id');
     this.type = this.routeEnd.snapshot.paramMap.get('type');
     console.log(`https://www.anapioficeandfire.com/api/${this.type}/${this.id}`);
