@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
     );
   }
   ngOnInit() {
-    $('#exampleModalCenter').modal('show')
+    $('#exampleModalCenter').modal('show');
   }
 
 }
