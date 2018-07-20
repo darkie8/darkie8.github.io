@@ -30,7 +30,7 @@
         </li>
         <li class="nav-item dropdown mx-2">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              
+              FilterOption
               </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="w-100 btn text-left" role="button" data-toggle="modal" data-target="#exampleModalLong1">Books</a>
@@ -61,7 +61,7 @@
             <div class="card" *ngFor="let x of sortedProduct[n];index as i">
               <div *ngIf="x.gender">
                 <a [routerLink]="['/element','characters',x.url.slice(49)]" style="color: black !important;">
-                  <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{sortedNames[n][i]}}.jpeg'
+                  <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{sortedNames[n][i].replace(" ","_")}}.jpeg'
                     style="padding: 12%;height: 32vw;" onerror="this.src=(this.className == 'card-img-top bg-dark  pos Male border border-primary ')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
                   <div class="card-body">
                     <h5 class="card-title text-center">Character</h5>

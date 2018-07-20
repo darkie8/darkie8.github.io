@@ -13,6 +13,8 @@ $('.spec').click(() => {
 export class AppComponent implements OnInit {
   public showProductB: any;
   public showProductH: any;
+  public showProductC: any;
+  public namesOfCharacters: any;
   public urlPix = ['https://awoiaf.westeros.org/images/9/93/AGameOfThrones.jpg',
     'https://awoiaf.westeros.org/images/3/39/AClashOfKings.jpg',
     'https://awoiaf.westeros.org/images/2/24/AStormOfSwords.jpg',
@@ -28,17 +30,25 @@ export class AppComponent implements OnInit {
   constructor(public appService: HttpGOTService) {
   }
   public name = '';
-  public fromReleaseDate: any;
-  public toReleaseDate: any;
-  nameh: any;
-  region: any;
-  words: any;
-  hasWords: any;
-  hasTitles: any;
-  hasSeats: any;
-  hasDiedOut: any;
-  hasAncestralWeapons: any;
+  public fromReleaseDate = '';
+  public toReleaseDate = '';
+  public nameh = '';
+  public region = '';
+  public words = '';
+  public hasWords = '';
+  public hasTitles = '';
+  public hasSeats = '';
+  public hasDiedOut = '';
+  public hasAncestralWeapons = '';
+  namec = '';
+  gender = '';
+  culture = '';
+  born = '';
+  died = '';
+  isAlive = '';
   type = 'books';
+  type1 = 'houses';
+  type2 = 'characters';
   /**
    * getIt
    */
@@ -62,19 +72,19 @@ export class AppComponent implements OnInit {
    * getIt1
    */
   public getIt1() {
-    const house = {
-      name: this.nameh,
-      region: this.region,
-      words: this.words,
-      hasWords: this.hasWords,
-      hasTitles: this.hasTitles,
-      hasSeats: this.hasSeats,
-      hasDiedOut: this.hasDiedOut,
-      hasAncestralWeapons: this.hasAncestralWeapons
-    };
-    this.appService.filterMethod('houses', `name=${house.name}&region=${house.region}&words=${house.words}
-    &hasWords=${house.hasWords}&hastitles=${house.hasTitles}&hasSeats=${house.hasSeats}&hasDiedout=${house.hasDiedOut}
-    &hasAncestralWeapons=${house.hasAncestralWeapons}`).subscribe(
+
+    const nameh = this.nameh;
+    const region = this.region;
+    const words = this.words;
+    const hasWords = this.hasWords;
+    const hasTitles = this.hasTitles;
+    const hasSeats = this.hasSeats;
+    const hasDiedOut = this.hasDiedOut;
+    const hasAncestralWeapons = this.hasAncestralWeapons;
+    const omega = `name=${nameh}&region=${region}&words=${words}
+    &hasWords=${hasWords}&hastitles=${hasTitles}&hasSeats=${hasSeats}&hasDiedout=${hasDiedOut}
+    &hasAncestralWeapons=${hasAncestralWeapons}`;
+    this.appService.filterMethod(this.type1, omega).subscribe(
       data => {
         console.log(data);
         this.showProductH = data;
@@ -83,7 +93,31 @@ export class AppComponent implements OnInit {
         console.log('error');
 
       }
-      );
+    );
+  }
+  public getIt2() {
+
+    const namec = this.namec;
+    const gender = this.gender;
+    const culture = this.culture;
+    const born = this.born;
+    const died = this.died;
+    const isAlive = this.isAlive;
+    const omega1 = `name=${namec}&region=${gender}&words=${born}
+    &hasWords=${died}&hastitles=${culture}&hasSeats=${isAlive}`;
+    this.appService.filterMethod(this.type2, omega1).subscribe(
+      data => {
+        console.log(data);
+        this.showProductC = data;
+        console.log(this.showProductC);
+        this.namesOfCharacters = this.showProductC.map(obj => (obj.name !== '') ? obj.name : obj.aliases[0]);
+        console.log(this.namesOfCharacters);
+      },
+      error => {
+        console.log('error');
+
+      }
+    );
   }
   ngOnInit() {
 

@@ -66,7 +66,7 @@
             </label>
             <br>
             <label>Name</label>
-            <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name" #name1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <input type="text" class="form-control" id="name" required [(ngModel)]="name" placeholder="eg: a game of thrones" name="name" #name1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="name1.valid || name1.pristine">
               Name is required!!
             </div>
@@ -74,7 +74,7 @@
           <div class="form-group px-3">
             <label>From-Release-Date</label>
             <input type="text" class="form-control" required id="fromReleaseDate" [(ngModel)]="fromReleaseDate" name="fromReleaseDate"
-              #fromReleaseDate1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+              #fromReleaseDate1="ngModel" [ngModelOptions]="{updateOn: 'submit'}" placeholder="yyyy-mm-dd">
             <div class="alert alert-danger" [hidden]="fromReleaseDate1.valid || fromReleaseDate1.pristine">
               From-Release-Date is required!!
             </div>
@@ -82,7 +82,7 @@
           <div class="form-group px-3">
             <label>To-Release-Date</label>
             <input type="text" class="form-control" required id="toReleaseDate" [(ngModel)]="toReleaseDate" name="toReleaseDate" #toReleaseDate1="ngModel"
-              [ngModelOptions]="{updateOn: 'submit'}">
+              [ngModelOptions]="{updateOn: 'submit'}" placeholder="yyyy-mm-dd">
             <div class="alert alert-danger" [hidden]="toReleaseDate1.valid || toReleaseDate1.pristine">
               To-Release-Date is required!!
             </div>
@@ -92,11 +92,11 @@
         <div *ngIf="showProductB" class="card-columns mt-2 p-1 p-lg-4">
           <div class="card" *ngFor="let x of showProductB;index as i" data-dismiss="modal">
             <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
-              <img id='id{{i}}' class="spec card-img-top bg-warning  pos border border-info" src={{urlPix[x.url.slice(44)-1]}} style="padding: 12%;height: 25vw;">
+              <img id='id{{i}}' class="spec card-img-top bg-warning  pos border border-info" src={{urlPix[x.url.slice(44)-1]}} style="padding: 12%;height: 20vw;">
               <div class="card-body">
                 <h5 class="card-title text-center spec">Books</h5>
               </div>
-              <div class="card-footer text-center spec" style="height: 75px !important;">
+              <div class="card-footer text-center spec" style="height: 80px !important;">
                 <small class="text-center spec">{{x.name}}</small>
               </div>
             </a>
@@ -121,21 +121,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)="getIt1()" #form01>
+        <form (ngSubmit)="getIt1()" #form02>
           <div class="form-group px-3">
             <label>
               <h3>Parameters</h3>
             </label>
             <br>
             <label>Name</label>
-            <input type="text" class="form-control" id="nameh" required [(ngModel)]="nameh" name="nameh" #nameh1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <input type="text" class="form-control" id="nameh" required [(ngModel)]="nameh" name="nameh" #nameh1="ngModel" [ngModelOptions]="{updateOn: 'submit'}" placeholder="eg: House algood">
             <div class="alert alert-danger" [hidden]="nameh1.valid || nameh1.pristine">
               Name is required!!
             </div>
           </div>
           <div class="form-group px-3">
             <label>Region</label>
-            <input type="text" class="form-control" required id="region" [(ngModel)]="region" name="region"
+            <input type="text" class="form-control" placeholder="eg: region name" required id="region" [(ngModel)]="region" name="region"
               #region1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="region1.valid || region1.pristine">
               region is required!!
@@ -143,7 +143,7 @@
           </div>
           <div class="form-group px-3">
             <label>Words</label>
-            <input type="text" class="form-control" required id="words" [(ngModel)]="words" name="words" #words1="ngModel"
+            <input type="text" class="form-control" required id="words" placeholder="eg: as high as honor" [(ngModel)]="words" name="words" #words1="ngModel"
               [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="words1.valid || words1.pristine">
               Words is required!!
@@ -151,23 +151,23 @@
           </div>
           <div class="form-group px-3">
             <label>Has-Words</label>
-            <input type="text" class="form-control" required id="hasWords" [(ngModel)]="words" name="hasWords" #hasWords1="ngModel"
-              [ngModelOptions]="{updateOn: 'submit'}">
+            <input type="text" class="form-control" required id="hasWords" [(ngModel)]="hasWords" name="hasWords" #hasWords1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}" placeholder="eg: boolean">
             <div class="alert alert-danger" [hidden]="hasWords1.valid || hasWords1.pristine">
               Has-Words is required!!
             </div>
           </div>
           <div class="form-group px-3">
             <label>Has-Title</label>
-            <input type="text" class="form-control" required id="hasTitle" placeholder="boolean" [(ngModel)]="hasTitle" name="hasTitle" #hasTitle1="ngModel"
+            <input type="text" class="form-control" required id="hasTitles" placeholder="eg: boolean" [(ngModel)]="hasTitles" name="hasTitles" #hasTitles1="ngModel"
               [ngModelOptions]="{updateOn: 'submit'}">
-            <div class="alert alert-danger" [hidden]="hasTitle1.valid || hasTitle1.pristine">
+            <div class="alert alert-danger" [hidden]="hasTitles1.valid || hasTitles1.pristine">
               Has-Title is required!!
             </div>
           </div>
           <div class="form-group px-3">
             <label>Has-Seats</label>
-            <input type="text" class="form-control" required id="hasSeats" placeholder="boolean" [(ngModel)]="hasSeats" name="hasSeats" #hasSeats1="ngModel"
+            <input type="text" class="form-control" required id="hasSeats" placeholder="eg: boolean" [(ngModel)]="hasSeats" name="hasSeats" #hasSeats1="ngModel"
               [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="hasSeats1.valid || hasSeats1.pristine">
               Has-Seats is required!!
@@ -175,7 +175,7 @@
           </div>
           <div class="form-group px-3">
             <label>Has-Died-Out</label>
-            <input type="text" class="form-control" required id="hasDiedOut" placeholder="boolean" [(ngModel)]="hasDiedOut" name="hasDiedOut" #hasDiedOut1="ngModel"
+            <input type="text" class="form-control" required id="hasDiedOut" placeholder="eg: boolean" [(ngModel)]="hasDiedOut" name="hasDiedOut" #hasDiedOut1="ngModel"
               [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="hasDiedOut1.valid || hasDiedOut1.pristine">
               Has-Died-Out is required!!
@@ -183,7 +183,7 @@
           </div>
           <div class="form-group px-3">
             <label>Has-Ancestral-Weapons</label>
-            <input type="text" class="form-control" required id="hasAncestralWeapons" placeholder="boolean" [(ngModel)]="hasAncestralWeapons" name="hasAncestralWeapons" #hasAncestralWeapons1="ngModel"
+            <input type="text" class="form-control" required id="hasAncestralWeapons" placeholder="eg: boolean" [(ngModel)]="hasAncestralWeapons" name="hasAncestralWeapons" #hasAncestralWeapons1="ngModel"
               [ngModelOptions]="{updateOn: 'submit'}">
             <div class="alert alert-danger" [hidden]="hasAncestralWeapons1.valid || hasAncestralWeapons1.pristine">
               Has-Ancestral-Weapons is required!!
@@ -191,15 +191,122 @@
           </div>
           <button type="submit" class="btn btn-primary submit" role="button" aria-expanded="true">Submit</button>
         </form>
-        <div *ngIf="showProductB" class="card-columns mt-2 p-1 p-lg-4">
-          <div class="card" *ngFor="let x of showProductB;index as i" data-dismiss="modal">
-            <a [routerLink]="['/element','books',x.url.slice(44)]" style="color: black !important;">
-              <img id='id{{i}}' class="spec card-img-top bg-warning  pos border border-info" src={{urlPix[x.url.slice(44)-1]}} style="padding: 12%;height: 25vw;">
+        <div *ngIf="showProductH" class="card-columns mt-2 p-lg-4">
+          <div class="card" *ngFor="let x of showProductH;index as i" data-dismiss="modal">
+            <a [routerLink]="['/element','houses',x.url.slice(45)]" style="color: black !important;">
+              <ng-template [ngIf]="x.name.indexOf(' of') != -1" [ngIfElse]="different">
+                <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name.slice(0,x.name.indexOf(' of'))}}.svg&width=600&lang=en"
+                  onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'" style="padding: 12%;height: 20vw;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Noble House</h5>
+                </div>
+                <div class="card-footer text-center" style="height: 80px !important;">
+                  <small class="text-center">{{x.name.slice(0,x.name.indexOf(' of'))}}</small>
+                  <br>
+                  <small class="text-center">of {{x.region}}</small>
+                </div>
+              </ng-template>
+              <ng-template #different>
+                <img id='id{{i}}' class="card-img-top bg-success  pos border border-secondary" src="https://awoiaf.westeros.org/thumb.php?f={{x.name}}.svg&width=600&lang=en"
+                  style="padding: 12%;height: 20vw;" onerror="this.src='https://awoiaf.westeros.org/thumb.php?f=None.svg&width=600&lang=en'">
+
+                <div class="card-body">
+                  <h5 class="card-title text-center">Noble House</h5>
+                </div>
+                <div class="card-footer text-center" style="height: 80px !important;">
+                  <small class="text-center">{{x.name}}</small>
+                  <br>
+                  <small class="text-center">of {{x.region}}</small>
+                </div>
+              </ng-template>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--next filter-->
+<div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+  style="z-index: 1051 !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Books</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="getIt2()" #form03>
+          <div class="form-group px-3">
+            <label>
+              <h3>Parameters</h3>
+            </label>
+            <br>
+            <label>Name</label>
+            <input type="text" class="form-control" id="namec" required [(ngModel)]="namec" name="namec" #namec1="ngModel" [ngModelOptions]="{updateOn: 'submit'}" placeholder="eg: jon snow">
+            <div class="alert alert-danger" [hidden]="namec1.valid || namec1.pristine">
+              Name is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Gender</label>
+            <input type="text" class="form-control" placeholder="eg: male/female" required id="gender" [(ngModel)]="gender" name="gender"
+              #gender1="ngModel" [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="gender1.valid || gender1.pristine">
+              Gender is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Culture</label>
+            <input type="text" class="form-control" required id="culture" placeholder="eg: bravosi" [(ngModel)]="culture" name="culture" #culture1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="culture1.valid || culture1.pristine">
+              Culture is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Born</label>
+            <input type="text" class="form-control" required id="born" [(ngModel)]="born" name="born" #born1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}" placeholder="eg: year">
+            <div class="alert alert-danger" [hidden]="born1.valid || born1.pristine">
+              Born is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>Died</label>
+            <input type="text" class="form-control" required id="died" placeholder="eg: year" [(ngModel)]="died" name="died" #died1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="died1.valid || died1.pristine">
+              Died is required!!
+            </div>
+          </div>
+          <div class="form-group px-3">
+            <label>IsAlive</label>
+            <input type="text" class="form-control" required id="isAlive" placeholder="eg: boolean" [(ngModel)]="isAlive" name="isAlive" #isAlive1="ngModel"
+              [ngModelOptions]="{updateOn: 'submit'}">
+            <div class="alert alert-danger" [hidden]="isAlive1.valid || isAlive1.pristine">
+              IsAlive is required!!
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit" role="button" aria-expanded="true">Submit</button>
+        </form>
+        <div *ngIf="showProductC" class="card-columns mt-2 p-lg-4">
+          <div class="card" *ngFor="let x of showProductC;index as i" data-dismiss="modal">
+            <a [routerLink]="['/element','characters',x.url.slice(49)]" style="color: black !important;">
+              <img id='id{{i}}' class="card-img-top bg-dark  pos {{x.gender}} border border-primary " src='https://api.got.show/misc/images/characters/{{namesOfCharacters[i].replace(" ","_")}}.jpeg'
+                style="padding: 12%;height: 20vw;" onerror="this.src=(this.className == 'card-img-top bg-dark  pos Male border border-primary ')?'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOrLXHISVGvwj8mmiW9-wlxR1R76rAQqXUJwm7jTbtNc_Z2d_7': 'https://yt3.ggpht.com/a-/ACSszfG6iLy8p0jz3wyF6mjPoMahHCYcRW2SQ4X1Gw=s900-mo-c-c0xffffffff-rj-k-no'">
               <div class="card-body">
-                <h5 class="card-title text-center spec">Books</h5>
+                <h5 class="card-title text-center">Character</h5>
               </div>
-              <div class="card-footer text-center spec" style="height: 75px !important;">
-                <small class="text-center spec">{{x.name}}</small>
+              <div class="card-footer text-center bg-secondary" style="height: 75px !important;">
+                
+                  <small class="text-center">{{namesOfCharacters[i]}}</small>
+                
               </div>
             </a>
           </div>
