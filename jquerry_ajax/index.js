@@ -7,7 +7,7 @@ let id
 let plot
 let k=[]
 let k1= []
-var time= 1000
+var time= 2500
 let imgPoster;
 $(document).ready(() => {
    // preven default
